@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ContentSlider({fadeKey,items}) {
   return (
-    <div className="text-right w-1/2">
+    <div className="text-right contentslider  flex justify-center items-start flex-col w-[50%]">
       <h3
         key={`h3-${fadeKey}`} // استفاده از کلید جدید برای ایجاد انیمیشن مجدد
         className="text-5xl mb-6 font-extrabold intorslideranim-h3"

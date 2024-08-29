@@ -39,7 +39,7 @@ export default function IntroSlider() {
   };
 
   return (
-    <div className="w-100 z-0 h-screen relative">
+    <div className="w-100 z-0 h-screen Introslider relative">
       <Swiper
         modules={[Navigation, EffectFade]}
         effect="fade"
@@ -50,19 +50,20 @@ export default function IntroSlider() {
           prevEl: ".custom-prev-button",
         }}
         onSlideChange={changesilder}
-        className="Introslider mt-5 relative h-full overflow-hidden"
+        className=" mt-5 relative h-full overflow-hidden"
       >
         <img
-          className="h-3/4 absolute right-0 bottom-0"
+          className="h-3/4 sharpbgslider absolute right-0 bottom-0"
           src="https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/07/3.png"
           alt=""
         />
         
         {infointroslider.map((item, index) => (
           <SwiperSlide key={item.id} className="w-100">
-            <div className="flex justify-between w-[80%] item-center">
+            <div className="flex slidesintro justify-between h-100% w-[100%] item-center">
+            <ContentSlider fadeKey={fadeKey} items={item} />
               <ImgSlide fadeKey={fadeKey} items={item} />
-              <ContentSlider fadeKey={fadeKey} items={item} />
+              
             </div>
           </SwiperSlide>
         ))}

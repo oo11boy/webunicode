@@ -1,12 +1,9 @@
-.Introslider .swiper-slide{
-display: flex;
-align-items: center;
-justify-content: center;
-direction: rtl;
-
-
+.Introslider .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: rtl;
 }
-
 
 /* قرار دادن دکمه‌های ناوبری در پایین سمت چپ */
 .Introslider .swiper-button-next,
@@ -19,7 +16,7 @@ direction: rtl;
 
 .Introslider .swiper-button-next {
   left: 80px; /* فاصله از سمت راست (می‌توانید آن را تغییر دهید) */
- right: auto;
+  right: auto;
 }
 
 .Introslider .swiper-button-prev {
@@ -27,45 +24,134 @@ direction: rtl;
   right: auto;
 }
 .Introslider {
-    background-image: url('https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/07/banner-1.jpg');
-    background-size: cover;
+  background-image: url("../../../../../public/image/bgslider.jpg");
+  background-size: cover;
 }
 
-.fadeimg{
-    animation: fade 1s ;
+.fadeimg {
+  animation: fade 1s;
 }
-.intorslideranim-h3{
-    animation: bottomtotoph3 0.8s;
+.intorslideranim-h3 {
+  animation: bottomtotoph3 0.8s;
 }
-.intorslideranim-p{
-    animation: bottomtotoph3 1.2s;
-    
-} 
-.intorslideranim-btn{
-    animation: bottomtotoph3 1.8s;
-    
-} 
+.intorslideranim-p {
+  animation: bottomtotoph3 1.2s;
+}
+.intorslideranim-btn {
+  animation: bottomtotoph3 1.8s;
+}
+
+.sharpbgslider {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  height: 70%;
+  width: 30%;
+  transform: scaleX(-1);
+}
 @keyframes fade {
-    0%{opacity: 0;}
-    100%{opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes bottomtotoph3 {
-    0%{
-        transform: translateY(+25%);
-    
-        opacity: 0;
-        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-      }
-      50%{
-        opacity: 0;
-      }
-   65%{
+  0% {
+    transform: translateY(+25%);
+
     opacity: 0;
-   }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-      }
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* responsive slider */
+
+@media only screen and (max-width: 350px) {
+  .contentslider h3 {
+    font-size: 14px;
+  }
+  .contentslider a {
+    font-size: 11px;
+  }
+  .contentslider p {
+    font-size: 12px !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .contentslider h3 {
+    font-size: 20px;
+  }
+  .contentslider p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .contentslider h3 {
+    font-size: 30px;
+  }
+  .contentslider {
+    width: 80% !important;
+  }
+
+  .contentslider p {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .contentslider p {
+    font-size: 14px;
+  }
+  .contentslider {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .imgintroslider {
+    display: none;
+  }
+
+  .Introslider {
+    height: 70vh !important;
+  }
+  .slidesintro {
+    padding-right: 10px !important;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .slidesintro {
+    width: 80% !important;
+  }
+
+  .imgintroslider img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .sharpbgslider {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    height: 70%;
+    width: 20%;
+  }
+  .Introslider {
+    height: 90vh !important;
+  }
 }
