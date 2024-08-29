@@ -1,0 +1,28 @@
+.Introslider .swiper-slide{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* قرار دادن دکمه‌های ناوبری در پایین سمت چپ */
+.Introslider .swiper-button-next,
+.Introslider .swiper-button-prev {
+  position: absolute;
+  bottom: 20px; /* فاصله از پایین */
+  top: auto; /* حذف موقعیت پیش فرض از بالا */
+  transform: none;
+}
+
+.Introslider .swiper-button-next {
+  left: 80px; /* فاصله از سمت راست (می‌توانید آن را تغییر دهید) */
+ right: auto;
+}
+
+.Introslider .swiper-button-prev {
+  left: 20px; /* فاصله از سمت چپ */
+  right: auto;
+}
+.Introslider {
+    background-image: url('https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/07/banner-1.jpg');
+    background-size: cover;
+}
