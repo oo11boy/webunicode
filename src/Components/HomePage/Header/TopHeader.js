@@ -1,3 +1,4 @@
+
 import React from "react";
 import "@/app/icons.css";
 import SocialIcons from "@/Components/GeneralComponents/SocialIcons/SocialIcons";
@@ -26,14 +27,19 @@ export default function TopHeader() {
                 <p className="bg-red-600 py-1   rounded-md">درخواست سایت</p>
               </div>
               <NavbarItems />
+
             </div>
           </div>
           <div className="w-1/4 logosite  pr-[10%] text-right h-[100px] items-center flex justify-end bg-[#CFD2D5] absolute top-[-10px] z-1 right-[25px]"></div>
           <div className="w-1/4 logosite  pr-[10%] text-right h-[100px] items-center flex justify-end bg-white absolute top-0  right-5 z-[1]">
+
             <SmallLogo />
+
+          
+
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
