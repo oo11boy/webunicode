@@ -2,7 +2,11 @@
 display: flex;
 align-items: center;
 justify-content: center;
+direction: rtl;
+
+
 }
+
 
 /* قرار دادن دکمه‌های ناوبری در پایین سمت چپ */
 .Introslider .swiper-button-next,
@@ -25,4 +29,13 @@ justify-content: center;
 .Introslider {
     background-image: url('https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/07/banner-1.jpg');
     background-size: cover;
+}
+
+.fade{
+    animation: fade 1s ;
+}
+
+@keyframes fade {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
 }

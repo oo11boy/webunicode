@@ -22,7 +22,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="fa">
       <body className={vazir.className}>{children}</body>
     </html>
   );
