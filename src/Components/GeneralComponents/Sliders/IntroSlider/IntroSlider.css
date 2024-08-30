@@ -48,6 +48,9 @@
   height: 70%;
   width: 30%;
   transform: scaleX(-1);
+  display: flex;
+  justify-content: end;
+  align-items: end;
 }
 @keyframes fade {
   0% {
@@ -120,6 +123,18 @@
   .contentslider {
     width: 80%;
   }
+  .sharpbgslider {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    height: 70%;
+    width: 30%;
+  }
+
+  .sharpbgslider img{
+    max-height:100%;
+    max-width: 100%;
+  }
 }
 
 @media only screen and (max-width: 1100px) {
@@ -133,7 +148,8 @@
   .slidesintro {
     padding-right: 10px !important;
   }
-  .custom-next-button ,.custom-prev-button{
+  .custom-next-button,
+  .custom-prev-button {
     display: none;
   }
 }
