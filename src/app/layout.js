@@ -1,6 +1,6 @@
 import "./globals.css";
 import localFont from '@next/font/local'
-const vazir = localFont({
+const Vazir = localFont({
   src: [
     {
       path: '../../public/Fonts/Vazir.ttf',
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
 
     <html lang="fa">
 
-      <body className={vazir.className}>{children}</body>
+      <body className={Vazir.className}>{children}</body>
     </html>
   );
 }

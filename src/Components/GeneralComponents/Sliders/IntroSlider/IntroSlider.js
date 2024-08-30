@@ -51,11 +51,13 @@ export default function IntroSlider() {
         onSlideChange={changesilder}
         className="mt-5 relative h-full overflow-hidden"
       >
+        <div  className="h-3/4 sharpbgslider absolute right-0 bottom-0">
         <img
-          className="h-3/4 sharpbgslider absolute right-0 bottom-0"
+         
           src="https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/07/3.png"
           alt=""
         />
+        </div>
 
         {infointroslider.map((item) => (
           <SwiperSlide key={item.id} className="w-100">
