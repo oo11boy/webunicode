@@ -7,7 +7,7 @@ import IntroSlider from "@/Components/GeneralComponents/Sliders/IntroSlider/Intr
 export default function Header() {
   return (
     <div className="h-[100vh] relative flex flex-col header">
-
+<TopHeader/>
 <IntroSlider/>
     </div>
   );

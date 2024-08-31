@@ -5,6 +5,7 @@ import SocialIcons from "@/Components/GeneralComponents/SocialIcons/SocialIcons"
 import { SiteEmail, SitePhone } from "@/Components/GeneralComponents/Contact/Contact";
 import NavbarItems from "@/Components/GeneralComponents/NavbarItems/NavbarItems";
 import SmallLogo from "@/Components/GeneralComponents/SiteLogo/SiteLogo";
+import './TopHeader.css'
 
 export default function TopHeader() {
   return (
