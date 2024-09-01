@@ -1,4 +1,20 @@
 import "./globals.css";
+<<<<<<< HEAD
+import localFont from "@next/font/local";
+const Vazir = localFont({
+  src: [
+    {
+      path: "../../public/Fonts/Vazir.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/Fonts/Vazir.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+=======
 import localFont from '@next/font/local'
 const vazir = localFont({
   src: [
@@ -14,6 +30,7 @@ const vazir = localFont({
     },
   ],
 
+>>>>>>> 5a499ed4d76616afc299d36a5fa89dea41e5090c
 });
 export const metadata = {
   title: "Create Next App",
@@ -22,8 +39,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+<<<<<<< HEAD
+    <html lang="fa">
+
+      <head>
+        <link rel="stylesheet" href="../Styles.css" />
+      </head>
+
+      
+      <body className={Vazir.className}>{children}</body>
+=======
     <html lang="en">
       <body className={vazir.className}>{children}</body>
+>>>>>>> 5a499ed4d76616afc299d36a5fa89dea41e5090c
     </html>
   );
 }

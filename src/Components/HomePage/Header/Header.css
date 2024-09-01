@@ -1,9 +1,13 @@
+<<<<<<< HEAD
+
+=======
 .header{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://c0.wallpaperflare.com/preview/183/501/299/close-up-code-coding-css.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
+>>>>>>> 5a499ed4d76616afc299d36a5fa89dea41e5090c
 .logosite{
    
     transform: skewX(-15deg);
@@ -15,6 +19,8 @@
 .navmenu li{
 cursor: pointer;
 }
+<<<<<<< HEAD
+=======
 
 .slideheader{
  width: 100%;
@@ -26,3 +32,4 @@ cursor: pointer;
   flex-direction: column;
   gap: 20px;
 }
+>>>>>>> 5a499ed4d76616afc299d36a5fa89dea41e5090c
