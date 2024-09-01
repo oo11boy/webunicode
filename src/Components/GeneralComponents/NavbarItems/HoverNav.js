@@ -22,7 +22,7 @@ export default function HoverNav() {
     },
   ];
   return (
-    <li class="relative group flex items-center gap-2">
+    <li class="relative text-black group flex items-center gap-2">
       طراحی سایت
       <ul class="absolute opacity-0 group-hover:opacity-100  text-black bg-white text-right top-10 right-0 mt-1 py-2 w-48 rounded-lg shadow-lg z-10 transition-opacity duration-400 ease-in">
         {navChildren.map((item) => (
