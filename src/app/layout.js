@@ -22,12 +22,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa">
-
       <head>
         <link rel="stylesheet" href="../Styles.css" />
       </head>
 
-      
       <body className={Vazir.className}>{children}</body>
     </html>
   );

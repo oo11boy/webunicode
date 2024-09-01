@@ -9,3 +9,12 @@
 .navmenu li{
 cursor: pointer;
 }
+
+@media only screen and (max-width: 1100px) {
+    .logosite{
+        display: none !important;
+    }
+    .top-navbar {
+        width: 1100px;
+    }
+}

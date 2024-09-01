@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "css": "npx tailwindcss -i ./src/app/globals.css -o ./public/Styles.css --watch"
- 
   },
   "dependencies": {
     "@next/font": "^14.2.7",
