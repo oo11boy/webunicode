@@ -118,7 +118,13 @@
   
 
 }
-
+.contentslider h3{
+  line-height: normal;
+}
+.contentslider a{
+  padding: 20px 20px;
+  font-weight: 800;
+  }
 @media only screen and (max-width: 900px) {
   .contentslider p {
     font-size: 14px!important;;
@@ -170,16 +176,27 @@
 
 @media only screen and (max-width: 400px) {
   .contentslider h3 {
-    font-size: 20px!important;;
+    font-size: 30px!important;
+    line-height: normal;
   }
   .contentslider p {
-    font-size: 12px!important;;
+    font-size: 12px!important;
+    width: 80%;
+   
+  }
+  .contentslider a{
+  padding: 15px 20px;
+  font-weight: 900;
+  }
+  .contentslider{
+    padding-left: 10px;
+    width: 100%!important;
   }
 
 }
 @media only screen and (max-width: 350px) {
   .contentslider h3 {
-    font-size: 14px;
+    font-size: 16px;
   }
   .contentslider a {
     font-size: 11px;
