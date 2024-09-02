@@ -3,6 +3,7 @@ import HoverNav from "@/Components/GeneralComponents/NavbarItems/HoverNav";
 import NavLinks from "@/Components/GeneralComponents/NavbarItems/NavLinks";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
+import SmallLogo from "@/Components/GeneralComponents/SiteLogo/SiteLogo";
 
 export default function ResoponsiveHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ export default function ResoponsiveHeader() {
     setIsOpen(e => !e)
   }
 
-  const showMobileMenu = isOpen ? <MobileMenu close={toggleMenu}/> : null;
+  const showMobileMenu = isOpen ? <MobileMenu close={toggleMenu} status={isOpen}/> : null;
   return (
     <>
       <nav class="flex z-10 items-center justify-between w-full mt-5 bg-white shadow-md">
@@ -36,11 +37,7 @@ export default function ResoponsiveHeader() {
 
           <div class="flex items-center m-auto pr-[4%]">
             <a class="ml-4" href="/">
-              <img
-                className="skew-x-[15deg] h-[40px]"
-                src="https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/08/logo.png"
-                alt=""
-              />
+            <SmallLogo skew={0}/>
             </a>
           </div>
           <HamburgerMenu toggleMenu={toggleMenu}/>

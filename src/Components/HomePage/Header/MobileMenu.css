@@ -1,19 +1,24 @@
+.bg-navbar{
+animation: fadeshow 0.5s;
+}
+.sidein{
+  animation: sidein 1s;
+}
+.sideout{
+  animation: sideout 1s;
+}
 .navbar-collapse {
+
   position: fixed;
   right: 0px;
   top: 0;
-  width: 400px;
   padding: 30px;
-  animation: fadeLeft;
-  transition: transform 0.3s ease;
   height: 100%;
   min-height: 100vh;
   z-index: 50;
   background-color: white;
 }
-.navbar-collapse.open {
-  transform: translateX(0);
-}
+
 .nav-list {
   list-style: none;
   padding: 0;
@@ -30,7 +35,7 @@
   padding: 15px;
   cursor: pointer;
   justify-content: space-between;
-  transition: background-color 0.3s ease;
+  
 }
 
 .nav-link:hover {
@@ -39,14 +44,22 @@
 
 .sub-menu {
   list-style: none;
-  padding: 10px;
   margin: 0;
   background-color: #f9f9f9;
   border-right: 2px solid #ddd;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+.nav-item.active .sub-menu {
+  max-height: 300px;
+  overflow: auto;
+  opacity: 1;
 }
 
 .sub-item {
   padding: 10px 15px;
+ 
 }
 
 .sub-link {
@@ -59,4 +72,23 @@
 
 .sub-link:hover {
   color: #494949;
+}
+
+
+
+/* animation */
+
+@keyframes fadeshow {
+  0%{opacity: 0;}
+  100%{opacity: 0.5;}
+}
+
+@keyframes sidein {
+  0%{right: -1000px;}
+  100%{right: 0}
+}
+
+@keyframes sideout {
+  0%{right:0}
+  100%{right: -1000px}
 }
