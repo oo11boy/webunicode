@@ -9,6 +9,7 @@ import { Navigation, EffectFade, Autoplay } from "swiper/modules";
 import ImgSlide from "./ImgSlide/ImgSlide";
 import ContentSlider from "./ContentSlider/ContentSlider";
 import PrevNextButton from "./PrevNextButton/PrevNextButton";
+import TablatMobileButton from "./PrevNextButton/TablatMobileButton";
 
 export default function IntroSlider() {
   const infointroslider = [
@@ -32,13 +33,17 @@ export default function IntroSlider() {
     setFadeKey((prevKey) => prevKey + 1);
   };
 
+  const handleTouchEnd = (swiper) => {
+    // تغییر به اسلاید بعدی در هنگام لمس
+    swiper.slideNext();
+  };
+
   return (
     <div className="w-100 z-0 h-screen Introslider relative">
       <Swiper
         modules={[Navigation, EffectFade, Autoplay]}
-        effect="fade"
-        speed={800}
-        fadeEffect={{ crossFade: true }}
+        speed={0} // حذف سرعت تغییرات
+         allowTouchMove={false}
         autoplay={{
           delay: 5000, // مدت زمان تغییر اسلایدها به میلی‌ثانیه
           disableOnInteraction: false,
@@ -50,13 +55,14 @@ export default function IntroSlider() {
         }}
         onSlideChange={changesilder}
         className="mt-5 relative h-full overflow-hidden"
+        loopAdditionalSlides={0} // جلوگیری از نمایش اسلاید قبلی در هنگام کشیدن
+      
       >
-        <div  className="h-3/4 sharpbgslider absolute right-0 ">
-        <img
-         
-          src="https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/07/3.png"
-          alt=""
-        />
+        <div className="h-3/4 sharpbgslider absolute right-0">
+          <img
+            src="https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/07/3.png"
+            alt=""
+          />
         </div>
 
         {infointroslider.map((item) => (
@@ -68,8 +74,9 @@ export default function IntroSlider() {
           </SwiperSlide>
         ))}
       </Swiper>
-
-      <PrevNextButton />
+{/* 
+      <PrevNextButton /> */}
+      <TablatMobileButton/>
     </div>
   );
 }
