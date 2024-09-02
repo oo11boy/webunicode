@@ -741,6 +741,10 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .resize {
   resize: both;
 }
@@ -988,6 +992,48 @@ video {
 
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+@font-face {
+  font-family: 'Vazir';
+
+  src: url('/Fonts/Vazir.ttf') format('truetype');
+
+  /* تغییر از ttf به truetype */
+
+  font-weight: normal;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'alibaba_black';
+
+  src: url('/Fonts/alibaba-black.woff2') format('woff2');
+
+  font-weight: 900;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'alibaba_bold';
+
+  src: url('/Fonts/alibaba-bold.woff2') format('woff2');
+
+  font-weight: 700;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'alibaba';
+
+  src: url('/Fonts/alibaba-regular.woff2') format('woff2');
+
+  font-weight: 400;
+
+  font-style: normal;
 }
 
 .hover\:bg-blue-900:hover {

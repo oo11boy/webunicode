@@ -9,7 +9,6 @@ import { Navigation, EffectFade, Autoplay } from "swiper/modules";
 import ImgSlide from "./ImgSlide/ImgSlide";
 import ContentSlider from "./ContentSlider/ContentSlider";
 import PrevNextButton from "./PrevNextButton/PrevNextButton";
-import TablatMobileButton from "./PrevNextButton/TablatMobileButton";
 
 export default function IntroSlider() {
   const infointroslider = [
@@ -74,9 +73,9 @@ export default function IntroSlider() {
           </SwiperSlide>
         ))}
       </Swiper>
-{/* 
-      <PrevNextButton /> */}
-      <TablatMobileButton/>
+
+      <PrevNextButton />
+   
     </div>
   );
 }
