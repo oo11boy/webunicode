@@ -38,7 +38,7 @@ export default function IntroSlider() {
   };
 
   return (
-    <div className="w-100 z-0 h-screen Introslider relative">
+    <div className="w-100 z-0 h-screen bg-slider-mob Introslider relative">
       <Swiper
         modules={[Navigation, EffectFade, Autoplay]}
         speed={0} // حذف سرعت تغییرات

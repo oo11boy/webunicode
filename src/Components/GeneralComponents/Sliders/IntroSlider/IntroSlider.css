@@ -126,6 +126,9 @@
   font-weight: 800;
   }
 @media only screen and (max-width: 900px) {
+  .bg-slider-mob{
+    background-image: url('https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/07/banner-1.jpg')!important;
+  }
   .contentslider p {
     font-size: 14px!important;;
   }
