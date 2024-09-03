@@ -1,3 +1,4 @@
+
 .Introslider .swiper-slide {
   display: flex;
   align-items: center;
@@ -29,13 +30,13 @@
 }
 
 .fadeimg {
-  animation: fade 1s;
+  animation: fade 0.2s;
 }
 .intorslideranim-h3 {
-  animation: bottomtotoph3 0.8s;
+  animation: bottomtotoph3 0.4s;
 }
 .intorslideranim-p {
-  animation: bottomtotoph3 1.2s;
+  animation: bottomtotoph3 0.8s;
 }
 .intorslideranim-btn {
   animation: bottomtotoph3 1.8s;
@@ -83,40 +84,51 @@
 
 /* responsive slider */
 
-@media only screen and (max-width: 350px) {
-  .contentslider h3 {
-    font-size: 14px;
-  }
-  .contentslider a {
-    font-size: 11px;
-  }
-  .contentslider p {
-    font-size: 12px !important;
-  }
-}
 
-@media only screen and (max-width: 400px) {
-  .contentslider h3 {
-    font-size: 20px!important;;
-  }
-  .contentslider p {
-    font-size: 12px!important;;
-  }
-}
 
-@media only screen and (max-width: 500px) {
-  .contentslider h3 {
-    font-size: 30px!important;
+
+@media only screen and (max-width: 1100px) {
+  .imgintroslider {
+    display: none;
   }
-  .contentslider {
-    width: 80% !important;
+  .sharpbgslider img{
+    max-height:100%;
+    max-width: 100%;
+  }
+  .Introslider {
+    height: 80vh !important;
+  }
+  .slidesintro {
+    padding-right: 10px !important;
   }
 
-  .contentslider p {
-    font-size: 12px!important;;
+
+  .custom-next-button,
+  .custom-prev-button {
+   bottom: 0!important;
   }
+
+  .custom-prev-button{
+  right: 3rem!important;
+  }
+  .custom-next-button svg,
+  .custom-prev-button svg{
+    width: 2.5rem!important;
+  }
+  
+
 }
+.contentslider h3{
+  line-height: normal;
+}
+.contentslider a{
+  padding: 20px 20px;
+  font-weight: 800;
+  }
 @media only screen and (max-width: 900px) {
+  .bg-slider-mob{
+    background-image: url('https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/07/banner-1.jpg')!important;
+  }
   .contentslider p {
     font-size: 14px!important;;
   }
@@ -134,26 +146,66 @@
   .contentslider h3 {
     font-size: 35px;
   }
-
+  .custom-prev-button{
+    right: 2.5rem!important;
+    }
+  .custom-next-button svg,
+  .custom-prev-button svg{
+    width: 2rem!important;
+  }
 }
 
-@media only screen and (max-width: 1100px) {
-  .imgintroslider {
-    display: none;
+
+
+@media only screen and (max-width: 500px) {
+  .contentslider h3 {
+    font-size: 30px!important;
   }
-  .sharpbgslider img{
-    max-height:100%;
-    max-width: 100%;
+  .contentslider {
+    width: 80% !important;
   }
-  .Introslider {
-    height: 70vh !important;
+
+  .contentslider p {
+    font-size: 12px!important;;
   }
-  .slidesintro {
-    padding-right: 10px !important;
-  }
-  .custom-next-button,
   .custom-prev-button {
-    display: none;
+    right: 2.5rem!important;
+  }
+  .custom-next-button svg,
+  .custom-prev-button svg{
+    width: 2rem!important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .contentslider h3 {
+    font-size: 30px!important;
+    line-height: normal;
+  }
+  .contentslider p {
+    font-size: 12px!important;
+    width: 80%;
+   
+  }
+  .contentslider a{
+  padding: 15px 20px;
+  font-weight: 900;
+  }
+  .contentslider{
+    padding-left: 10px;
+    width: 100%!important;
+  }
+
+}
+@media only screen and (max-width: 350px) {
+  .contentslider h3 {
+    font-size: 16px;
+  }
+  .contentslider a {
+    font-size: 11px;
+  }
+  .contentslider p {
+    font-size: 12px !important;
   }
 }
 

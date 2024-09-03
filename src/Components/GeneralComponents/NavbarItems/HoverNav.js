@@ -24,7 +24,7 @@ export default function HoverNav({size}) {
   return (
     <li class={`relative text-black group flex items-center gap-2 text-${size}`}>
       طراحی سایت
-      <ul class="absolute opacity-0 group-hover:opacity-100  text-black bg-white text-right top-10 right-0 mt-1 py-2 w-48 rounded-lg shadow-lg z-10 transition-opacity duration-400 ease-in">
+      <ul class="absolute opacity-0 group-hover:opacity-100  text-black bg-white text-right top-10 right-0 mt-1 py-2 w-auto rounded-lg shadow-lg z-10 transition-opacity duration-400 ease-in">
         {navChildren.map((item) => (
           <li key={item.id} class="px-4 py-2 whitespace-nowrap flex justify-end">
             <Link href={item.to}>

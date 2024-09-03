@@ -1,0 +1,63 @@
+
+
+@font-face {
+    font-family: 'vazir';
+    src: url('/Fonts/Vazir.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'alibaba_black';
+    src: url('/Fonts/alibaba-black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'alibaba_bold';
+    src: url('/Fonts/alibaba-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'alibaba';
+    src: url('/Fonts/alibaba-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'iransans';
+    src: url('/Fonts/iransans.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'iransansweb';
+    src: url('/Fonts/iransansweb.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'yekan';
+    src: url('/Fonts/yekan.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+h3{
+    font-family: "iransans";
+}
+p{
+    font-family: "iransans";
+}
+li{
+    font-family: "yekan";
+}
+
+a{
+    font-family: "yekan";
+}
