@@ -3,6 +3,7 @@
   }
   .Portfolio .swiper-slide {
     transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: scaleY(0.95)
   }
   
   .Portfolio .swiper-slide-active {
@@ -139,10 +140,10 @@
     }
   
     .portfolio-slide-title {
-      top: 47%;
+      top: 47%!important;
       width: 100% !important;
-      right: 0;
-      transform: skewX(0);
+      right: 0!important;
+      transform: skewX(0)!important;
     }
   
     .titletext {
@@ -176,10 +177,10 @@
     }
   
     .portfolio-slide-title {
-      top: 40%;
+      top: 40%!important;
       width: 100% !important;
-      right: 0;
-      transform: skewX(0);
+      right: 0!important;
+      transform: skewX(0)!important;
     }
   
     .titletext {

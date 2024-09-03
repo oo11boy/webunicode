@@ -1,5 +1,5 @@
 import React from "react";
-import './buttons.css'
+import './Buttons.css'
 export default function ViewMoreBtn({text}) {
   return (
     <button className="bg-white  active:shadow-inner seemorebtn p-5 shadow-md rounded-xl">
