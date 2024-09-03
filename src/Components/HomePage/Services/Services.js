@@ -52,7 +52,7 @@ export default function Services() {
           </div>
 
           {/* <!-- Right Content Section with Full Width Dark Background --> */}
-          <div class="w-[50%] flex flex-col justify-start pt-24 lg:py-16 ">
+          <div class="w-[50%] flex flex-col justify-start md:pt-24 lg:py-16 ">
             <div class=" relative  m-auto lg:ml-20  lg:pl-8">
               <div class="absolute hidden md:flex -right-5 lg:right-[unset] lg:-left-20 lg:-top-14 -top-20 arrow-shape mb-8">
                 <img class="w-32" src="/image/red-arrow.png" alt="arrow" />
