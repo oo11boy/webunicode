@@ -1,6 +1,7 @@
+"use client"
 import React from "react";
 import "./Services.css";
-
+import {Flat, Heat, Nested} from '@alptugidin/react-circular-progress-bar'
 export default function Services() {
   const infoservice = [
     {
@@ -57,7 +58,7 @@ export default function Services() {
               <div class="absolute hidden md:flex -right-5 lg:right-[unset] lg:-left-20 lg:-top-14 -top-20 arrow-shape mb-8">
                 <img class="w-32" src="/image/red-arrow.png" alt="arrow" />
               </div>
-              <h3 class="mb-6 text-4xl  text-black text-center md:text-right md:text-white ">
+              <h3 class="mb-6 text-4xl gradianttext text-center md:text-right md:text-white ">
                 انعطاف‌پذیری و ویژگی‌های متناسب با سبک هر تیم.
               </h3>
               <p class="my-6 pt-6 text-black text-center md:text-right md:text-white ">
@@ -70,25 +71,69 @@ export default function Services() {
               <div class="circle-progress md:hidden lg:flex justify-between w-full  space-x-8">
                 <div class="progressbar my-10 md:my-auto w-full md:w-auto items-center flex md:flex-none flex-col justify-center md: text-center text-black">
                   <div
-                    class="circle relative w-28 h-28 rounded-full bg-gray-100 mb-4"
+                    class="circle relative w-28 h-28 rounded-full mb-4"
                     data-percent="58"
                   >
-                    <canvas width="120" height="120"></canvas>
-                    <strong class="absolute inset-0 flex items-center justify-center text-lg font-semibold">
-                      58%
-                    </strong>
+<Flat  
+   progress={50}
+   range={{ from: 0, to: 100 }}
+   sign={{ value: '%', position: 'end' }}
+  
+   showMiniCircle={true}
+   showValue={true}
+   sx={{
+     strokeColor: '#ff0000',
+     
+     barWidth: 5, 
+     bgStrokeColor: '#ffffff',
+     bgColor: { value: '#F3F4F6', transparency: '99' },  
+     shape: 'full',
+     strokeLinecap: 'round',
+     valueSize: 25,
+     valueWeight: 'bold',
+     valueColor: '#333',
+     valueFamily: 'alibaba',
+     loadingTime: 1000,
+     miniCircleColor: '#ff0000',
+     miniCircleSize: 5,
+     valueAnimation: true,
+     intersectionEnabled: true
+   }}
+/>
                   </div>
                   <h4 class="text-xl font-medium text-black md:text-white">رشد شرکت</h4>
                 </div>
                 <div class="progressbar  mb-10 md:mb-auto w-full md:w-auto items-center flex md:flex-none flex-col justify-center md: text-center text-black">
                 <div
-                    class="circle relative w-28 h-28 rounded-full bg-gray-100 mb-4"
+                    class="circle relative w-28 h-28 rounded-full mb-4"
                     data-percent="87"
                   >
-                    <canvas width="120" height="120"></canvas>
-                    <strong class="absolute inset-0 flex items-center justify-center text-lg font-semibold">
-                      87%
-                    </strong>
+                  <Flat  
+   progress={87}
+   range={{ from: 0, to: 100 }}
+   sign={{ value: '%', position: 'end' }}
+  
+   showMiniCircle={true}
+   showValue={true}
+   sx={{
+     strokeColor: '#ff0000',
+     
+     barWidth: 5, 
+     bgStrokeColor: '#ffffff',
+     bgColor: { value: '#F3F4F6', transparency: '99' },  
+     shape: 'full',
+     strokeLinecap: 'round',
+     valueSize: 25,
+     valueWeight: 'bold',
+     valueColor: '#333',
+     valueFamily: 'alibaba',
+     loadingTime: 1000,
+     miniCircleColor: '#ff0000',
+     miniCircleSize: 5,
+     valueAnimation: true,
+     intersectionEnabled: true
+   }}
+/>
                   </div>
                   <h4 class="text-xl font-medium  text-black md:text-white">مشتریان راضی</h4>
                 </div>
