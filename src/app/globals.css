@@ -8,16 +8,12 @@
    
 }
 
-.container-field{
-    width: 100%;
-    margin: auto;
-    direction: rtl;
-}
+
 
 .container-field {
     width: 100%;
     margin: auto;
-    direction: rtl;
+    direction: rtl!important;
   }
   .container{
       padding-right:0.75rem!important;
@@ -26,9 +22,13 @@
       margin-left: auto;
     
   }
+
   @media only screen and (min-width: 576px) {
     .container {
       max-width: 540px;
+    }
+    .container-half{
+      max-width: 270px;
     }
   }
   
@@ -36,22 +36,34 @@
       .container {
           max-width: 720px;
       }
+      .container-half{
+        max-width: 360px;
+      }
   }
   
   @media (min-width: 992px) {
       .container {
           max-width: 960px;
       }
+      .container-half {
+        max-width: 480px;
+    }
   }
   
   @media (min-width: 1200px) {
       .container {
           max-width: 1140px;
       }
+      .container-half {
+        max-width: 570px;
+    }
   }
   
   @media (min-width: 1250px) {
       .container {
           max-width: 1250px;
       }
+      .container-half {
+        max-width: 625px;
+    }
   }
