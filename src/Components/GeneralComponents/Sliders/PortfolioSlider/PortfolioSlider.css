@@ -1,7 +1,18 @@
 .portfolio-slider-section {
     background-image: url("https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/07/27.png");
   }
+  .Portfolio .swiper-slide {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
   
+  .Portfolio .swiper-slide-active {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  
+  .Portfolio .swiper-slide-next, .swiper-slide-prev {
+    opacity: 0.7;
+  }
   .divider {
     width: 60%;
     height: 2px;
@@ -23,7 +34,20 @@
   .portfolio-slider-link.hover {
     color: red;
   }
+  .titletext{
+    font-family: 'alibaba';
+  }
+  .slidecard p{
+    font-family: 'iransans';
+  }
+
   
+  .slidecard img{
+    object-fit: cover;
+    object-position: top;
+  
+  }
+
   @media only screen and (min-width: 772px) {
     .divider {
       margin-bottom: 10px !important;
@@ -91,22 +115,23 @@
     }
   
     .portfolio-slide-title {
-      top: 40%;
+      top: 38%;
     }
   }
   
   @media only screen and (max-width: 772px) {
+  
     .divider {
-      margin-bottom: 10px !important;
+      margin-bottom: 5px !important;
     }
   
     .slidecard img {
-      height: 70% !important;
+      height: 60% !important;
     }
   
     .slidecard p {
-      height: auto !important;
-      margin-top: unset;
+      height: 30% !important;
+      margin-top:unset
     }
   
     .portfolio-slider-link {
@@ -114,7 +139,7 @@
     }
   
     .portfolio-slide-title {
-      top: 55%;
+      top: 47%;
       width: 100% !important;
       right: 0;
       transform: skewX(0);
@@ -129,52 +154,40 @@
     }
   }
   
+
+
   @media only screen and (max-width: 406px) {
-    .slidecard {
-      height: 70% !important;
-      position: relative;
-      padding-bottom: 10px !important;
+    .divider {
+      margin-top: 15% !important;
     }
   
     .slidecard img {
-      height: 40% !important;
-      padding-bottom: 5%;
+      height: 50% !important;
     }
   
     .slidecard p {
-      height: auto !important;
-      font-size: 14px !important;
+      height: 30% !important;
+      margin-top: 30px;
     }
   
     .portfolio-slider-link {
-      height: auto !important;
+      height: 10% !important;
+      font-size: 15px;
     }
   
     .portfolio-slide-title {
-      top: 50% !important;
-      height: 60px;
+      top: 40%;
       width: 100% !important;
       right: 0;
       transform: skewX(0);
     }
   
     .titletext {
-      font-size: 18px !important;
-    }
-  }
-  
-  @media only screen and (max-width: 350px) {
-    .portfolio-slide-title {
-      top: 45% !important;
-      height: 60px;
-      width: 100% !important;
-      right: 0;
-      transform: skewX(0);
+      transform: skewX(12deg) !important;
     }
   
-    .slidecard img {
-      height: 40% !important;
-      padding-bottom: 15%;
+    .icontitletext span {
+      transform: skewX(0) !important;
     }
   }
   
