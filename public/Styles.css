@@ -716,10 +716,6 @@ video {
   width: 25%;
 }
 
-.w-48 {
-  width: 12rem;
-}
-
 .w-\[100\%\] {
   width: 100%;
 }
@@ -730,6 +726,10 @@ video {
 
 .w-\[90\%\] {
   width: 90%;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .w-full {
@@ -994,46 +994,15 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
-@font-face {
-  font-family: 'Vazir';
-
-  src: url('/Fonts/Vazir.ttf') format('truetype');
-
-  /* تغییر از ttf به truetype */
-
-  font-weight: normal;
-
-  font-style: normal;
+.container{
+  width: 80%;
+  margin: auto;
 }
 
-@font-face {
-  font-family: 'alibaba_black';
-
-  src: url('/Fonts/alibaba-black.woff2') format('woff2');
-
-  font-weight: 900;
-
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'alibaba_bold';
-
-  src: url('/Fonts/alibaba-bold.woff2') format('woff2');
-
-  font-weight: 700;
-
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'alibaba';
-
-  src: url('/Fonts/alibaba-regular.woff2') format('woff2');
-
-  font-weight: 400;
-
-  font-style: normal;
+.container-field{
+  width: 100%;
+  margin: auto;
+  direction: rtl;
 }
 
 .hover\:bg-blue-900:hover {
