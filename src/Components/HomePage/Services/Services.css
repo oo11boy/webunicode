@@ -1,0 +1,64 @@
+
+
+.gradianttext {
+    background: rgb(19,6,236);
+    background: linear-gradient(90deg, rgba(19,6,236,1) 0%, rgba(255,0,30,1) 100%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text; /* برای مرورگرهای وب‌کیت مانند Chrome و Safari */
+    background-clip: text; /* برای مرورگرهای دیگر */
+    color: transparent; /* رنگ متن را شفاف کنید تا فقط گرادینت نمایش داده شود */
+}
+
+.elementor-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .elementor-container h3{
+    font-family: "alibaba";
+  }
+  .elementor-container p{
+    font-family: "iransans";
+  }
+  .elementor-container h4{
+    font-family: "yekan";
+  }
+.elementor-container::after {
+    position: absolute;
+    right: -8%;
+    top: 0;
+    content: "";
+    height: 100%;
+    width: 57%!important;
+    background: #202022;
+    z-index: -1;
+    transform: skew(-10deg, 0deg);
+}
+
+@media (max-width: 1024px) {
+    .elementor-container::after {
+        transform: inherit;
+        right: 0!important;
+      
+        left: 0;
+        width: 100%!important;
+    }
+    .fatherdivservice >div{
+width: 100%!important;
+    }
+}
+
+
+@media (min-width: 1600px) {
+    .elementor-container::after {
+     
+        width: 58%!important;;
+    }
+}
+
+
+
+@media (max-width: 762px) {
+    .elementor-container::after {
+     background-color: white!important;
+        width: 58%!important;;
+    }
+}

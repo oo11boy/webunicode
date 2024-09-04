@@ -10,6 +10,11 @@
     "css": "npx tailwindcss -i ./src/app/globals.css -o ./public/Styles.css --watch"
   },
   "dependencies": {
+    "@alptugidin/react-circular-progress-bar": "^1.1.2",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.0.2",
+    "@mui/material": "^6.0.2",
     "@next/font": "^14.2.7",
     "dotenv": "^16.4.5",
     "mysql2": "^3.11.0",
