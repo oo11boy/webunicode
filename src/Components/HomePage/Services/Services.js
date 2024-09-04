@@ -3,22 +3,28 @@ import React from "react";
 import "./Services.css";
 import ListServices from "./ListServices";
 import General_Info_Service from "./General_Info_Service";
+import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly';
+import HandshakeIcon from '@mui/icons-material/Handshake';
+import EngineeringIcon from '@mui/icons-material/Engineering';
 export default function Services() {
   const infoservice = [
     {
       id: 1,
       title: "طراحی ریسپانسیو",
       content: "ما برای شما ریسپانسیو طراحی میکنیم",
+      icon: <MobileFriendlyIcon fontSize="large"/>
     },
     {
       id: 2,
       title: "بهینه‌سازی برای موتورهای جستجو",
       content: "خدمات بهینه‌سازی برای افزایش رتبه سایت شما در موتورهای جستجو",
+      icon: <EngineeringIcon fontSize="large"/>
     },
     {
       id: 3,
       title: "طراحی رابط کاربری",
       content: "ایجاد رابط کاربری زیبا و کاربرپسند برای وب‌سایت و اپلیکیشن",
+      icon: <HandshakeIcon fontSize="large"/>
     },
   ];
 
