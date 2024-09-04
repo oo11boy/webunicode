@@ -2,14 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-.container{
-    width: 80%;
-    margin: auto;
-   
+
+
+.container-field {
+  width: 100%;
+  margin: auto;
+  direction: rtl;
 }
 
-.container-field{
-    width: 100%;
-    margin: auto;
-    direction: rtl;
+.container{
+    padding-right:0.75rem!important;
+    padding-left: 0.75rem!important;
+    margin-right: auto;
+    margin-left: auto;
+  
+}
+@media only screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1250px) {
+    .container {
+        max-width: 1250px;
+    }
+}
+
+
+
+@media (max-width: 570px) {
+  .container {
+    
+padding-right:2rem!important;
+padding-left: 2rem!important;
+  }
 }
