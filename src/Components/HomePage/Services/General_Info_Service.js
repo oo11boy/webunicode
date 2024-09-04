@@ -3,9 +3,9 @@ import React from 'react'
 
 export default function General_Info_Service() {
   return (
-    <div class="w-[50%] flex flex-col justify-start md:pt-24 lg:py-16 ">
+    <div class="w-[50%] flex flex-col justify-start md:pt-24 lg:py-8 ">
     <div class=" relative  m-auto lg:ml-20  lg:pl-8">
-      <div class="absolute hidden md:flex -right-5 lg:right-[unset] lg:-left-20 lg:-top-14 -top-20 arrow-shape mb-8">
+      <div class="absolute hidden md:flex -right-5 lg:right-[unset] lg:-left-20 lg:-top-24 -top-20 arrow-shape mb-8">
         <img class="w-32" src="/image/red-arrow.png" alt="arrow" />
       </div>
       <h3 class="mt-24 md:mt-auto mb-6 text-4xl gradianttext text-center md:text-right md:text-white ">
@@ -22,9 +22,10 @@ export default function General_Info_Service() {
         نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
       </p>
 
-      <div class="circle-progress hidden lg:flex justify-between w-full  space-x-8">
+      <div class="circle-progress hidden lg:flex justify-between w-full  ">
         <CircleProgressBar percentage={58} text={"رشد شرکت"} />
-        <CircleProgressBar percentage={99} text={"رضایت مشتری"} />
+        <CircleProgressBar percentage={99}  text={"رضایت مشتری"} />
+        <CircleProgressBar percentage={100} value={'+'} text={"پروژه"} />
       </div>
     </div>
   </div>

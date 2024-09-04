@@ -6,6 +6,7 @@ import General_Info_Service from "./General_Info_Service";
 import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import EngineeringIcon from '@mui/icons-material/Engineering';
+import SystemSecurityUpdateGoodIcon from '@mui/icons-material/SystemSecurityUpdateGood';
 export default function Services() {
   const infoservice = [
     {
@@ -25,6 +26,12 @@ export default function Services() {
       title: "طراحی رابط کاربری",
       content: "ایجاد رابط کاربری زیبا و کاربرپسند برای وب‌سایت و اپلیکیشن",
       icon: <HandshakeIcon fontSize="large"/>
+    },
+    {
+      id: 4,
+      title: "رعایت اصول سئو",
+      content: "تمام قالب های طراحی شده توسط ما با رعایت کامل اصول سئو بهینه سازی شده اند.",
+      icon: <SystemSecurityUpdateGoodIcon fontSize="large"/>
     },
   ];
 

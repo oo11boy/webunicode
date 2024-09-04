@@ -3,7 +3,7 @@ export default function ServiceCard({ item }) {
   return (
     <div
       key={item.id}
-      class=" w-full shadow rounded-xl mt-10 md:mt-auto border-red-200 md:border-none md:shadow-none my-4 border-2 p-4 md:w-[50%] feature-style-one lg:w-full wow fadeInUp mb-10"
+      class=" w-full shadow rounded-xl mt-10 md:mt-[unset] border-red-200 md:border-none md:shadow-none my-4 border-2 p-4 md:p-none md:w-[50%] feature-style-one lg:w-full wow fadeInUp "
     >
       <div class="flex flex-col lg:flex-row items-center md:items-start justify-start md:flex-nowrap flex-wrap ">
        

@@ -7,8 +7,9 @@ export default function page() {
   return (
     <>
     <Header/>
-    <PortfolioSlider/>
     <Services />
+    <PortfolioSlider/>
+ 
  
     </>
   )
