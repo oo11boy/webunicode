@@ -49,7 +49,7 @@ export default function PortfolioSlider() {
   ];
 
   return (
-    <div className="container-field flex justify-center flex-col items-center py-32 bg-cover bg-[#F7F7F7] portfolio-slider-section">
+    <div className="container-field flex justify-center flex-col items-center py-20 bg-cover bg-[#F7F7F7] portfolio-slider-section">
     <TopSectionsTitle/>
       <Swiper
       modules={[ Autoplay]}

@@ -8,9 +8,13 @@ export default function General_Info_Service() {
       <div class="absolute hidden md:flex -right-5 lg:right-[unset] lg:-left-20 lg:-top-14 -top-20 arrow-shape mb-8">
         <img class="w-32" src="/image/red-arrow.png" alt="arrow" />
       </div>
-      <h3 class="mb-6 text-4xl gradianttext text-center md:text-right md:text-white ">
+      <h3 class="mt-24 md:mt-auto mb-6 text-4xl gradianttext text-center md:text-right md:text-white ">
         انعطاف‌پذیری و ویژگی‌های متناسب با سبک هر تیم.
       </h3>
+      <div class="circle-progress md:hidden flex justify-between w-full  md:space-x-8">
+        <CircleProgressBar percentage={58} text={"رشد شرکت"} />
+        <CircleProgressBar percentage={99} text={"رضایت مشتری"} />
+      </div>
       <p class="my-6 pt-6 text-black text-center md:text-right md:text-white ">
         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
         استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
@@ -18,7 +22,7 @@ export default function General_Info_Service() {
         نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
       </p>
 
-      <div class="circle-progress md:hidden lg:flex justify-between w-full  space-x-8">
+      <div class="circle-progress hidden lg:flex justify-between w-full  space-x-8">
         <CircleProgressBar percentage={58} text={"رشد شرکت"} />
         <CircleProgressBar percentage={99} text={"رضایت مشتری"} />
       </div>

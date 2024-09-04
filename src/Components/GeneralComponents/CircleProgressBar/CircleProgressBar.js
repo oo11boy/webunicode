@@ -4,7 +4,7 @@ import React from "react";
 
 export default function CircleProgressBar({ percentage, text }) {
   return (
-    <div class="progressbar my-10 md:my-auto w-full md:w-auto items-center flex md:flex-none flex-col justify-center md: text-center text-black">
+    <div class="progressbar lg:my-10 md:my-auto w-full md:w-auto items-center flex md:flex-none flex-col justify-center md: text-center text-black">
       <div
         class="circle relative w-28 h-28 rounded-full mb-4"
         data-percent={percentage}

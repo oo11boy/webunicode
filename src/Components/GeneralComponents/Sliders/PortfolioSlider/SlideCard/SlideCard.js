@@ -32,7 +32,7 @@ export default function SlideCard({items}) {
                 href={items.link}
                 className={`portfolio-slider-link flex items-center px-4 ${hoverlink ? 'hover' : ''}`}
             >
-                <p className="pl-2">مشاهده نمونه کار</p>
+                <p className="pl-2">مشاهده</p>
                 <div className="divider"></div>
             </a>
         </div>
