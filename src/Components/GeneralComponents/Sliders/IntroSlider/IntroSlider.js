@@ -43,10 +43,7 @@ export default function IntroSlider() {
         modules={[Navigation, EffectFade, Autoplay]}
         speed={0} // حذف سرعت تغییرات
          allowTouchMove={false}
-        autoplay={{
-          delay: 5000, // مدت زمان تغییر اسلایدها به میلی‌ثانیه
-          disableOnInteraction: false,
-        }}
+      
         loop={true} // اضافه کردن ویژگی loop
         navigation={{
           nextEl: ".custom-next-button",
