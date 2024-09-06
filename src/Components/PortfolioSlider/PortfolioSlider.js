@@ -50,7 +50,7 @@ export default function PortfolioSlider() {
 
   return (
     <div className="container-field flex justify-center flex-col items-center py-20 bg-cover bg-[#F7F7F7] portfolio-slider-section">
-    <TopSectionsTitle/>
+    <TopSectionsTitle toptext={'اندکی از'} maintext={'نمونه کارها'} linecolor={'red-500'} maincolor={'black'}/>
       <Swiper
       modules={[ Autoplay]}
         slidesPerView={3}
