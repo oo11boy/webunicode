@@ -1,8 +1,8 @@
-import Header from '@/Components/HomePage/Header/Header'
-import Services from '@/Components/HomePage/Services/Services'
+import Header from '@/Components/Header/Header'
+import Services from '@/Components/Services/Services'
 import React from 'react'
 import './fonts.css'
-import PortfolioSlider from '@/Components/GeneralComponents/Sliders/PortfolioSlider/PortfolioSlider'
+import PortfolioSlider from '@/Components/PortfolioSlider/PortfolioSlider'
 export default function page() {
   return (
     <>

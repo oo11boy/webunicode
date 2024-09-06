@@ -1,4 +1,4 @@
-import CircleProgressBar from '@/Components/GeneralComponents/CircleProgressBar/CircleProgressBar'
+import CircleProgressBar from '@/Components/UiComponents/CircleProgressBar/CircleProgressBar'
 import React from 'react'
 
 export default function General_Info_Service() {

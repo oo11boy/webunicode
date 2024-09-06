@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import SlideCard from "./SlideCard/SlideCard";
 import "./PortfolioSlider.css";
-import TopSectionsTitle from "../../TopSectionsTitle/TopSectionText";
-import ViewMoreBtn from "../../Buttons/ViewMoreBtn";
+import TopSectionsTitle from "../UiComponents/TopSectionsTitle/TopSectionText";
+import ViewMoreBtn from "../UiComponents/Buttons/ViewMoreBtn";
 import { Autoplay } from "swiper/modules";
 
 export default function PortfolioSlider() {

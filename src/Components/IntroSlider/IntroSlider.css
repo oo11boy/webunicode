@@ -25,7 +25,7 @@
   right: auto;
 }
 .Introslider {
-  background-image: url("../../../../../public/image/bgslider.jpg");
+  background-image: url("/image/bgslider.jpg");
   background-size: cover;
 }
 

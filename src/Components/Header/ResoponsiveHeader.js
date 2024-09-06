@@ -1,9 +1,9 @@
-import HamburgerMenu from "@/Components/GeneralComponents/HamburgerMenu/HamburgerMenu";
-import HoverNav from "@/Components/GeneralComponents/NavbarItems/HoverNav";
-import NavLinks from "@/Components/GeneralComponents/NavbarItems/NavLinks";
+import HamburgerMenu from "@/Components/Header/HamburgerMenu/HamburgerMenu";
+import HoverNav from "@/Components/Header/NavbarItems/HoverNav";
+import NavLinks from "@/Components/Header/NavbarItems/NavLinks";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
-import SmallLogo from "@/Components/GeneralComponents/SiteLogo/SiteLogo";
+import SmallLogo from "@/Components/UiComponents/SiteLogo/SiteLogo";
 
 export default function ResoponsiveHeader() {
   const [isOpen, setIsOpen] = useState(false);

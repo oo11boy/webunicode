@@ -1,5 +1,5 @@
-import { SiteEmail, SitePhone } from "@/Components/GeneralComponents/Contact/Contact";
-import SocialIcons from "@/Components/GeneralComponents/SocialIcons/SocialIcons";
+import { SiteEmail, SitePhone } from "@/Components/UiComponents/Contact/Contact";
+import SocialIcons from "@/Components/UiComponents/SocialIcons/SocialIcons";
 
 export default function ContactNavbar() {
   return (

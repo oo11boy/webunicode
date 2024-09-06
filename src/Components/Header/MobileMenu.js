@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./MobileMenu.css";
-import SmallLogo from "@/Components/GeneralComponents/SiteLogo/SiteLogo";
+import SmallLogo from "@/Components/UiComponents/SiteLogo/SiteLogo";
 
 export default function MobileMenu({ close, status }) {
   const [openItemId, setOpenItemId] = useState(null);

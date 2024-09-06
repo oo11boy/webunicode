@@ -2,12 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import "@/app/icons.css";
-import NavbarItems from "@/Components/GeneralComponents/NavbarItems/NavbarItems";
+import NavbarItems from "@/Components/Header/NavbarItems/NavbarItems";
 
 import "./Header.css";
 import ContactNavbar from "./ContactNavbar";
 import ResoponsiveHeader from "./ResoponsiveHeader";
-import SmallLogo from "@/Components/GeneralComponents/SiteLogo/SiteLogo";
+import SmallLogo from "@/Components/UiComponents/SiteLogo/SiteLogo";
 
 export default function TopHeader() {
   const [isMobile, setIsMobile] = useState(false);
