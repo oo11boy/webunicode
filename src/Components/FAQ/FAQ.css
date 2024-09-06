@@ -44,17 +44,6 @@
     color: transparent; /* رنگ متن را شفاف کنید تا فقط گرادینت نمایش داده شود */
   }
 
-  .decorate-circle {
-    position: absolute;
-    right: -100px;
-    top: -100px;
-    content: "";
-    background-color: #e7f3f7;
-    height: 400px;
-    width: 400px;
-    opacity: 0.3;
-    border-radius: 100%;
-  }
 
 .faq-style-one {
     background-color: #f9f9f9;

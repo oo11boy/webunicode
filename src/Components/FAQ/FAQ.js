@@ -46,7 +46,6 @@ export default function FAQ() {
       <div class="container m-auto">
         <div class="flex flex-wrap md:flex-nowrap items-center">
           <div class="accordion-box relative">
-            <div className="decorate-circle hidden md:flex"></div>
             <div className="mt-10 md:mt-0">
               <span class="text-2xl font-bold before-top-section-text">
                 سوالات متداول پایه
