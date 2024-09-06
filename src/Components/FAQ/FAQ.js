@@ -57,7 +57,7 @@ export default function FAQ() {
             </div>
           </div>
           <div class="w-full">
-            <div class="faq-thumb mt-20 md:mt-0 mr-0 md:mr-10">
+            <div class="faq-thumb  mr-0 md:mr-10">
               <img
                 decoding="async"
                 src="/image/FAQ-img.png"
