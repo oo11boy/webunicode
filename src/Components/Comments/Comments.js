@@ -69,7 +69,8 @@ export default function Comments() {
   ];
 
   return (
-    <div className="container-field relative flex justify-start flex-col items-center pt-20 bg-cover bg-[#1D2027] comment-section min-h-[80vh] !mb-[300px] overflow-x-clip">
+    <>
+    <div className="container-field relative flex justify-start flex-col items-center pt-20 bg-cover bg-[#1D2027] comment-section min-h-[80vh]  overflow-x-clip">
       <TopSectionsTitle
         toptext={"تعدادی از"}
         maintext={"نظرات مشتریان"}
@@ -105,5 +106,7 @@ export default function Comments() {
         </Swiper>
       </div>
     </div>
+    <div className="h-[300px] w-full bg-[#F7F7F7]">sa</div>
+    </>
   );
 }

@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 
-body{
+/* body{
   background-color: #F7F7F7;
-}
+} */
 
 .container-field {
   width: 100%;
