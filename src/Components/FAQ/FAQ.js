@@ -1,12 +1,13 @@
 "use client";
 
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+// import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Accordions from "./Accordions";
 import "./FAQ.css";
-import { useState } from "react";
+// import { useState } from "react";
 
 export default function FAQ() {
-  const [isExpand, setIsExpand] = useState(null);
+//   const [isExpand, setIsExpand] = useState(null);
 
   const accordions = [
     {
@@ -30,60 +31,35 @@ export default function FAQ() {
   ];
   return (
     <div class="container-field faq-field pt-20">
-          <div class="container m-auto">
-            <div class="flex flex-wrap md:flex-nowrap items-center">
-              <div class="accordion-box relative">
-              <div className="decorate-circle hidden md:flex"></div>
-                <span class="text-2xl font-bold before-top-section-text">
-                  سوالات متداول پایه
-                </span>
+      <div class="container m-auto">
+        <div class="flex flex-wrap md:flex-nowrap items-center">
+          <div class="accordion-box relative">
+            <div className="decorate-circle hidden md:flex"></div>
+            <span class="text-2xl font-bold before-top-section-text">
+              سوالات متداول پایه
+            </span>
 
-                <p class="text-4xl mt-6 opacity-100 font-bold">
-                  سوالات رایج برای این پروژه
-                </p>
-                <div class="faq-style-one w-92 md:w-[80%] default-padding mt-8">
-                  {accordions.map((item, index) => (
-                    <Accordion
-                      key={index}
-                      onChange={() =>
-                        setIsExpand(isExpand === index ? null : index)
-                      }
-                      expanded={isExpand === index}
-                      className="accordion-container"
-                    >
-                      <AccordionSummary
-                        className={
-                          isExpand === index
-                            ? "accordion-summery expanded"
-                            : "accordion-summery"
-                        }
-                        expandIcon={item.icon}
-                        aria-controls={`panel${index}-content`}
-                        id={`panel${index}-header`}
-                      >
-                        {item.summery}
-                      </AccordionSummary>
-                      <AccordionDetails className="accordion-details">
-                        {item.detail}
-                      </AccordionDetails>
-                    </Accordion>
-                  ))}
-                </div>
-              </div>
-              <div class="w-full">
-                <div class="faq-thumb mt-20 md:mt-0 mr-0 md:mr-10">
-                  <img
-                    decoding="async"
-                    src="https://demo.unlimitedweb.ir/Consua/new/wp-content/uploads/2023/11/6-1.png"
-                    alt="FAQ Thumbnail"
-                    className="w-80 md:w-full m-auto"
-                  />
-                </div>
-              </div>
+            <p class="text-4xl mt-6 opacity-100 font-bold">
+              سوالات رایج برای این پروژه
+            </p>
+            <div class="faq-style-one w-92 md:w-[80%] default-padding mt-8">
+              {accordions.map((item, index) => (
+                <Accordions key={index} {...item} index={index} />
+              ))}
             </div>
           </div>
-
-
+          <div class="w-full">
+            <div class="faq-thumb mt-20 md:mt-0 mr-0 md:mr-10">
+              <img
+                decoding="async"
+                src="https://demo.unlimitedweb.ir/Consua/new/wp-content/uploads/2023/11/6-1.png"
+                alt="FAQ Thumbnail"
+                className="w-80 md:w-full m-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
