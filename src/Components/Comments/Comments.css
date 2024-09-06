@@ -1,122 +1,102 @@
-
-.comment-section{
-    background-image: url('/image/bgcomment.png');
-    background-size: contain !important;
-    background-position: left top !important;
-    background-repeat: no-repeat !important;
-
+.comment-section {
+  background-image: url("/image/bgcomment.png");
+  background-size: contain !important;
+  background-position: left top !important;
+  background-repeat: no-repeat !important;
 }
-.commentcontainer h3{
-    font-family: 'alibaba';
+.commentcontainer h3 {
+  font-family: "yekan";
 }
-.commentcontainer p{
-    font-family: 'yekan';
+.commentcontainer p {
+  font-family: "yekan";
 }
 .comments .swiper-slide > div {
-    margin-top: 40px;
-    transition: margin-top 0.5s ease, height 0.5s ease;
-    margin-bottom: 20px;
-    height: 380px;
+  margin-top: 40px;
+  transition: margin-top 0.5s ease, height 0.5s ease;
+  margin-bottom: 20px;
+  height: 380px;
 }
 
 .comments .swiper-slide-active > div {
-    margin-top: 0px;
-    height: 420px;
-    transition: margin-top 0.5s ease, height 0.5s ease;
+  margin-top: 0px;
+  height: 420px;
+  transition: margin-top 0.5s ease, height 0.5s ease;
 }
 
-
-.commentcontainer{
-    width: 1500px;
+.commentcontainer {
+  width: 1500px;
 }
 
-/* Custom styles for Swiper pagination */
 .swiper-pagination {
-    
-    bottom: 10px!important; /* Adjust the position of pagination */
-  }
-  
-  .swiper-pagination-bullet {
-    border:2px solid rgba(255, 0, 0, 0.274);
-  
-    background-color: white;
-    width: 25px; /* Bullet width */
-    height: 25px; /* Bullet height */
-    opacity: 1; /* Bullet opacity */
-  }
-  
-  .swiper-pagination-bullet-active {
-    border:2px solid red;
+  bottom: 10px !important;
+}
+
+.swiper-pagination-bullet {
+  border: 2px solid rgba(255, 0, 0, 0.274);
+
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  border: 2px solid red;
   position: relative;
-    background-color: white;
-    width: 25px; /* Bullet width */
-    height: 25px; /* Bullet height */
-    opacity: 1; /* Bullet opacity */
+  background-color: white;
+  width: 25px; /* Bullet width */
+  height: 25px; /* Bullet height */
+  opacity: 1; /* Bullet opacity */
+}
+.swiper-pagination-bullet-active::after {
+  content: ".";
+  position: absolute;
+  font-size: 40px;
+  top: -150%;
+  left: 28%;
+  color: red;
+}
+@media (max-width: 650px) {
+  .commentcontainer {
+    width: 1200px !important;
   }
-  .swiper-pagination-bullet-active::after{
-    content: '.';
-    position: absolute;
-    font-size: 40px;
-    top: -150%;
-    left: 28%;
-    color: red;
-  
-  
+
+  .comments .swiper-slide > div {
+    margin-top: 40px;
+    transition: margin-top 0.5s ease, height 0.5s ease;
+    margin-bottom: 20px;
+    height: 440px;
   }
-  @media (max-width: 650px) {
-    .commentcontainer {
-     width: 1200px!important; 
 
-    }
-
-    .comments .swiper-slide > div {
-        margin-top: 40px;
-        transition: margin-top 0.5s ease, height 0.5s ease;
-        margin-bottom: 20px;
-        height: 440px;
-    }
-    
-    .comments .swiper-slide-active > div {
-        margin-top: 0px;
-        height: 480px;
-        transition: margin-top 0.5s ease, height 0.5s ease;
-    }
+  .comments .swiper-slide-active > div {
+    margin-top: 0px;
+    height: 480px;
+    transition: margin-top 0.5s ease, height 0.5s ease;
   }
-  
+}
 
-  @media (max-width: 500px) {
-    .commentcontainer {
-     width: 1000px!important; 
-
-    }
-
-    .commentcontainer h3{
-        font-size: 20px;
-    }
-    
-    .commentcontainer p{
-        font-size: 14px;
-    }
+@media (max-width: 500px) {
+  .commentcontainer {
+    width: 1000px !important;
   }
-  
 
-
-    
-
-  @media (max-width: 400px) {
-    .commentcontainer {
-     width: 900px!important; 
-
-    }
+  .commentcontainer h3 {
+    font-size: 20px;
   }
-  
-    
 
-  
-  @media (max-width: 360px) {
-    .commentcontainer {
-     width: 820px!important; 
-
-    }
+  .commentcontainer p {
+    font-size: 14px;
   }
-  
+}
+
+@media (max-width: 400px) {
+  .commentcontainer {
+    width: 900px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .commentcontainer {
+    width: 820px !important;
+  }
+}

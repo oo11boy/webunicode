@@ -5,7 +5,7 @@ import "swiper/css/pagination"; // Import Swiper styles for Pagination
 import TopSectionsTitle from "../UiComponents/TopSectionsTitle/TopSectionText";
 import { Autoplay, Pagination } from "swiper/modules";
 import "./Comments.css";
-import { Star } from "@mui/icons-material";
+import CardComment from "./CardComment";
 
 export default function Comments() {
   const infocomment = [
@@ -57,30 +57,7 @@ export default function Comments() {
       name: "مهدی کرمی",
       sitename: "ایده‌های وب",
     },
-    {
-      id: 9,
-      title: "برخورد حرفه‌ای",
-      comment:
-        "تعامل با تیم طراحی سایت بسیار حرفه‌ای بود. آنها به تمامی نیازها رسیدگی کردند و طراحی نهایی بسیار فراتر از انتظارات ما بود. کیفیت کار و سرعت عمل آنها بسیار عالی بود.",
-      name: "زهره مهدوی",
-      sitename: "راه‌حل‌های حرفه‌ای",
-    },
-    {
-      id: 10,
-      title: "طراحی به‌روز و مدرن",
-      comment:
-        "طراحی سایت ما با استفاده از تکنولوژی‌های روز انجام شد. نتیجه نهایی سایتی مدرن و کاربرپسند بود که به خوبی نمایانگر برند ما است. تیم طراحی بسیار حرفه‌ای بود و تمام نیازهای ما را در نظر گرفت.",
-      name: "کاوه سلیمی",
-      sitename: "دیزاین مدرن",
-    },
-    {
-      id: 11,
-      title: "نتیجه‌ای عالی",
-      comment:
-        "نتیجه طراحی سایت توسط این تیم فوق‌العاده بود. تمامی مراحل طراحی با دقت و حرفه‌ای‌گری انجام شد و پشتیبانی پس از طراحی نیز بسیار قابل توجه بود. این تیم یکی از بهترین‌ها در زمینه طراحی سایت است.",
-      name: "الهام عبدالهی",
-      sitename: "نتایج برتر",
-    },
+    
     {
       id: 12,
       title: "بینظیر هستند",
@@ -122,31 +99,7 @@ export default function Comments() {
         >
           {infocomment.map((item, index) => (
             <SwiperSlide key={item.id}>
-              <div className="bg-white rounded-lg shadow-md shadow-gray-200 flex p-8 flex-col justify-start items-start w-full">
-                <div className="flex w-full my-8 justify-between items-start gap-y-3">
-                  <div>
-                    <h3 className="text-4xl mb-4">{item.title}</h3>
-                    <span>
-                      <Star className="text-orange-400" />
-                      <Star className="text-orange-400" />
-                      <Star className="text-orange-400" />
-                      <Star className="text-orange-400" />
-                      <Star className="text-orange-400" />
-                    </span>
-                  </div>
-                  <img
-                    className="opacity-5 w-[50px] h-[50px]"
-                    src="/image/quote.png"
-                  />
-                </div>
-                <div className="mb-8 flex justify-start items-start">
-                  <p className="border-b pb-4 border-black">{item.comment}</p>
-                </div>
-                <div className="flex flex-row justify-between w-full items-center">
-                  <p>{item.name}</p>
-                  <p>{item.sitename}</p>
-                </div>
-              </div>
+              <CardComment item={item} />
             </SwiperSlide>
           ))}
         </Swiper>
