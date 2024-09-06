@@ -15,7 +15,7 @@ export default function SlideCard({items}) {
                 onMouseEnter={() => setHoverlink(true)}
                 onMouseLeave={() => setHoverlink(false)}
                 href="#"
-                className="w-[90%] portfolio-slide-title flex bg-[#1D2027] h-20 absolute skew-x-12 right-[-5%] top-[42%]"
+                className="w-[90%] portfolio-slide-title flex bg-[#1D2027] h-20 absolute skew-x-12 right-[-5%] top-[40%]"
             >
                 <div className="skew-x-11 icontitletext flex w-[40%] bg-red-700 justify-center items-center h-full">
                     <span className={`${items.icon} text-4xl -skew-x-12 text-white pr-4`}></span>
