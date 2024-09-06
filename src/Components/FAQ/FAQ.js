@@ -54,7 +54,7 @@ export default function FAQ() {
             <div class="faq-thumb mt-20 md:mt-0 mr-0 md:mr-10">
               <img
                 decoding="async"
-                src="https://demo.unlimitedweb.ir/Consua/new/wp-content/uploads/2023/11/6-1.png"
+                src="/image/FAQ-img.png"
                 alt="FAQ Thumbnail"
                 className="w-80 md:w-full m-auto"
               />
