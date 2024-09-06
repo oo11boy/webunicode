@@ -7,7 +7,7 @@ import "./FAQ.css";
 // import { useState } from "react";
 
 export default function FAQ() {
-//   const [isExpand, setIsExpand] = useState(null);
+  //   const [isExpand, setIsExpand] = useState(null);
 
   const accordions = [
     {
@@ -35,13 +35,15 @@ export default function FAQ() {
         <div class="flex flex-wrap md:flex-nowrap items-center">
           <div class="accordion-box relative">
             <div className="decorate-circle hidden md:flex"></div>
-            <span class="text-2xl font-bold before-top-section-text">
-              سوالات متداول پایه
-            </span>
+            <div className="mt-10 md:mt-0">
+              <span class="text-2xl font-bold before-top-section-text">
+                سوالات متداول پایه
+              </span>
 
-            <p class="text-4xl mt-6 opacity-100 font-bold">
-              سوالات رایج برای این پروژه
-            </p>
+              <p class="text-4xl my-6 opacity-100 font-bold">
+                سوالات رایج برای این پروژه
+              </p>
+            </div>
             <div class="faq-style-one w-92 md:w-[80%] default-padding mt-8">
               {accordions.map((item, index) => (
                 <Accordions key={index} {...item} index={index} />
