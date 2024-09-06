@@ -4,10 +4,10 @@
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Accordions from "./Accordions";
 import "./FAQ.css";
-// import { useState } from "react";
+import { useState } from "react";
 
 export default function FAQ() {
-  //   const [isExpand, setIsExpand] = useState(null);
+    const [isExpand, setIsExpand] = useState(null);
 
   const accordions = [
     {
@@ -46,7 +46,7 @@ export default function FAQ() {
             </div>
             <div class="faq-style-one w-92 md:w-[80%] default-padding mt-8">
               {accordions.map((item, index) => (
-                <Accordions key={index} {...item} index={index} />
+                <Accordions key={index} {...item} index={index} isExpand={isExpand} setIsExpand={setIsExpand}/>
               ))}
             </div>
           </div>

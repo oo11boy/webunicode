@@ -1,8 +1,6 @@
 
-import { useState } from "react";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
-export default function Accordions({summery, detail, icon, index}) {
-  const [isExpand, setIsExpand] = useState(null);
+export default function Accordions({summery, detail, icon, index, isExpand, setIsExpand}) {
   return (
     <>
       <Accordion
