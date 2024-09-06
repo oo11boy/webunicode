@@ -4,6 +4,7 @@ import React from 'react'
 import './fonts.css'
 import PortfolioSlider from '@/Components/PortfolioSlider/PortfolioSlider'
 import FAQ from '@/Components/FAQ/FAQ'
+import Comments from '@/Components/Comments/Comments'
 export default function page() {
   return (
     <>
@@ -11,6 +12,7 @@ export default function page() {
     <Services />
     <PortfolioSlider/>
     <FAQ />
+ <Comments/>
  
     </>
   )

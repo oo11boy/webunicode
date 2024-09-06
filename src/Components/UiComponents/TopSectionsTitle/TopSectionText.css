@@ -24,7 +24,7 @@
 .section-divider .line1{
     width:90%;
     height: 3px;
-    background-color: red;
+ 
     margin-right: 10px;
 }
 
@@ -32,5 +32,5 @@
 .section-divider .line2{
     width: 10%;
     height: 3px;
-    background-color: red;
+ 
 }
