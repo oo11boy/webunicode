@@ -1,0 +1,55 @@
+.faq-field {
+    position: relative;
+    background-image: url("/image/FAQ-bg.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 50%;
+}
+.accordion-container {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .accordion-summery {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: larger;
+    height: 80px;
+    font-family: 'alibaba';
+  }
+  
+  .accordion-summery.expanded {
+    background-color: #ff3030;
+    color: #ffffff;
+  }
+  
+  .accordion-details {
+    padding: 16px;
+    background-color: #ffffff;
+    font-family: 'iransans';
+  }
+  
+  .accordion-icon {
+    color: #ff5722;
+  }
+
+.before-top-section-text {
+    background: rgb(19,6,236);
+    background: linear-gradient(90deg, rgba(19,6,236,1) 0%, rgba(255,0,30,1) 100%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text; /* برای مرورگرهای وب‌کیت مانند Chrome و Safari */
+    background-clip: text; /* برای مرورگرهای دیگر */
+    color: transparent; /* رنگ متن را شفاف کنید تا فقط گرادینت نمایش داده شود */
+  }
+
+
+.faq-style-one {
+    background-color: #f9f9f9;
+    /* width: 80%; */
+}
+
+span {
+    font-family: 'iransans';
+}
