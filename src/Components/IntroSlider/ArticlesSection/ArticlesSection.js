@@ -61,7 +61,7 @@ export default function ArticlesSection() {
           </div>
         </div>
         <div className="flex justify-center items-center w-full mb-5">
-        <ViewMoreBtn text={'مشاهده تمام مقالات'}/>
+        <ViewMoreBtn link={'./blog'} text={'مشاهده تمام مقالات'}/>
         </div>
       
       </div>
