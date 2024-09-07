@@ -1,21 +1,32 @@
-.articles img{
-object-fit: cover;
-object-position:50% 40%;
+.articles img {
+  object-fit: cover;
+  object-position: 50% 40%;
 }
-.thumb{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    content: "";
-    height: 80%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%) repeat scroll 0 0;
-    transition: all 0.35s ease-in-out;
+.thumb {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  height: 80%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)
+    repeat scroll 0 0;
+  transition: all 0.35s ease-in-out;
 }
 .text-outline {
-    text-shadow: 
-      1px 1px 0 #0000007f,  
-      -1px -1px 0 #0000007f,
-      1px -1px 0 #0000007f,
-      -1px 1px 0 #0000007f;
-  }
+  text-shadow: 1px 1px 0 #0000007f, -1px -1px 0 #0000007f, 1px -1px 0 #0000007f,
+    -1px 1px 0 #0000007f;
+}
+
+.titlearticlesection h3 {
+  font-family: "yekan" !important;
+}
+
+.titlearticlesection p {
+  font-family: "iransans" !important;
+}
+
+.textarticlecategory {
+    font-family: 'alibaba';
+}

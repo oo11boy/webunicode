@@ -27,16 +27,16 @@ export const PostCard = ({ item, className, heightcard }) => (
             </div>
             <div className="ms-2.5 justify-between flex w-full items-center sm:ms-4">
              
-            <p className="text-xs  text-white/80 ">{item.date}</p>
-<h3 className=" bg-red-600 py-1 rounded px-3 text-white ">{item.Category}</h3>
+            <p className="text-xs textarticlecategory  text-white/80 ">{item.date}</p>
+<h3 className=" bg-red-600 py-1 textarticlecategory rounded px-3 text-white ">{item.Category}</h3>
             </div>
           </div>
         </div>
       </div>
   
       <div className="absolute bottom-0 inset-x-0 z-10">
-        <div className="flex flex-col h-full p-4 sm:p-6">
-          <h3 className="text-lg sm:text-3xl font-semibold text-white group-hover:text-white/80 group-focus:text-white/80">
+        <div className="flex titlearticlesection flex-col h-full p-4 sm:p-6">
+          <h3 className="text-lg  sm:text-3xl font-semibold text-white group-hover:text-white/80 group-focus:text-white/80">
             {item.title}
           </h3>
           <p className="mt-2 text-white/80">{item.content}</p>
