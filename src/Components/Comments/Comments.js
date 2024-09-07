@@ -91,10 +91,7 @@ export default function Comments() {
           spaceBetween={30}
           pagination={{ clickable: true }} // Add pagination configuration
           breakpoints={{
-            1500: {
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
+        
           }}
           className="comments commentcontainer absolute  !pb-[10%] md:!pb-[5%] top-60 lg:top-80"
         >
