@@ -34,7 +34,7 @@ export default function ArticlesSection() {
   return (
     <div dir="rtl">
       <div className="container mt-20 articles">
-        <TopSectionText toptext={'آخرین'} maincolor={'black'} maintext={"مطالب وبلاگ"} linecolor={'red-600'}/>
+        <TopSectionText toptext={'آخرین'} maincolor={'black'} maintext={"مطالب وبلاگ"} linecolor={'red'}/>
         <div className=" py-10 lg:py-14 ">
           <div className="grid lg:grid-cols-2 gap-6">
             <div>
