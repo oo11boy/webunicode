@@ -17,12 +17,10 @@ import FactoryIcon from '@mui/icons-material/Factory';
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Scrollbar } from "swiper/modules";
 import TitleSection from "./TitleSection";
 import ListCategories from "./ListCategories";
 import "swiper/css/navigation";
-import PrevNextButton from "../IntroSlider/PrevNextButton/PrevNextButton";
-// import required modules
 
 export default function CategorySelection() {
     const category = [
@@ -46,11 +44,8 @@ export default function CategorySelection() {
     >
         <TitleSection/>
       <Swiper
-        modules={[Autoplay,Navigation]}
-        navigation={{
-            nextEl: ".custom-next-button",
-            prevEl: ".custom-prev-button",
-          }}
+        modules={[Autoplay,Scrollbar]}
+   scrollbar={true}
         slidesPerView={5}
         centeredSlides={1}
         speed={500}
@@ -90,9 +85,7 @@ export default function CategorySelection() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="hidden xl:flex">
-      <PrevNextButton prevposition="left-2" nextposition="left-16" positiony="-top-1" color="white"/>
-      </div>
+     
     </div>
   );
 }
