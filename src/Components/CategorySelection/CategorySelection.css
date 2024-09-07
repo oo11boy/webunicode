@@ -1,0 +1,12 @@
+.categoryslider p{
+    font-size: 14px;
+    font-family: 'yekan';
+}
+.categorysection{
+    background: rgb(19,6,236);
+    background: linear-gradient(90deg, rgba(19,6,236,1) 0%, rgba(255,0,30,1) 100%, rgba(0,212,255,1) 100%);
+   
+}
+.categorysection h3{
+    font-family: 'alibaba';
+}
