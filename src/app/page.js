@@ -6,6 +6,7 @@ import PortfolioSlider from "@/Components/PortfolioSlider/PortfolioSlider";
 import FAQ from "@/Components/FAQ/FAQ";
 import Comments from "@/Components/Comments/Comments";
 import CategorySelection from "@/Components/CategorySelection/CategorySelection";
+import Footer from "@/Components/Footer/Footer";
 export default function page() {
   return (
     <>
@@ -17,6 +18,7 @@ export default function page() {
       <CategorySelection/>
       <FAQ />
       <Comments />
+      <Footer />
     </>
   );
 }
