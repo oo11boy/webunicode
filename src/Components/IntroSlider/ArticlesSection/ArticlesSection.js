@@ -39,17 +39,22 @@ export default function ArticlesSection() {
           <div className="grid lg:grid-cols-2 gap-6">
             <div>
               {posts.slice(-1).map((item) => (
-                <PostCard heightcard={"730px"} item={item} className="" />
-              ))}
+                <span key={item.id}>
+                       <PostCard heightcard={"730px"} item={item} className="" />
+           
+                </span>
+                ))}
             </div>
 
             <div>
               {posts.slice(0, -1).map((item) => (
+                  <span key={item.id}>
                 <PostCard
                   heightcard={"355px"}
                   item={item}
                   className="mb-[20px]"
                 />
+                </span>
               ))}
             </div>
           </div>

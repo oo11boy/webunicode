@@ -2,7 +2,7 @@ export const PostCard = ({ item, className, heightcard }) => (
     <a
       className={`group relative block rounded-xl focus:outline-none ${className}`}
       href="#"
-      key={item.id}
+ 
     >
       <div
         className={`shrink-0 relative rounded-xl overflow-hidden w-full before:absolute max-md:!h-[355px] before:inset-x-0 before:z-[1] before:size-full before:bg-gradient-to-t before:from-black`}
