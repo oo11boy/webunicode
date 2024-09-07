@@ -4,7 +4,7 @@ export default function WhyUsImageSide() {
   return (
     <div className="relative mainimgwhyus w-full lg:w-[43%] lg:pr-[7%] md:!h-[450px]">
     <img
-      className="lg:h-[80%]  lg:!w-full object-cover rounded-xl"
+      className="lg:h-[80%] shadow border-gray-300 border xl:h-[100%]  lg:!w-full object-cover rounded-xl"
       src="/image/design-team.jpg"
       alt=""
     />

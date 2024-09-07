@@ -11,7 +11,7 @@ export default function WhyUsInfoCard() {
   return (
     <div className="flex flex-col md:!flex-row  z-50 mt-10 w-full justify-between items-center">
   {infocard.map((item)=>(
- <div className="border w-full md:w-[150px] flex justify-center flex-col items-center bg-white p-4 h-[150px]">
+ <div key={item.id} className="border w-full md:w-[150px] flex justify-center flex-col items-center bg-white p-4 h-[150px]">
  <span>
   {item.icon}
  </span>
