@@ -17,10 +17,11 @@ import FactoryIcon from '@mui/icons-material/Factory';
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import TitleSection from "./TitleSection";
 import ListCategories from "./ListCategories";
-
+import "swiper/css/navigation";
+import PrevNextButton from "../IntroSlider/PrevNextButton/PrevNextButton";
 // import required modules
 
 export default function CategorySelection() {
@@ -41,11 +42,15 @@ export default function CategorySelection() {
   return (
     <div
       dir="rtl"
-      className="w-[100%] categorysection  h-auto py-10 xl:flex justify-start items-center"
+      className="w-[100%] relative categorysection  h-auto py-10 xl:flex justify-start items-center"
     >
         <TitleSection/>
       <Swiper
-        modules={[Autoplay]}
+        modules={[Autoplay,Navigation]}
+        navigation={{
+            nextEl: ".custom-next-button",
+            prevEl: ".custom-prev-button",
+          }}
         slidesPerView={5}
         centeredSlides={1}
         speed={500}
@@ -85,6 +90,9 @@ export default function CategorySelection() {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="hidden xl:flex">
+      <PrevNextButton prevposition="left-2" nextposition="left-16" positiony="-top-1" color="white"/>
+      </div>
     </div>
   );
 }
