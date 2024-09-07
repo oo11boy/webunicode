@@ -2,6 +2,7 @@ import React from "react";
 import "./ArticlesSection.css";
 import { PostCard } from "./PostCard";
 import TopSectionText from "@/Components/UiComponents/TopSectionsTitle/TopSectionText";
+import ViewMoreBtn from "@/Components/UiComponents/Buttons/ViewMoreBtn";
 
 export default function ArticlesSection() {
   const posts = [
@@ -59,6 +60,10 @@ export default function ArticlesSection() {
             </div>
           </div>
         </div>
+        <div className="flex justify-center items-center w-full mb-5">
+        <ViewMoreBtn text={'مشاهده تمام مقالات'}/>
+        </div>
+      
       </div>
     </div>
   );
