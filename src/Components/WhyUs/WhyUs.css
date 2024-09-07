@@ -1,0 +1,66 @@
+.whyus{
+    background-color: #F7F7F7;
+    background-image: url('/image/bgwhyus.png');
+  
+    width: 100%;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: right top !important;
+}
+
+.whyusgradiant{
+   background: linear-gradient(90deg, #DF0A0A 0%, #930707 100%);
+}
+.whyusnumber{
+
+    font-size: 100px;
+    display: block;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffffff;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    padding-bottom: 50px;
+}
+.whyusp{
+font-family: 'alibaba';
+}
+
+.whyus h1{
+    font-family: "alibaba";
+}
+.whyusptext{
+    font-family: "yekan";
+}
+
+.whyus svg{
+    font-size: 60px;
+    margin-bottom: 10px;
+    color: rgba(255, 0, 0, 0.552);
+}
+
+
+
+@media only screen and (min-width: 992px) {
+.mainimgwhyus img{
+    width: 100%;
+
+}
+.mainimgwhyus {
+    margin-bottom: 10%!important;
+}
+}
+
+
+
+@media only screen and (max-width: 772px) {
+    .mainimgwhyus img{
+        width: 100%;
+    
+    }
+    .mainimgwhyus {
+        margin-bottom: 10%!important;
+    }
+    }
+    
+    

@@ -6,17 +6,20 @@ import PortfolioSlider from "@/Components/PortfolioSlider/PortfolioSlider";
 import FAQ from "@/Components/FAQ/FAQ";
 import Comments from "@/Components/Comments/Comments";
 import CategorySelection from "@/Components/CategorySelection/CategorySelection";
+import WhyUs from "@/Components/WhyUs/WhyUs";
 export default function page() {
   return (
     <>
       <Header />
-     
+      <WhyUs/>
       <Services />
      
       <PortfolioSlider />
       <CategorySelection/>
+    
       <FAQ />
       <Comments />
+
     </>
   );
 }
