@@ -2,8 +2,11 @@ import Title from "../UiComponents/H4Title/Title";
 
 export default function Footer() {
     return (
-      <div className="container-field bg-[#1b1919] text-light pt-10">
-        <footer className="">
+      <div className="container-field bg-gray-900 text-light pt-10">
+        <footer className="relative overflow-hidden">
+          <div className="absolute lg:pl-2 lg:-bottom-60 overflow-hidden right-0 w-16 sm:w-24 md:w-32 lg:w-48 opacity-30">
+            <img src="/image/footer-img.png" alt="" />
+          </div>
           {/* Company Information */}
           <div className="footer-content container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:h-80 mt-20 lg:gap-0 gap-20 text-sm text-white">
             
@@ -93,14 +96,14 @@ export default function Footer() {
           </div>
   
           {/* Footer Bottom */}
-          <div className="footer-bottom bg-gray-900 text-gray-500 text-center  py-4">
-            <div className="container flex justify-between items-center">
-                <p>تمامی حقوق برای قالب یونیکد محفوظ است. ددددددد</p>
-                <div className="flex justify-center space-x-4 mt-2">
-                <a href="#">مقررات</a>
-                <a href="#">خط مشی</a>
-                <a href="#">پشتیبانی</a>
-                </div>
+          <div className="footer-bottom bg-black text-gray-500 text-center w-full py-4">
+            <div className="container flex flex-wrap w-full sm:flex-nowrap sm:m-[unset] justify-between items-end">
+                <p className=" mx-auto sm:m-[unset]">تمامی حقوق برای قالب یونیکد محفوظ است. ددددددد</p>
+                <ul className="flex justify-around sm:flex-nowrap w-[50%] mx-auto sm:m-[unset] mt-2">
+                  <li><a href="#">مقررات</a></li>
+                  <li><a href="#">خط</a></li>
+                  <li><a href="#">پشتیبانی</a></li>
+                </ul>
             </div>
           </div>
         </footer>
