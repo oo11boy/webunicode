@@ -45,7 +45,7 @@ export default function FAQ() {
   return (
     <div class="container-field faq-field">
       <div class="container pt-20 m-auto">
-      <TopSectionText toptext={'مهمترین'} maintext={'سوالات متدوال'} linecolor={'red-600'} maincolor={'black'}/>
+      <TopSectionText toptext={'مهمترین'} maintext={'سوالات متدوال'} linecolor={'red'} maincolor={'black'}/>
         
         <div class="flex flex-wrap md:flex-nowrap items-center">
     
