@@ -41,7 +41,7 @@ export default function TopHeader() {
     <>
       {/* <div className="navbar-header w-100"> */}
       <div className="flex w-full  text-center items-center justify-between">
-        <div className="top-navbar lg:w-3/4 h-[50px]">
+        <div className="top-navbar  h-[50px]">
           {/* <div className="w-full"> */}
             <ContactNavbar />
           {/* </div> */}

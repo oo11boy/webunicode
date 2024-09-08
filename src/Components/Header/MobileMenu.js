@@ -17,6 +17,20 @@ export default function MobileMenu({ close, status }) {
     }, 500);
   };
 
+  useEffect(() => {
+    // جلوگیری از اسکرول صفحه وقتی منو باز است
+    if (showNavbar) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // بازگشت به حالت پیش‌فرض هنگام خروج از کامپوننت
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showNavbar]);
+
   const navItems = [
     {
       title: "نمونه کارها",
@@ -73,7 +87,7 @@ export default function MobileMenu({ close, status }) {
   return (
     <>
       <div
-        className={`bg-black opacity-50 transition-all bg-navbar absolute right-0 top-0 w-full h-full ${
+        className={`bg-black opacity-50 transition-all bg-navbar absolute right-0 top-0 w-full h-[100vh] ${
           showNavbar ? "visible" : "invisible"
         }`}
       ></div>
@@ -91,7 +105,6 @@ export default function MobileMenu({ close, status }) {
           ></button>
           <a href="/">
           <SmallLogo skew={0}/>
-         
           </a>
         </div>
         <ul className="nav-list">
