@@ -12,9 +12,10 @@ export default function SlideCard({items}) {
                 alt=""
             />
             <a
+               target="_blank"
                 onMouseEnter={() => setHoverlink(true)}
                 onMouseLeave={() => setHoverlink(false)}
-                href={'#'}
+                href={`../viewportfolio/${items.id}`}
                 className="w-[90%] portfolio-slide-title flex bg-[#1D2027] h-16 absolute skew-x-12 right-[-5%] top-[40%]"
             >
                 <div className="skew-x-11 icontitletext flex w-[40%] bg-red-700 justify-center items-center h-full">
@@ -29,7 +30,8 @@ export default function SlideCard({items}) {
             </p>
 
             <a
-                href={items.link}
+            target="_blank"
+                href={`../viewportfolio/${items.id}`}
                 className={`portfolio-slider-link flex items-center px-4 ${hoverlink ? 'hover' : ''}`}
             >
                 <p className="pl-2">مشاهده</p>
