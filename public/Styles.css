@@ -2101,32 +2101,7 @@ video {
     height: 100%;
   }
 
-  .xl\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
   .xl\:text-\[17px\] {
     font-size: 17px;
-  }
-
-  .xl\:text-\[18px\] {
-    font-size: 18px;
-  }
-
-  .xl\:text-\[22px\] {
-    font-size: 22px;
-  }
-
-  .xl\:text-\[40px\] {
-    font-size: 40px;
-  }
-
-  .xl\:text-\[lg\] {
-    color: lg;
-  }
-
-  .xl\:text-\[px\] {
-    color: px;
   }
 }
