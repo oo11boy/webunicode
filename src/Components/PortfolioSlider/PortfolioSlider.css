@@ -51,44 +51,66 @@
 
   @media only screen and (min-width: 772px) {
     .divider {
-      margin-bottom: 10px !important;
+      margin-bottom: -12% !important;
+      width: 100%;
+    }
+    .slidecard img {
+      height: 60% !important;
+    
+    }
+  
+    .slidecard p {
+      height: 15% !important;
+      margin-top: 10%!important;
+    }
+  
+    .portfolio-slide-title {
+      top: 52%!important;
+    }
+     
+    .portfolio-slider-link {
+      height: 10% !important;
     }
   }
   
   @media only screen and (min-width: 992px) {
     .divider {
-      margin-top: 10px !important;
+      margin-top: 0 !important;
       margin-bottom: unset;
     }
   
     .slidecard img {
-      height: 65% !important;
-      padding-bottom: 10% !important;
+      height: 60% !important;
+    
     }
   
     .slidecard p {
-      height: 25% !important;
-      margin-top: unset;
+      height: 15% !important;
+      margin-top: 8%!important;
     }
   
     .portfolio-slide-title {
       top: 50%;
     }
+     
+    .portfolio-slider-link {
+      height: 7% !important;
+    }
   }
   
   @media only screen and (min-width: 1200px) {
     .slidecard img {
-      height: 55% !important;
+      height: 60% !important;
       padding-bottom: 10% !important;
     }
   
     .slidecard p {
-      height: 35% !important;
-      margin-top: unset;
+      height: 20% !important;
+      margin-top: 10%!important;
     }
   
     .portfolio-slide-title {
-      top: 35%;
+      top: 45%!important;
     }
   
     .slidecard {
@@ -96,42 +118,49 @@
     }
   
     .portfolio-slider-link {
-      height: 10% !important;
+      height: 8% !important;
     }
   
     .divider {
-      margin-bottom: 5px !important;
+      margin-bottom: -15% !important;
     }
   }
   
   @media only screen and (min-width: 1300px) {
+    .divider {
+      margin-bottom: -4% !important;
+    }
     .slidecard img {
-      height: 60% !important;
-      padding-bottom: 15% !important;
+      height: 70% !important;
+     
     }
   
     .slidecard p {
-      height: 30% !important;
-      margin-top: unset;
+      height: 15% !important;
+      margin-top: unset!important;
+
     }
-  
+    .portfolio-slider-link {
+      height: 15% !important;
+    }
     .portfolio-slide-title {
-      top: 38%;
+      top: 45%!important;
     }
   }
   
   @media only screen and (max-width: 772px) {
   
     .divider {
-      margin-bottom: 5px !important;
+      margin-bottom: -1% !important;
+      width: 100%;
     }
   
     .slidecard img {
-      height: 60% !important;
+      height: 70% !important;
     }
   
     .slidecard p {
-      height: 30% !important;
+      height: 15% !important;
       margin-top:unset
     }
   
@@ -140,7 +169,7 @@
     }
   
     .portfolio-slide-title {
-      top: 47%!important;
+      top: 55%!important;
       width: 100% !important;
       right: 0!important;
       transform: skewX(0)!important;
@@ -158,29 +187,34 @@
 
 
   @media only screen and (max-width: 406px) {
+    .titletext{
+      font-size: 18px;
+    }
     .divider {
-      margin-top: 15% !important;
+      margin-top: 4% !important;
+      width: 100%;
     }
   
     .slidecard img {
-      height: 50% !important;
+      height: 60% !important;
     }
   
     .slidecard p {
-      height: 30% !important;
-      margin-top: 30px;
+      height: 20% !important;
+   
     }
   
     .portfolio-slider-link {
-      height: 10% !important;
+      height: 20% !important;
       font-size: 15px;
     }
   
     .portfolio-slide-title {
-      top: 40%!important;
+      top: 45%!important;
       width: 100% !important;
       right: 0!important;
       transform: skewX(0)!important;
+   
     }
   
     .titletext {
