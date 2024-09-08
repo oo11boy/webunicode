@@ -1,5 +1,6 @@
 import Title from "../UiComponents/H4Title/Title";
 import Icon from "../UiComponents/Icon/icon";
+import SmallLogo from "../UiComponents/SiteLogo/SiteLogo";
 
 export default function Footer() {
   return (
@@ -13,14 +14,8 @@ export default function Footer() {
           {/* Logo and Info Section */}
 
           <div className="about text-start lg:mx-auto">
-            <img
-              className="mb-4"
-              src="https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/08/logo-light.png"
-              width="205"
-              height="60"
-              alt="کانسوا"
-            />
-            <p className="mb-8 leading-loose">
+          <SmallLogo/>
+            <p className="mb-8 mt-4 leading-loose">
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
               استفاده از طراحان گرافیک است.
             </p>

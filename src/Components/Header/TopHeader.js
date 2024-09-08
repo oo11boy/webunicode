@@ -11,6 +11,7 @@ import SmallLogo from "@/Components/UiComponents/SiteLogo/SiteLogo";
 
 export default function TopHeader() {
   const [isMobile, setIsMobile] = useState(false);
+  const [IsSticky,setIsSticky]=useState(false)
   const handleResize = () => {
     setIsMobile(window.innerWidth < 1100);
   };
@@ -19,6 +20,22 @@ export default function TopHeader() {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
   return (
     <>
@@ -29,7 +46,8 @@ export default function TopHeader() {
             <ContactNavbar />
           {/* </div> */}
           <div className="h-full w-full pt-1 m-auto flex justify-between items-center z-[2]">
-            {isMobile ? <ResoponsiveHeader /> : <NavbarItems />}
+            {isMobile || IsSticky ? <ResoponsiveHeader /> : <NavbarItems />}
+ 
           </div>
         </div>
         {/* <div className="w-1/4 logosite  pr-[10%] text-right h-[100px] items-center flex justify-end bg-[#CFD2D5] absolute top-[-10px] z-1 right-[25px]"></div> */}
