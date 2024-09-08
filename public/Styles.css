@@ -729,6 +729,10 @@ video {
   z-index: 99;
 }
 
+.z-\[50\] {
+  z-index: 50;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -1025,6 +1029,10 @@ video {
   width: 100%;
 }
 
+.w-3\/4 {
+  width: 75%;
+}
+
 .max-w-\[unset\] {
   max-width: unset;
 }
@@ -1040,6 +1048,31 @@ video {
 
 .skew-x-12 {
   --tw-skew-x: 12deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.skew-x-\[\] {
+  --tw-skew-x: ;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.skew-x-\[skew\] {
+  --tw-skew-x: skew;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.skew-x-\[\$\] {
+  --tw-skew-x: $;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.skew-x-\[\$\{s\}\] {
+  --tw-skew-x: ${s};
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.skew-x-\[\$\{skew\}\] {
+  --tw-skew-x: ${skew};
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1858,6 +1891,10 @@ video {
     width: 100%;
   }
 
+  .md\:w-3\/4 {
+    width: 75%;
+  }
+
   .md\:flex-none {
     flex: none;
   }
@@ -1990,6 +2027,10 @@ video {
     width: 100% !important;
   }
 
+  .lg\:w-3\/4 {
+    width: 75%;
+  }
+
   .lg\:w-48 {
     width: 12rem;
   }
@@ -2103,6 +2144,10 @@ video {
 
   .xl\:h-\[100\%\] {
     height: 100%;
+  }
+
+  .xl\:w-3\/4 {
+    width: 75%;
   }
 
   .xl\:text-\[17px\] {
