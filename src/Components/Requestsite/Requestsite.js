@@ -13,7 +13,7 @@ export default function Requestsite() {
 
   return (
     <div className="bg-[#9844F1] Requestsite flex flex-col min-h-lvh">
-      <div className="flex h-[15vh] bg-[#9844F1] mx-auto w-[80%] items-center">
+      <div className="flex h-[8vh] lg:h-[15vh] bg-[#9844F1] mx-auto w-[80%] items-center">
         {steptitle.map((item, index) => (
           <React.Fragment key={index}>
             <span
