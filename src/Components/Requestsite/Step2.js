@@ -29,31 +29,31 @@ export default function Step2({ step, setStep }) {
 
   return (
     <div className="flex min-h-[80vh] step1 flex-col justify-center items-center">
-      <h3 className="text-3xl mb-8">اطلاعات زیر را وارد نمایید</h3>
+      <h3 className="text-xl text-bold sm:text-3xl mb-8">اطلاعات زیر را وارد نمایید</h3>
       <form className="flex w-full flex-col justify-center items-center">
         <input
           type="text"
           name="name"
           value={formData.name}
           onChange={handleInputChange}
-          className="bg-[#F7F8F9] border mb-4 border-gray-500 w-[60%] p-8 rounded-xl"
-          placeholder="نام و نام خانوادگی خود را وارد نمایید."
+          className="bg-[#F7F8F9] border mb-4 border-gray-500 w-[85%] md:w-[60%] p-8 rounded-xl"
+          placeholder="نام و نام خانوادگی."
         />
         <input
           type="number"
           name="phone"
           value={formData.phone}
           onChange={handleInputChange}
-          className="bg-[#F7F8F9] border mb-4 border-gray-500 w-[60%] p-8 rounded-xl"
-          placeholder="شماره تماس خود را وارد نمایید."
+          className="bg-[#F7F8F9] border mb-4 border-gray-500 w-[85%] md:w-[60%] p-8 rounded-xl"
+          placeholder="شماره تماس"
         />
         <input
           type="email"
           name="email"
           value={formData.email}
           onChange={handleInputChange}
-          className="bg-[#F7F8F9] border mb-4 border-gray-500 w-[60%] p-8 rounded-xl"
-          placeholder="ایمیل خود را وارد کنید."
+          className="bg-[#F7F8F9] w-[85%] md:w-[60%]  border mb-4 border-gray-500  p-8 rounded-xl"
+          placeholder="آدرس ایمیل"
         />
       </form>
 

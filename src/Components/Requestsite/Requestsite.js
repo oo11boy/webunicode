@@ -17,8 +17,8 @@ export default function Requestsite() {
         {steptitle.map((item, index) => (
           <React.Fragment key={index}>
             <span
-              className={`w-[4%] flex  rounded-full pt-1 m-4 items-center  justify-center ${
-                step === index + 1 ? "text-white bg-black" : "text-black bg-white "
+              className={`w-[20%] lg:w-[2.5%] flex  justify-center ${
+                step === index + 1 ? "text-yellow-300" : "text-white"
               }`}
             >
 
@@ -30,7 +30,7 @@ export default function Requestsite() {
           </React.Fragment>
         ))}
       </div>
-      <div className="container min-h-[80vh] bg-white rounded-2xl">
+      <div className="w-[95%] m-auto sm:container min-h-[80vh] bg-white rounded-2xl">
         {step == 1 && <Step1 setStep={setStep} step={step} />}
         {step == 2 && <Step2 setStep={setStep} step={step} />}
         {step == 3 && <Step3 setStep={setStep} step={step} />}

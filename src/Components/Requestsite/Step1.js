@@ -1,14 +1,10 @@
 import { useState } from "react";
-import {
-  FaStore,
-  FaBuilding,
-
-  FaIndustry,
-} from "react-icons/fa";
+import { FaStore, FaBuilding, FaIndustry } from "react-icons/fa";
 
 export default function Step2({ step, setStep }) {
   const [selectedType, setSelectedType] = useState("");
   const [selectedOption, setSelectedOption] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const siteTypes = [
     { label: "فروشگاهی", value: "store", icon: <FaStore /> },
@@ -30,40 +26,41 @@ export default function Step2({ step, setStep }) {
   const handleSelect = (value) => {
     setSelectedType(value);
     setSelectedOption(""); // Reset the secondary option when type changes
+  
+      // Open modal on mobile devices
+      setIsModalOpen(true);
+ 
   };
 
   const isNextButtonEnabled = () => {
-    // If "resume" is selected, enable the button
     if (selectedType === "resume") {
       return true;
     }
-    // If "store" or "company" is selected, the button is enabled only when an option is selected
     if (
       (selectedType === "store" || selectedType === "company") &&
       selectedOption
     ) {
       return true;
     }
-    // Otherwise, the button remains disabled
     return false;
   };
 
   return (
     <div className="flex min-h-[80vh] step1 flex-col justify-center items-center">
-      <h3 className="text-3xl mb-8">نوع سایت درخواستی را انتخاب نمایید:</h3>
+      <h3 className="text-xl lg:text-3xl mb-8">نوع سایت درخواستی را انتخاب نمایید:</h3>
       <div className="flex flex-wrap justify-center items-center gap-8">
         {siteTypes.map((type) => (
           <div
             key={type.value}
             onClick={() => handleSelect(type.value)}
-            className={`relative p-8 w-64 h-64 cursor-pointer border rounded-3xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-blue-100 ${
+            className={`relative p-8 w-32 h-32 lg:!w-64 lg:!h-64 cursor-pointer border rounded-3xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-blue-100 ${
               selectedType === type.value
                 ? "border-blue-500 bg-blue-50"
                 : "bg-white"
             }`}
           >
             <div className="flex flex-col items-center justify-center h-full">
-              <span className="text-5xl mb-4">{type.icon}</span>
+              <span className="text-3xl sm:!text-5xl mb-4">{type.icon}</span>
               <h4 className="text-xl font-semibold">{type.label}</h4>
             </div>
             {selectedType === type.value && (
@@ -73,48 +70,63 @@ export default function Step2({ step, setStep }) {
         ))}
       </div>
 
-      {/* Conditional rendering for store options */}
-      {selectedType === "store" && (
-        <div className="mt-8 flex flex-wrap justify-center items-center gap-8">
-          {storeOptions.map((option) => (
-            <div
-              key={option.value}
-              onClick={() => setSelectedOption(option.value)}
-              className={`p-6 cursor-pointer w-56 text-center border rounded-xl shadow-md transition-transform transform hover:scale-105 hover:bg-green-100 ${
-                selectedOption === option.value
-                  ? "border-green-500 bg-green-50"
-                  : "bg-white"
-              }`}
+      {/* Modal for mobile */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg w-[95%] md:w-full max-w-md">
+            <h2 className="text-xl mb-4">انتخاب کنید:</h2>
+            {selectedType === "store" && (
+              <div className="flex flex-wrap justify-center items-center gap-8">
+                {storeOptions.map((option) => (
+                  <div
+                    key={option.value}
+                    onClick={() => {
+                      setSelectedOption(option.value);
+                      setIsModalOpen(false); // Close modal after selection
+                    }}
+                    className={`p-6 cursor-pointer w-56 text-center border rounded-xl shadow-md transition-transform transform hover:scale-105 hover:bg-green-100 ${
+                      selectedOption === option.value
+                        ? "border-green-500 bg-green-50"
+                        : "bg-white"
+                    }`}
+                  >
+                    <h4 className="text-lg font-medium">{option.label}</h4>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {selectedType === "company" && (
+              <div className="flex flex-wrap justify-center items-center gap-8">
+                {companyOptions.map((option) => (
+                  <div
+                    key={option.value}
+                    onClick={() => {
+                      setSelectedOption(option.value);
+                      setIsModalOpen(false); // Close modal after selection
+                    }}
+                    className={`p-6 cursor-pointer w-56 text-center border rounded-xl shadow-md transition-transform transform hover:scale-105 hover:bg-yellow-100 ${
+                      selectedOption === option.value
+                        ? "border-yellow-500 bg-yellow-50"
+                        : "bg-white"
+                    }`}
+                  >
+                    <h4 className="text-lg font-medium">{option.label}</h4>
+                  </div>
+                ))}
+              </div>
+            )}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="mt-4 px-6 py-2 bg-red-500 text-white rounded-lg"
             >
-              <h4 className="text-lg font-medium">{option.label}</h4>
-            </div>
-          ))}
+              بستن
+            </button>
+          </div>
         </div>
       )}
 
-      {/* Conditional rendering for company options */}
-      {selectedType === "company" && (
-        <div className="mt-8 flex flex-wrap justify-center items-center gap-8">
-          {companyOptions.map((option) => (
-            <div
-              key={option.value}
-              onClick={() => setSelectedOption(option.value)}
-              className={`p-6 cursor-pointer w-56 text-center border rounded-xl shadow-md transition-transform transform hover:scale-105 hover:bg-yellow-100 ${
-                selectedOption === option.value
-                  ? "border-yellow-500 bg-yellow-50"
-                  : "bg-white"
-              }`}
-            >
-              <h4 className="text-lg font-medium">{option.label}</h4>
-            </div>
-          ))}
-        </div>
-      )}
-
-      <div className="flex gap-8">
-       
-
-   
+      <div className="flex my-3 md:my-[unset] gap-8">
         <button
           className="btnnext text-2xl py-2 px-8 mt-12 rounded-full shadow-lg transition-all hover:scale-105 hover:shadow-xl disabled:opacity-50"
           onClick={() => setStep(step + 1)}
