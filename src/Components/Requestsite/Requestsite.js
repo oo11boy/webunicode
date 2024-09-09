@@ -90,7 +90,7 @@ export default function Requestsite() {
             </>
           ) : (
             <>
-             <div className="h-[80vh] flex flex-col justify-between items-center w-[90%] m-auto border-2 border-gray-200 shadow-lg rounded-xl bg-white">
+             <div className="h-[80vh] mt-5 flex flex-col justify-between items-center w-[90%] m-auto border-2 border-gray-200 shadow-lg rounded-xl bg-white">
                 
               <Typography className="w-full h-[90%]" component={"div"} sx={{ mt: 2, mb: 1, py: 1 }}>
                  {activeStep === 0 && <Step1 />}
