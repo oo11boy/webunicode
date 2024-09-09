@@ -121,7 +121,7 @@ export default function Step2({ step, setStep }) {
             )}
             <button
               onClick={() => setIsModalOpen(false)}
-              className="mt-4 px-6 py-2 bg-red-500 text-white rounded-lg"
+              className="mt-4 px-6 py-2 bg-[#1f9d7e] text-white rounded-lg"
             >
               بستن
             </button>

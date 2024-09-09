@@ -29,7 +29,7 @@ export default function Step2({ step, setStep }) {
 
   return (
     <div className="flex min-h-[80vh] step1 flex-col justify-center items-center">
-      <h3 className="text-2xl text-bold text-[#9844F1] sm:!text-4xl mb-8">اطلاعات زیر را وارد نمایید</h3>
+      <h3 className="text-2xl text-bold text-[#9844F1] sm:!text-4xl mb-8">اطلاعات زیر را وارد نمایید:</h3>
       <form className="flex w-full flex-col justify-center items-center">
         <input
           type="text"
