@@ -87,7 +87,7 @@ export default function Step2({ step, setStep }) {
                       setSelectedOption(option.value);
                       setIsModalOpen(false); // Close modal after selection
                     }}
-                    className={`p-6 cursor-pointer w-56 text-center border rounded-xl shadow-md transition-transform transform hover:scale-105 hover:bg-green-100 ${
+                    className={`p-6 cursor-pointer w-56 text-center border rounded-xl shadow-md transition-transform  transform hover:scale-105 hover:bg-green-100 ${
                       selectedOption === option.value
                         ? "border-green-500 bg-green-50"
                         : "bg-white"

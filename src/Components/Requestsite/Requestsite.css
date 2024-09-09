@@ -14,3 +14,17 @@ font-family: 'iransans'!important;
 .step1 h3 , .step1 h2{
     font-family: "alibaba"!important;
 }
+
+.steps > div{
+animation: fade 0.8s;
+
+}
+.steps > div input{
+    animation: fade 1s;
+    
+    }
+   
+@keyframes fade {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}

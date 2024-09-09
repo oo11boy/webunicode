@@ -30,7 +30,7 @@ export default function Requestsite() {
           </React.Fragment>
         ))}
       </div>
-      <div className="w-[95%] m-auto sm:container min-h-[80vh] bg-white rounded-2xl">
+      <div className="w-[95%] steps m-auto sm:container min-h-[80vh] bg-white rounded-2xl">
         {step == 1 && <Step1 setStep={setStep} step={step} />}
         {step == 2 && <Step2 setStep={setStep} step={step} />}
         {step == 3 && <Step3 setStep={setStep} step={step} />}
