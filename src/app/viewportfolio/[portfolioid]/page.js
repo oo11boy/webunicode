@@ -9,7 +9,7 @@ export default function Page({ params }) {
   const { portfolioid } = params
   const router = useRouter()
 const [url,seturl]=useState(null)
-
+console.log(portfolioid)
 
   useEffect(() => {
 
