@@ -6,20 +6,22 @@ import Step2 from "./Step2";
 import Step4 from "./Step4";
 import "./Requestsite.css";
 import Step5 from "./Step5";
+
 export default function Requestsite() {
   const [step, setStep] = useState(1);
   const steptitle = ["1", "2", "3", "4", "5"];
 
   return (
-    <div className="bg-[#9844F1] flex flex-col min-h-lvh">
+    <div className="bg-[#9844F1] Requestsite flex flex-col min-h-lvh">
       <div className="flex h-[15vh] bg-[#9844F1] mx-auto w-[80%] items-center">
         {steptitle.map((item, index) => (
           <React.Fragment key={index}>
             <span
-              className={`w-[2.5%] flex justify-center ${
-                step === index + 1 ? "text-yellow-300" : "text-white"
+              className={`w-[4%] flex  rounded-full pt-1 m-4 items-center  justify-center ${
+                step === index + 1 ? "text-white bg-black" : "text-black bg-white "
               }`}
             >
+
               {item}
             </span>
             {index < steptitle.length - 1 && (
