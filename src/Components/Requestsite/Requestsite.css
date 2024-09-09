@@ -1,9 +1,9 @@
-.formstep1 label{
-    left: unset;
-    right: 20px;
+.step1 *{
+font-family: 'iransans'!important;
 }
-.rsitebg{
-    background: rgb(19,6,236);
-    background: linear-gradient(90deg, rgba(19,6,236,1) 0%, rgba(255,0,30,1) 100%, rgba(0,212,255,1) 100%);
-   
+
+.btnnext{
+    background: #3CD3AD;
+    color: white;
+    
 }
