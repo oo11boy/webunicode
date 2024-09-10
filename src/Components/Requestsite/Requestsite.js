@@ -7,7 +7,7 @@ import Step4 from "./Step4";
 import "./Requestsite.css";
 import Step5 from "./Step5";
 export default function Requestsite() {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(3);
   const steptitle = ["1", "2", "3", "4", "5"];
 
   return (
@@ -17,7 +17,7 @@ export default function Requestsite() {
           <React.Fragment key={index}>
             <span
               className={`w-[2.5%] flex justify-center ${
-                step === index + 1 ? "text-yellow-300" : "text-white"
+                step === index + 1 ? "text-yellow-300 font-bold text-2xl" : "text-white"
               }`}
             >
               {item}

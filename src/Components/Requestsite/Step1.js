@@ -2,7 +2,6 @@ import { useState } from "react";
 import {
   FaStore,
   FaBuilding,
-
   FaIndustry,
 } from "react-icons/fa";
 
