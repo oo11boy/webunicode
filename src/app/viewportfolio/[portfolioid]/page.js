@@ -23,6 +23,6 @@ const [url,seturl]=useState(null)
   }, [portfolioid, router])
 
   return (
-    <ResponsiveIframe  url={url}/>
+    <ResponsiveIframe  url={url} id={portfolioid}/>
   )
 }

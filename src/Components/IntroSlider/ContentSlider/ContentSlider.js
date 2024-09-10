@@ -19,7 +19,7 @@ export default function ContentSlider({fadeKey,items}) {
       <a
         key={`a-${fadeKey}`}
         className="bg-red-600 text-white rounded-full intorslideranim-btn px-6 py-3"
-        href="#"
+        href={'../requestSite/create'}
       >
         ثبت سفارش طراحی سایت
       </a>
