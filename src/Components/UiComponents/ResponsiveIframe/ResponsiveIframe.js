@@ -6,7 +6,7 @@ import DesktopWindowsIcon from "@mui/icons-material/DesktopWindows";
 import SmallLogo from "@/Components/UiComponents/SiteLogo/SiteLogo";
 import Link from "next/link";
 
-const ResponsiveIframe = ({ url }) => {
+const ResponsiveIframe = ({ url ,id}) => {
   const [size, setSize] = useState("desktop");
 
   const sizes = {
@@ -23,7 +23,7 @@ const ResponsiveIframe = ({ url }) => {
             <Link
               style={{ fontFamily: "iransans" }}
               class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-              href={"../siterequest"}
+              href={`../requestSite/${id}`}
             >
               ثبت درخواست سایت
             </Link>
