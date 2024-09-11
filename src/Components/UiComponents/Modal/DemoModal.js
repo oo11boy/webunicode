@@ -1,8 +1,15 @@
 import Link from "next/link";
 import "../../Requestsite/PortofolioCards/PortofolioCards.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import { useEffect, useState } from "react";
+import { PortfolioDb } from "@/lib/PortfolioDb";
 
-export default function DemoModal({ setIsModalOpen, item, setFormData }) {
+export default function DemoModal({
+  setIsModalOpen,
+  item,
+  setFormData,
+  requestTemplate,
+}) {
   const handleSelectDemo = () => {
     setFormData((prev) => ({
       ...prev,
@@ -33,13 +40,13 @@ export default function DemoModal({ setIsModalOpen, item, setFormData }) {
           <div className="flex flex-col space-y-10">
             <span className="text-xl font-bold">{item.name}</span>
             <span className="">{item.content}</span>
-            <button
-              onClick={handleSelectDemo}
+            <a
               style={{ fontFamily: "iransans" }}
-              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+              class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+              onClick={() => requestTemplate(item.id)}
             >
-              انتخاب دمو
-            </button>
+              ثبت درخواست سایت
+            </a>
           </div>
         </div>
 
