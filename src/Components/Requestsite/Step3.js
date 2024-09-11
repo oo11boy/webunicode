@@ -5,7 +5,7 @@ import CategoryBtn from "../UiComponents/Buttons/CategoryBtn";
 import TemplateDemo from "./TemplateDemo";
 
 
-export default function Step3({ step, setStep }) {
+export default function Step3({ step, setStep,setFormData }) {
   const [category, setCategory] = useState("all");
   const [chooseTemplate, setChooseTemplate] = useState(null);
 
@@ -27,6 +27,10 @@ export default function Step3({ step, setStep }) {
 
   useEffect(() => {
     console.log('Updated chooseTemplate:', chooseTemplate);
+    chooseTemplate &&  setFormData((prev) => ({
+      ...prev,
+      portfolioid:chooseTemplate.id
+    }));
   }, [chooseTemplate]);
 
   return (
@@ -49,7 +53,7 @@ export default function Step3({ step, setStep }) {
         </div>
         <div className="w-3/4 grid-container max-h-[53vh]">
           {PortfolioDb.map((item, index) => (
-            <PortofolioCards item={item} key={index} category={category} requestTemplate={requestTemplate} />
+            <PortofolioCards  item={item} key={index} category={category} requestTemplate={requestTemplate} />
           ))}
         </div>
       </div>

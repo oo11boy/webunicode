@@ -27,28 +27,6 @@ export default function Step4({ setStep, setFormData, formData }) {
     }));
   }, [extraHosting, selection, domainNeeded]);
 
-  useEffect(() => {
-    const findsitetype = PriceProtfolio.filter(
-      (item) => item.Category == formData.sitetype
-    );
-    if (findsitetype.Category == "resume") {
-      setCheckout(findsitetype);
-    } else {
-      const findothersitetype = findsitetype.find(
-        (item) => item.selection == formData.selection
-      );
-      setCheckout(findothersitetype);
-    }
-  }, [formData.sitetype, formData.selection]);
-
-  useEffect(() => {
-    setFormData((prev) => ({
-      ...prev,
-      sitetype: infodemo.Category,
-    }))
-     
-  }, [infodemo])
-
   const storeOptions = [
     { label: "زیر 100 محصول", value: "under_100" },
     { label: "100 تا 1000 محصول", value: "100_to_1000" },
