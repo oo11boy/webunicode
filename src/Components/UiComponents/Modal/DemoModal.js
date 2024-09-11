@@ -1,8 +1,12 @@
 import Link from "next/link";
 import "../../Requestsite/PortofolioCards/PortofolioCards.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import { useEffect, useState } from "react";
+import { PortfolioDb } from "@/lib/PortfolioDb";
 
-export default function DemoModal({ setIsModalOpen, item }) {
+export default function DemoModal({ setIsModalOpen, item, requestTemplate }) {
+  
+
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full md:w-full max-w-xl">
@@ -25,13 +29,13 @@ export default function DemoModal({ setIsModalOpen, item }) {
           <div className="flex flex-col space-y-10">
             <span className="text-xl font-bold">{item.name}</span>
             <span className="">{item.content}</span>
-            <Link
+            <a
               style={{ fontFamily: "iransans" }}
               class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-              href={`../requestSite/${item.id}`}
+              onClick={() => requestTemplate(item.id)}
             >
               ثبت درخواست سایت
-            </Link>
+            </a>
           </div>
         </div>
 
