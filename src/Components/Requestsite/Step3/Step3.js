@@ -1,8 +1,9 @@
 import { PortfolioDb } from "@/lib/PortfolioDb";
 import React, { useEffect, useState } from "react";
 import PortofolioCards from "./PortofolioCards/PortofolioCards";
-import CategoryBtn from "../UiComponents/Buttons/CategoryBtn";
-import TemplateDemo from "./TemplateDemo";
+
+import CategoryBtn from "@/Components/UiComponents/Buttons/CategoryBtn";
+import TemplateDemo from "../TemplateDemo";
 
 
 export default function Step3({ step, setStep,setFormData }) {

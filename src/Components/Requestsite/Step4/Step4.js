@@ -1,12 +1,14 @@
 import { PortfolioDb } from "@/lib/PortfolioDb";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import InformationCard from "./InformationCard";
-import ImagePortfolioCard from "./ImageportfolioCard";
+
 import ExtraSettingCard from "./ExtraSettingCard";
 import PriceCard from "./PriceCard";
 import SubmitBtnCard from "./SubmitBtnCard";
 import PlanInfoCard from "./PlanInfoCard";
 import { PriceProtfolio } from "@/lib/PriceProtfolio";
+import ImagePortfolioCard from "./ImagePortfolioCard";
+
 
 export default function Step4({ step, setStep, setFormData, formData }) {
   const [domainNeeded, setDomainNeeded] = useState(false);

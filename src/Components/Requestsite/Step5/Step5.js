@@ -1,7 +1,7 @@
 import React from 'react';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Button from '@mui/material/Button';
-import { SitePhone } from '../UiComponents/Contact/Contact';
+import { SitePhone } from '../../UiComponents/Contact/Contact';
 
 export default function Step5({ step, setStep }) {
   return (
