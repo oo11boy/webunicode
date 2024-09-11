@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import PortofolioCards from "./PortofolioCards/PortofolioCards";
 import CategoryBtn from "../UiComponents/Buttons/CategoryBtn";
 
-export default function Step3({ step, setStep }) {
+export default function Step3({ step, setStep ,setFormData}) {
   const [category, setCategory] = useState('all');
   const categories = [
     { id: 1, title: "همه قالب‌ها", category: "all" },
@@ -34,21 +34,21 @@ export default function Step3({ step, setStep }) {
         </div>
         <div className="w-3/4 grid-container max-h-[60vh]">
           {PortfolioDb.map((item, index) => (
-            <PortofolioCards item={item} key={index} category={category}/>
+            <PortofolioCards item={item} key={index} setFormData={setFormData} category={category}/>
           ))}
         </div>
       </div>
       <div className="flex gap-8 m-auto w-full text-center">
         <button
           className="btnnext text-2xl py-2 px-8 mt-12 rounded-full shadow-lg transition-all hover:scale-105 hover:shadow-xl"
-          // onClick={() => setStep(step - 1)}
+          onClick={() => setStep(step - 1)}
         >
           قبلی
         </button>
         <button
           className="btnnext text-2xl py-2 px-8 mt-12 rounded-full shadow-lg transition-all hover:scale-105 hover:shadow-xl disabled:opacity-50"
-          // onClick={() => setStep(step + 1)}
-          // disabled={isNextDisabled}
+          onClick={() => setStep(step + 1)}
+         
         >
           بعدی
         </button>

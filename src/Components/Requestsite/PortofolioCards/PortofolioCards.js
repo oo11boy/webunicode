@@ -8,7 +8,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
 import Link from "next/link";
 
-export default function PortofolioCards({ item, category }) {
+export default function PortofolioCards({ item, category ,setFormData }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -29,7 +29,7 @@ export default function PortofolioCards({ item, category }) {
         </a>
         <div className="">
           {isModalOpen && (
-            <DemoModal item={item} setIsModalOpen={setIsModalOpen} />
+            <DemoModal setFormData={setFormData} item={item} setIsModalOpen={setIsModalOpen} />
           )}
         </div>
       </div>

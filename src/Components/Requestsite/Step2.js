@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function Step2({ step, setStep }) {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-  });
-
+export default function Step2({ step, setStep, formData, setFormData }) {
   const [isNextDisabled, setIsNextDisabled] = useState(true);
 
   // Update button state whenever form data changes
@@ -23,7 +17,7 @@ export default function Step2({ step, setStep }) {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: value, // Update formData with input values
     });
   };
 
@@ -52,7 +46,7 @@ export default function Step2({ step, setStep }) {
           name="email"
           value={formData.email}
           onChange={handleInputChange}
-          className="bg-[#F7F8F9] w-[85%] md:w-[60%]  border mb-4 border-gray-500  p-8 rounded-xl"
+          className="bg-[#F7F8F9] w-[85%] md:w-[60%] border mb-4 border-gray-500 p-8 rounded-xl"
           placeholder="آدرس ایمیل"
         />
       </form>

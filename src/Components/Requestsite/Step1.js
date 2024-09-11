@@ -1,11 +1,9 @@
 import { PortfolioDb } from "@/lib/PortfolioDb";
 import { useEffect, useState } from "react";
-import { FaStore, FaBuilding, FaIndustry, FaUserNurse } from "react-icons/fa";
+import { FaStore, FaBuilding, FaIndustry } from "react-icons/fa";
 
-export default function Step2({ step, setStep, id }) {
+export default function Step2({ step, setStep, id, setFormData }) {
   const [selectedType, setSelectedType] = useState("");
-  const [selectedOption, setSelectedOption] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const siteTypes = [
     { label: "فروشگاهی", value: "store", icon: <FaStore /> },
@@ -13,53 +11,16 @@ export default function Step2({ step, setStep, id }) {
     { label: "رزومه‌ای", value: "resume", icon: <FaIndustry /> },
   ];
 
-  const storeOptions = [
-    { label: "زیر 100 محصول", value: "under_100" },
-    { label: "100 تا 1000 محصول", value: "100_to_1000" },
-    { label: "بیش از 1000 محصول", value: "above_1000" },
-  ];
-
-  const companyOptions = [
-    { label: "شرکتم کوچک است", value: "small_company" },
-    { label: "شرکتم بزرگ است", value: "large_company" },
-  ];
-
-  const handleSelect = (value) => {
+  const handleSelectType = (value) => {
     setSelectedType(value);
-    setSelectedOption("");
-
-    if (value === "store" || value === "company") {
-      setIsModalOpen(true);
-    } else {
-      setIsModalOpen(false);
-    }
+    // Store the selected type in formData
+  
   };
 
   const isNextButtonEnabled = () => {
-    if (selectedType === "resume") {
-      return true;
-    }
-    
-    if (
-      (selectedType === "store" || selectedType === "company") &&
-      selectedOption
-    ) {
-      return true;
-    }
-    return false;
+    return selectedType !== "";
   };
 
-  useEffect(() => {
-    const findportfolio = PortfolioDb.find((item) => item.id == id);
-    if (findportfolio) {
-      setSelectedType(findportfolio.category);
-      if (findportfolio.category === "store" || findportfolio.category === "company") {
-        setIsModalOpen(true);
-      } else {
-        setIsModalOpen(false);
-      }
-    }
-  }, [id]);
 
   return (
     <div className="flex step1 min-h-[80vh] step1 flex-col justify-center items-center">
@@ -70,7 +31,7 @@ export default function Step2({ step, setStep, id }) {
         {siteTypes.map((type) => (
           <div
             key={type.value}
-            onClick={() => handleSelect(type.value)}
+            onClick={() => handleSelectType(type.value)}
             className={`relative p-8 w-32 h-32 lg:!w-64 lg:!h-64 cursor-pointer border rounded-3xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-blue-100 ${
               selectedType === type.value
                 ? "border-blue-500 bg-blue-50"
@@ -91,66 +52,6 @@ export default function Step2({ step, setStep, id }) {
           </div>
         ))}
       </div>
-
-      {/* Modal for mobile */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-8 rounded-lg shadow-lg w-[95%] md:w-full max-w-md">
-            <h2 className="text-xl text-[#1f9d7e] mb-4">انتخاب کنید:</h2>
-            {selectedType === "store" && (
-              <div className="flex flex-wrap justify-center items-center gap-8">
-                {storeOptions.map((option) => (
-                  <div
-                    key={option.value}
-                    onClick={() => {
-                      setSelectedOption(option.value);
-                      setIsModalOpen(false); // Close modal after selection
-                    }}
-                    className={`p-6 cursor-pointer w-56 text-center border rounded-xl shadow-md transition-transform transform hover:scale-105 hover:bg-green-100 ${
-                      selectedOption === option.value
-                        ? "border-green-500 bg-green-50"
-                        : "bg-white"
-                    }`}
-                  >
-                    <h4 className="text-lg text-[#1f9d7e] font-medium">
-                      {option.label}
-                    </h4>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {selectedType === "company" && (
-              <div className="flex flex-wrap justify-center items-center gap-8">
-                {companyOptions.map((option) => (
-                  <div
-                    key={option.value}
-                    onClick={() => {
-                      setSelectedOption(option.value);
-                      setIsModalOpen(false); // Close modal after selection
-                    }}
-                    className={`p-6 cursor-pointer w-56 text-center border rounded-xl shadow-md transition-transform transform hover:scale-105 hover:bg-yellow-100 ${
-                      selectedOption === option.value
-                        ? "border-yellow-500 bg-yellow-50"
-                        : "bg-white"
-                    }`}
-                  >
-                    <h4 className="text-lg text-[#1f9d7e] font-medium">
-                      {option.label}
-                    </h4>
-                  </div>
-                ))}
-              </div>
-            )}
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="mt-4 px-6 py-2 bg-[#1f9d7e] text-white rounded-lg"
-            >
-              بستن
-            </button>
-          </div>
-        </div>
-      )}
 
       <div className="flex my-3 md:my-[unset] gap-8">
         <button

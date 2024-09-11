@@ -2,7 +2,15 @@ import Link from "next/link";
 import "../../Requestsite/PortofolioCards/PortofolioCards.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-export default function DemoModal({ setIsModalOpen, item }) {
+export default function DemoModal({ setIsModalOpen, item, setFormData }) {
+  const handleSelectDemo = () => {
+    setFormData((prev) => ({
+      ...prev,
+      portfolioid: item.id, // Store the demo ID in formData.portfolioid
+    }));
+    setIsModalOpen(false); // Close the modal after selecting the demo
+  };
+
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full md:w-full max-w-xl">
@@ -25,13 +33,13 @@ export default function DemoModal({ setIsModalOpen, item }) {
           <div className="flex flex-col space-y-10">
             <span className="text-xl font-bold">{item.name}</span>
             <span className="">{item.content}</span>
-            <Link
+            <button
+              onClick={handleSelectDemo}
               style={{ fontFamily: "iransans" }}
-              class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-              href={`../requestSite/${item.id}`}
+              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
             >
-              ثبت درخواست سایت
-            </Link>
+              انتخاب دمو
+            </button>
           </div>
         </div>
 
