@@ -19,16 +19,17 @@ export default function Requestsite({portfolioid}) {
     phone: "",
     email: "",
     portfolioid:"",
-    sitetype:"",
+    type:"",
     selection:"",
     comdomain:"",
-    exterahost:""
+    extrahost:""
 
   });
+ 
 
   return (
     <div className="bg-[#9844F1] Requestsite flex flex-col min-h-lvh">
-      <div className="flex h-[8vh] lg:h-[15vh] bg-[#9844F1] mx-auto w-[80%] items-center">
+      <div className="flex h-[8vh] lg:h-[10vh] bg-[#9844F1] mx-auto w-[80%] items-center">
         {steptitle.map((item, index) => (
           <React.Fragment key={index}>
             <span
@@ -45,7 +46,7 @@ export default function Requestsite({portfolioid}) {
           </React.Fragment>
         ))}
       </div>
-      <div className="w-[95%] steps m-auto sm:container min-h-[80vh] bg-white rounded-2xl">
+      <div className="w-[95%] steps m-auto sm:container min-h-[85vh] bg-white rounded-2xl">
         {step == 1 && <Step1 id={portfolioid} setStep={setStep} step={step} setFormData={setFormData} />}
         {step == 2 && <Step2 setStep={setStep} step={step} formData={formData} setFormData={setFormData}/>}
         {step == 3 && <Step3 setStep={setStep} step={step} setFormData={setFormData} />}

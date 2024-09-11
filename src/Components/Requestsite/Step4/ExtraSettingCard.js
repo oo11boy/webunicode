@@ -1,9 +1,55 @@
 import React from 'react'
 
-export default function ExtraSettingCard({domainNeeded,setDomainNeeded,extraHosting,setExtraHosting}) {
+export default function ExtraSettingCard({domainNeeded,setDomainNeeded,extraHosting,setExtraHosting,companyOptions,storeOptions,infoorder,setSelection,Selection}) {
   return (
-    <div className="w-full lg:!w-1/3 h-full p-4 bg-white rounded-xl shadow-lg border border-gray-200">
-          {/* دامنه */}
+    <div className="w-full xl:!w-1/3 !h-[325px] p-4 bg-white rounded-xl shadow-lg border border-gray-200">
+            {infoorder.category === "store" && (
+       <div className='mb-8'>
+             <label className="block text-lg font-semibold text-gray-700 mb-2">
+            
+            مقدار حدودی محصولات:
+            </label>
+              <div className="flex text-[10px] sm:text-sm mt-2">
+              {storeOptions.map((option) => (
+                <button
+                  key={option.value}
+                  className={`py-2 ml-2 px-4 rounded-lg transition-all duration-300 ${
+                    Selection === option.value
+                      ? "bg-green-500 text-white shadow-lg"
+                      : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                  }`}
+                  onClick={() => setSelection(option.value)}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+            </div>
+        )}
+
+        {infoorder.category === "company" && (
+          <div className='mb-8'>
+            <label className="block text-lg font-semibold text-gray-700 mb-2">
+            
+            مقدار حدودی محصولات:
+            </label>
+            <div className="flex text-[10px] sm:text-sm mt-2">
+              {companyOptions.map((option) => (
+                <button
+                  key={option.value}
+                  className={`py-2 ml-2 px-4 rounded-lg transition-all duration-300 ${
+                    Selection === option.value
+                      ? "bg-green-500 text-white shadow-lg"
+                      : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                  }`}
+                  onClick={() => setSelection(option.value)}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
           <div className="mb-6">
             <label className="block text-lg font-semibold text-gray-700 mb-2">
               آیا دامنه .com می‌خواهید؟

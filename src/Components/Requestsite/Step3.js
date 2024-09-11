@@ -29,7 +29,8 @@ export default function Step3({ step, setStep,setFormData }) {
     console.log('Updated chooseTemplate:', chooseTemplate);
     chooseTemplate &&  setFormData((prev) => ({
       ...prev,
-      portfolioid:chooseTemplate.id
+      portfolioid:chooseTemplate.id,
+     
     }));
   }, [chooseTemplate]);
 
