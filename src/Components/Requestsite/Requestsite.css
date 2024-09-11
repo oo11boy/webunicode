@@ -28,3 +28,19 @@ animation: fade 0.8s;
     0%{opacity: 0;}
     100%{opacity: 1;}
 }
+
+.step4  li p{
+font-family: "yekan"!important;
+}
+
+.step4 .plans li {
+ 
+    font-size: 18px;
+    font-weight: bolder;
+
+
+}
+.step4 h2{
+    font-family: "alibaba"!important;
+
+    }

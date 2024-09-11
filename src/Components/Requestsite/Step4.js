@@ -12,7 +12,7 @@ export default function Step4({ step, setStep }) {
   };
 
   return (
-    <div className="w-[95%] h-[80vh] py-2 md:py-[unset] overflow-y-auto mx-auto">
+    <div className="w-[95%] step4 h-[80vh] py-2 md:py-[unset] overflow-y-auto mx-auto">
       <div className="flex flex-col-reverse sm:!flex-row sm:!h-[180px]  mt-6 gap-x-4 justify-center items-start w-full">
         <div className="w-full sm:!w-3/4 h-full p-4 bg-gray-100 rounded-xl shadow-md">
           <ul className="space-y-2 mt-2">
@@ -52,7 +52,7 @@ export default function Step4({ step, setStep }) {
           <h2 className="text-md lg:!text-2xl mb-8 font-bold text-gray-900">
             پکیج پیشنهادی با توجه به اطلاعات دریافتی:
           </h2>
-          <ul className="flex  flex-wrap sm:!flex-nowrap gap-8  justify-between items-center w-full">
+          <ul className="flex plans flex-wrap sm:!flex-nowrap gap-8  justify-between items-center w-full">
             <li className="text-gray-700  border h-[100px] sm:!h-[140px] border-gray-200 bg-white w-5/12 md:!w-1/4 p-4 shadow-md flex flex-col items-center justify-center">
               <p>5 گیگابایت</p>
               <p>هاست</p>
