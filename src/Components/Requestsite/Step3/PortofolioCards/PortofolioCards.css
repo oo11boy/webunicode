@@ -122,16 +122,10 @@
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-/* Container hover effects */
-.image-container:hover {
-  transform: scale(1.05); /* Slight zoom effect */
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
-}
 
 /* Hover effects */
 .image-container:hover {
-  transform: scale(1.05); /* Slight zoom effect */
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+ box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
   background-color: 0 15px 25px rgba(0, 0, 0, 0.5);
 }
 

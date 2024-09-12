@@ -72,7 +72,7 @@ export default function Step4({id, step, setStep, setFormData, formData }) {
           
           setSelection={setSelection}
         />
-        <ImagePortfolioCard infoorder={infoorder} />
+        <ImagePortfolioCard id={formData.portfolioid} infoorder={infoorder} />
       </div>
 
       <div className="flex flex-col xl:!flex-row h-auto xl:!h-[220px] mt-6 gap-x-4 justify-center items-start w-full">

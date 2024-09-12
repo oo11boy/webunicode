@@ -5,7 +5,7 @@ import DemoModal from "@/Components/UiComponents/Modal/DemoModal";
 import SearchIcon from "@mui/icons-material/Search";
 
 
-export default function PortofolioCards({ item, category,setFormData, requestTemplate }) {
+export default function PortofolioCards({ item, category, requestTemplate }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {

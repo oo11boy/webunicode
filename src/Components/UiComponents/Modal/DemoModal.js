@@ -2,13 +2,7 @@ import Link from "next/link";
 import "../../Requestsite/Step3/PortofolioCards/PortofolioCards.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-export default function DemoModal({
-  setIsModalOpen,
-  item,
-  requestTemplate,
-}) {
-
-
+export default function DemoModal({ setIsModalOpen, item, requestTemplate }) {
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full md:w-full max-w-xl">
@@ -34,7 +28,10 @@ export default function DemoModal({
             <a
               style={{ fontFamily: "iransans" }}
               class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-              onClick={() => requestTemplate(item.id)}
+              onClick={() => {
+                requestTemplate(item.id);
+                setIsModalOpen(false);
+              }}
             >
               ثبت درخواست سایت
             </a>
