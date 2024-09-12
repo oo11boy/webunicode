@@ -6,7 +6,7 @@ import CategoryBtn from "@/Components/UiComponents/Buttons/CategoryBtn";
 import TemplateDemo from "../TemplateDemo";
 
 
-export default function Step3({ step, setStep,setFormData }) {
+export default function Step3({ step, setStep,setFormData ,id}) {
   const [category, setCategory] = useState("all");
   const [chooseTemplate, setChooseTemplate] = useState(null);
 
@@ -34,7 +34,9 @@ export default function Step3({ step, setStep,setFormData }) {
      
     }));
   }, [chooseTemplate]);
-
+  useEffect(()=>{
+    id>0 && setStep(4) 
+  },[id])
   return (
     <div className="w-full">
       <h3 className="text-3xl font-semibold my-10 text-center text-[#9844F1]">

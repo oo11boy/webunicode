@@ -21,7 +21,7 @@ export default function page() {
     
       <FAQ />
       <Comments />
-
+ 
       <ArticlesSection/>
       <Footer />
     </>
