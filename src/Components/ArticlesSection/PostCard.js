@@ -1,3 +1,5 @@
+import ImageWithLoader from "../UiComponents/ImageWithLoader/Image";
+
 export const PostCard = ({ item, className, heightcard }) => (
     <a
       className={`group relative block rounded-xl focus:outline-none ${className}`}
@@ -9,6 +11,9 @@ export const PostCard = ({ item, className, heightcard }) => (
         style={{ height: heightcard }}
       >
         <img
+        
+        />
+        <ImageWithLoader 
           className="size-full absolute top-0 start-0 object-cover transition-transform duration-300 ease-in-out group-hover:scale-125"
           src={item.img}
           alt={item.title}

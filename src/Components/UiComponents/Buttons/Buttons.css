@@ -1,4 +1,27 @@
-.seemorebtn{
-    font-family: "alibaba";
-    color: rgba(0, 0, 0, 0.508);
-    }
+.seemorebtn {
+  font-family: "alibaba";
+  color: rgba(0, 0, 0, 0.508);
+}
+
+@media (max-width: 768px) {
+  .categoryBtn {
+    font-size: x-small;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .categoryBtn {
+    font-size: xx-small;
+    white-space: nowrap;
+    width: 80%;
+  }
+}
+
+@media (max-width: 350px) {
+  .categoryBtn {
+    font-size: xx-small;
+    white-space: nowrap;
+    width: 80%;
+  }
+}

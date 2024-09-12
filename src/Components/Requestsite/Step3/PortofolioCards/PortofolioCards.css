@@ -1,0 +1,181 @@
+/* Grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); /* Responsive */
+  gap: 30px;
+  padding: 20px 40px;
+  height: 75vh;
+  overflow: scroll;
+  background-color: #f5f5f5; /* Softer background */
+  /* border-radius: 20px; */
+  position: relative;
+  /* top: 40px; */
+}
+.image-container {
+  position: relative;
+  display: block;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  height: 150px;
+  margin: 10px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+/* Image styles */
+.portfolio-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Button styles */
+.hover-eye-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px 15px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+  border-radius: 10px; /* Rounded button */
+  /* font-size: 1rem; */
+  /* font-weight: 600; */
+}
+
+.hover-cart-button {
+  position: absolute;
+  padding: 7px 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+  border-radius: 10px; /* Rounded button */
+  /* font-size: 1rem; */
+  /* font-weight: 600; */
+}
+
+.hover-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+  font-size: smaller;
+  color: #fff;
+}
+
+.hover-name {
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+  font-size: small;
+  color: #fff;
+  font-size: larger;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* Portfolio name styles */
+.portofolio-name {
+  text-align: center;
+  font-family: 'iransans';
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #333;
+}
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Start with no background */
+  transition: background-color 0.4s ease;
+  z-index: 10; /* Ensure overlay is on top */
+}
+
+/* Darken background on hover */
+.image-container:hover::before {
+  background-color: rgba(0, 0, 0, 0.5); /* Darken background on hover */
+}
+
+/* Ensure image stays behind the overlay */
+.portfolio-image {
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+
+/* Hover effects */
+.image-container:hover {
+ box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  background-color: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.image-container:hover .portfolio-image {
+  transform: scale(1.1);
+  filter: blur(7px); /* Softer blur */
+  
+}
+
+.image-container:hover .hover-eye-button {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1); /* Slight button zoom on hover */
+  z-index: 10;
+}
+
+.image-container:hover .hover-cart-button {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1); /* Slight button zoom on hover */
+  z-index: 10;
+  background-color: rgba(250, 228, 228, 0.5);
+}
+
+.image-container:hover .hover-content {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1); /* Slight button zoom on hover */
+  z-index: 10;
+}
+
+.image-container:hover .hover-name {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1); /* Slight button zoom on hover */
+  z-index: 10;
+}
+
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(19,6,236,1) 0%, rgba(255,0,30,1) 50%, rgba(0,212,255,1) 100%);
+  border-radius: 10px;
+  border: 3px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}

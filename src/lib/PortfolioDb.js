@@ -2,7 +2,7 @@ export const PortfolioDb = [
     {
         id: 1,
         name: " دیجیکالا",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/digikala/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2023/10/digikala.webp",
         icon: "icon-cart",
@@ -11,7 +11,7 @@ export const PortfolioDb = [
     {
         id: 2,
         name: "فروشگاه مو تن رو",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/mootanro/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2023/10/mootanro.webp",
         icon: "icon-cart",
@@ -20,7 +20,7 @@ export const PortfolioDb = [
     {
         id: 3,
         name: " فروشگاه فایل",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/filestore/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2022/11/woodmart-filestore-demo.png",
         icon: "icon-cart",
@@ -29,7 +29,7 @@ export const PortfolioDb = [
     {
         id: 4,
         name: "فروش جواهرات",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/rosegold/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2024/03/woodmart-rosegold-demo.webp",
         icon: "icon-cart",
@@ -38,7 +38,7 @@ export const PortfolioDb = [
     {
         id: 5,
         name: "شیک پوش",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/shikposh",
         img: "https://iran-woodmart.ir/wp-content/uploads/2024/05/woodmart-demo-shikposh.webp",
         icon: "icon-cart",
@@ -47,7 +47,7 @@ export const PortfolioDb = [
     {
         id: 6,
         name: "فروشگاه عسل",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/asalmarket/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2022/09/asalmarket-woodmart-demo.png",
         icon: "icon-cart",
@@ -56,7 +56,7 @@ export const PortfolioDb = [
     {
         id: 7,
         name: "لوازم آرایشی",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/arayeshi/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2023/02/arayeshi-demo.png",
         icon: "icon-cart",
@@ -65,7 +65,7 @@ export const PortfolioDb = [
     {
         id: 8,
         name: "فروشگاه ساعت",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/saatshop/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2022/09/saatshop-woodmart-demo.png",
         icon: "icon-cart",
@@ -74,7 +74,7 @@ export const PortfolioDb = [
     {
         id: 9,
         name: "فروشگاه روشنایی",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/noorshop/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2022/09/noorshop-demo.png",
         icon: "icon-cart",
@@ -83,7 +83,7 @@ export const PortfolioDb = [
     {
         id: 10,
         name: "سخت افزار تیک کالا",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/tikakala/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2022/05/woodmart-theme-tikakala-demo.png",
         icon: "icon-cart",
@@ -92,7 +92,7 @@ export const PortfolioDb = [
     {
         id: 11,
         name: "موبایل و لوازم جانبی",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/lavazem-janebi/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2022/08/woodmart-theme-lavazem-janebi-demo.png",
         icon: "icon-cart",
@@ -101,7 +101,7 @@ export const PortfolioDb = [
     {
         id: 12,
         name: " عطر و ادکلن",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/perfume/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2022/05/woodmart-theme-perfume-demo.png",
         icon: "icon-cart",
@@ -110,7 +110,7 @@ export const PortfolioDb = [
     {
         id: 13,
         name: "فروشگاه بازی",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/dicardo/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2022/04/woodmart-theme-dicardo-demo.png",
         icon: "icon-cart",
@@ -119,7 +119,7 @@ export const PortfolioDb = [
     {
         id: 14,
         name: "فروشگاه لباس",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/bootik/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2022/07/woodmart-theme-bootik-demo.png",
         icon: "icon-cart",
@@ -128,7 +128,7 @@ export const PortfolioDb = [
     {
         id: 15,
         name: "فروش دوره آموزشی",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/learn/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2022/04/woodmart-theme-woodlearn-demo.png",
         icon: "icon-cart",
@@ -137,7 +137,7 @@ export const PortfolioDb = [
     {
         id: 16,
         name: "فروش گل و گیاه",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/woodplants/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2022/04/iran-woodmart-ir-woodplant.png",
         icon: "icon-cart",
@@ -146,7 +146,7 @@ export const PortfolioDb = [
     {
         id: 17,
         name: "فروشگاه جواهرات",
-        category: "store_design",
+        category: "store",
         link: "https://iran-woodmart.ir/demo/goldshop/",
         img: "https://iran-woodmart.ir/wp-content/uploads/2022/07/woodmart-theme-goldshop-demo.png",
         icon: "icon-cart",
@@ -155,7 +155,7 @@ export const PortfolioDb = [
     {
         id: 18,
         name: " قالب شرکتی 1",
-        category: "company_design",
+        category: "company",
         link: "https://wpshare.ir/zhaket/engitech/home-02/",
         img: "https://wpshare.ir/zhaket/engitech-intro/Engitech_files/home-2.jpg",
         icon: "icon-office",
@@ -164,7 +164,7 @@ export const PortfolioDb = [
     {
         id: 19,
         name: " قالب شرکتی 2",
-        category: "company_design",
+        category: "company",
         link: "https://wpshare.ir/zhaket/engitech/home-03/",
         img: "https://wpshare.ir/zhaket/engitech-intro/Engitech_files/home-3.jpg",
         icon: "icon-office",
@@ -173,7 +173,7 @@ export const PortfolioDb = [
     {
         id: 20,
         name: " قالب شرکتی 3",
-        category: "company_design",
+        category: "company",
         link: "https://wpshare.ir/zhaket/engitech/home-04/",
         img: "https://wpshare.ir/zhaket/engitech-intro/Engitech_files/home-4.jpg",
         icon: "icon-office",
@@ -182,7 +182,7 @@ export const PortfolioDb = [
     {
         id: 21,
         name: " قالب شرکتی 4",
-        category: "company_design",
+        category: "company",
         link: "https://wpshare.ir/zhaket/engitech/home-05/",
         img: "https://wpshare.ir/zhaket/engitech-intro/Engitech_files/home-5.jpg",
         icon: "icon-office",
@@ -191,7 +191,7 @@ export const PortfolioDb = [
     {
         id: 22,
         name: " قالب شرکتی 5",
-        category: "company_design",
+        category: "company",
         link: "https://wpshare.ir/zhaket/engitech/home-06/",
         img: "https://wpshare.ir/zhaket/engitech-intro/Engitech_files/home-6.jpg",
         icon: "icon-office",
@@ -200,7 +200,7 @@ export const PortfolioDb = [
     {
         id: 23,
         name: " قالب شرکتی 6",
-        category: "company_design",
+        category: "company",
         link: "https://wpshare.ir/zhaket/engitech/home-07/",
         img: "https://wpshare.ir/zhaket/engitech-intro/Engitech_files/home-7.jpg",
         icon: "icon-office",
@@ -209,7 +209,7 @@ export const PortfolioDb = [
     {
         id: 24,
         name: " قالب شرکتی 7",
-        category: "company_design",
+        category: "company",
         link: "https://wpshare.ir/zhaket/engitech/home-08/",
         img: "https://wpshare.ir/zhaket/engitech-intro/Engitech_files/home-8.jpg",
         icon: "icon-office",
@@ -218,7 +218,7 @@ export const PortfolioDb = [
     {
         id: 25,
         name: " قالب شرکتی 8",
-        category: "company_design",
+        category: "company",
         link: "https://wpshare.ir/zhaket/engitech/home-09/",
         img: "https://wpshare.ir/zhaket/engitech-intro/Engitech_files/home-9.jpg",
         icon: "icon-office",
@@ -227,7 +227,7 @@ export const PortfolioDb = [
     {
         id: 26,
         name: " قالب شرکتی 9",
-        category: "company_design",
+        category: "company",
         link: "https://wpshare.ir/zhaket/engitech/home-10/",
         img: "https://wpshare.ir/zhaket/engitech-intro/Engitech_files/home-10.jpg",
         icon: "icon-office",
@@ -236,7 +236,7 @@ export const PortfolioDb = [
     {
         id: 27,
         name: " قالب شرکتی 10",
-        category: "company_design",
+        category: "company",
         link: "https://demo.themsah.com/zeus/demo-1/",
         img: "https://cdnsu.zhakethub.ir/public-smartupdater/installer-screenshots/6648a69d0cf9ab5be3040665/zhaket_665336a107eda.jpg",
         icon: "icon-office",
@@ -245,7 +245,7 @@ export const PortfolioDb = [
     {
         id: 28,
         name: " قالب شرکتی 11",
-        category: "company_design",
+        category: "company",
         link: "https://wpshare.ir/zhaket/quantech/",
         img: "https://cdnsu.zhakethub.ir/public-smartupdater/installer-screenshots/66267e15ecba6335b20a5409/zhaket_663b817e3e28e.jpg",
         icon: "icon-office",
@@ -259,7 +259,7 @@ export const PortfolioDb = [
         img: "https://upthemes.ir/wp-content/uploads/2023/11/1111.jpg",
         icon: "icon-heart-broken",
         content: "قالب پزشکی با طراحی مناسب برای کلینیک‌ها و بیمارستان‌ها.",
-        category: "pez_design"
+        category: "store"
       },
       {
         id: 35,
@@ -268,7 +268,7 @@ export const PortfolioDb = [
         img: "https://upthemes.ir/wp-content/uploads/2023/11/222.jpg",
         icon: "icon-heart-broken",
         content: "برای وبسایت‌های پزشکی و بهداشتی طراحی شده است.",
-        category: "pez_design"
+        category: "store"
       },
       {
         id: 36,
@@ -277,7 +277,7 @@ export const PortfolioDb = [
         img: "https://upthemes.ir/wp-content/uploads/2024/01/dental-2.jpg",
         icon: "icon-heart-broken",
         content: "قالب ویژه دندانپزشکی با امکانات تخصصی.",
-        category: "pez_design"
+        category: "store"
       },
       {
         id: 37,
@@ -286,7 +286,7 @@ export const PortfolioDb = [
         img: "https://upthemes.ir/wp-content/uploads/2024/01/personal-doctor1.jpg",
         icon: "icon-heart-broken",
         content: "برای پزشکان شخصی و متخصصین طراحی شده است.",
-        category: "pez_design"
+        category: "resume"
       },
       {
         id: 38,
@@ -295,7 +295,7 @@ export const PortfolioDb = [
         img: "https://files.rtl-theme.com/attachments/2023/09/8638b76e31e75b787c6020699e4a01f45162d6fe92c3bc.webp",
         icon: "icon-heart-broken",
         content: "برای فروشگاه‌های تجهیزات پزشکی طراحی شده است.",
-        category: "pez_design"
+        category: "store"
       },
       {
         id: 39,
@@ -304,7 +304,7 @@ export const PortfolioDb = [
         img: "https://media.rtlcdn.com/2023/12/3157f30713a0fce3f01b71375d0399d2c472661eb84724.webp",
         icon: "icon-heart-broken",
         content: "طراحی ویژه برای دندانپزشکان با امکانات مدرن.",
-        category: "pez_design"
+        category: "store"
       },
       
       {
@@ -314,8 +314,9 @@ export const PortfolioDb = [
         img: "https://ghaleblake.ir/landing/wp-content/uploads/2022/09/1.jpeg",
         icon: "icon-user-tie",
         content: "قالب رزومه حرفه‌ای با طراحی مدرن و تمیز.",
-        category: "goodprice_design"
+        category: "resume"
       },
+      
       {
         id: 50,
         name: " شخصی رزومه ای 11",
@@ -323,7 +324,7 @@ export const PortfolioDb = [
         img: "https://ghaleblake.ir/landing/wp-content/uploads/2022/09/s2.jpeg",
         icon: "icon-user-tie",
         content: "طراحی ویژه برای رزومه‌های شخصی و حرفه‌ای.",
-        category: "goodprice_design"
+        category: "resume"
       },
       {
         id: 51,
@@ -332,7 +333,7 @@ export const PortfolioDb = [
         img: "https://ghaleblake.ir/landing/wp-content/uploads/2023/04/s3-2-min.png",
         icon: "icon-user-tie",
         content: "برای ایجاد رزومه‌های حرفه‌ای با طراحی خاص.",
-        category: "goodprice_design"
+        category: "resume"
       },
       {
         id: 52,
@@ -341,6 +342,6 @@ export const PortfolioDb = [
         img: "https://ghaleblake.ir/landing/wp-content/uploads/2022/09/savis-4.jpeg",
         icon: "icon-user-tie",
         content: "برای رزومه‌های شخصی با طراحی مدرن و کاربرپسند.",
-        category: "goodprice_design"
+        category: "resume"
       }
 ];

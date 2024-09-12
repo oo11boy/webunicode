@@ -10,7 +10,6 @@ export default function Page({ params }) {
   const router = useRouter()
 const [url,seturl]=useState(null)
 
-
   useEffect(() => {
 
     const validPortfolio = PortfolioDb.some(item => item.id === parseInt(portfolioid))
@@ -24,6 +23,6 @@ const [url,seturl]=useState(null)
   }, [portfolioid, router])
 
   return (
-    <ResponsiveIframe  url={url}/>
+    <ResponsiveIframe  url={url} id={portfolioid}/>
   )
 }
