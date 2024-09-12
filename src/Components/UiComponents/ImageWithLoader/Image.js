@@ -1,16 +1,21 @@
 "use client"
 import React, { useState, useEffect } from "react";
-import { ClipLoader, PuffLoader } from "react-spinners";
+import { ClipLoader } from "react-spinners";
+import './image.css'
 
 const ImageWithLoader = ({ src, alt, className,height}) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     const img = new Image();
     img.src = src;
 
-    img.onload = () => setLoading(false);
+    img.onload = () => {
+      setLoading(false);
+      setImageLoaded(true);
+    };
     img.onerror = () => {
       setError(true);
       setLoading(false);
@@ -33,7 +38,8 @@ const ImageWithLoader = ({ src, alt, className,height}) => {
         <img
           src={src}
           alt={alt}
-          className={className}
+          className={`${className} ${imageLoaded ? 'fade-in' : 'hidden'}`}
+          onLoad={() => setImageLoaded(true)}
         />
       )}
       {error && (
