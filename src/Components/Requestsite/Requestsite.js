@@ -11,7 +11,7 @@ import Step5 from "./Step5/Step5";
 export default function Requestsite({portfolioid}) {
 
  
-  const [step, setStep] = useState(3);
+  const [step, setStep] = useState(1);
 
   const steptitle = ["1", "2", "3", "4", "5"];
   const [formData, setFormData] = useState({
