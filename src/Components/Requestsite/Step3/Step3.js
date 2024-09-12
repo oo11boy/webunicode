@@ -1,10 +1,11 @@
 import { PortfolioDb } from "@/lib/PortfolioDb";
 import React, { useEffect, useState } from "react";
-import PortofolioCards from "./PortofolioCards/PortofolioCards";
+
 import './Step3.css'
 
 import CategoryBtn from "@/Components/UiComponents/Buttons/CategoryBtn";
 import TemplateDemo from "../TemplateDemo";
+import PortofolioCards from "./PortofolioCards/PortofolioCards";
 
 export default function Step3({ step, setStep, setFormData, id }) {
   const [category, setCategory] = useState("all");

@@ -3,6 +3,7 @@ import "./PortofolioCards.css";
 import DemoModal from "@/Components/UiComponents/Modal/DemoModal";
 // import Link from "next/link";
 import SearchIcon from "@mui/icons-material/Search";
+import ImageWithLoader from "@/Components/UiComponents/ImageWithLoader/Image";
 
 
 export default function PortofolioCards({ item, category, requestTemplate }) {
@@ -16,7 +17,8 @@ export default function PortofolioCards({ item, category, requestTemplate }) {
     return (
       <div className="w-full">
         <a className="image-container">
-          <img src={item.img} alt={item.content} className="portfolio-image" />
+      
+        <ImageWithLoader src={item.img} alt={item.content} className="portfolio-image" />
           <button
             onClick={showModal}
             className="hover-eye-button text-white text-sm hover:text-black hover:bg-white transition-all"

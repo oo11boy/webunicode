@@ -1,13 +1,15 @@
 // import ClearIcon from "@mui/icons-material/Clear";
 // import { useState } from "react";
 
+import ImageWithLoader from "../UiComponents/ImageWithLoader/Image";
+
 export default function TemplateDemo({ item }) {
-  
-    // if (!isVisible) return null;
+  // if (!isVisible) return null;
   return (
     <div className="flex w-[85%] m-auto mt-4 border-2 rounded-lg">
       <div className="w-28 p-2">
-        <img
+   
+        <ImageWithLoader
           className="w-[100%] rounded-xl h-[90px]"
           src={item.img}
           alt={item.name}
