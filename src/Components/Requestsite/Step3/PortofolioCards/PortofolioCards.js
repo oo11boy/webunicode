@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import "./PortofolioCards.css";
 import DemoModal from "@/Components/UiComponents/Modal/DemoModal";
 // import Link from "next/link";
-import PortofolioContent from "./PortofolioContent";
-
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
-import Link from "next/link";
+
 
 export default function PortofolioCards({ item, category,setFormData, requestTemplate }) {
   const [isModalOpen, setIsModalOpen] = useState(false);

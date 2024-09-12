@@ -31,6 +31,7 @@
   height: auto;
   transition: transform 0.5s ease, filter 0.5s ease;
   border-radius: 15px;
+  object-fit: cover;
 }
 
 /* Button styles */

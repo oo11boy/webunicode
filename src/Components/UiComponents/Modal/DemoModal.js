@@ -1,22 +1,13 @@
 import Link from "next/link";
 import "../../Requestsite/Step3/PortofolioCards/PortofolioCards.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import { useEffect, useState } from "react";
-import { PortfolioDb } from "@/lib/PortfolioDb";
 
 export default function DemoModal({
   setIsModalOpen,
   item,
-  setFormData,
   requestTemplate,
 }) {
-  const handleSelectDemo = () => {
-    setFormData((prev) => ({
-      ...prev,
-      portfolioid: item.id, // Store the demo ID in formData.portfolioid
-    }));
-    setIsModalOpen(false); // Close the modal after selecting the demo
-  };
+
 
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
@@ -26,7 +17,7 @@ export default function DemoModal({
             <img
               src={item.img}
               alt={item.content}
-              className="portfolio-image w-full max-h-[200px]"
+              className="portfolio-image  w-full max-h-[200px]"
             />
 
             <Link
