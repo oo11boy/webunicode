@@ -66,16 +66,6 @@ export default function Step3({ step, setStep, setFormData, id }) {
           ))}
           {chooseTemplate && <TemplateDemo item={chooseTemplate} />}
         </div>
-        <div className="w-3/4 grid-container max-h-[53vh]">
-          {PortfolioDb.map((item, index) => (
-            <PortofolioCards
-              item={item}
-              key={index}
-              category={category}
-              requestTemplate={requestTemplate}
-            />
-          ))}
-        </div>
       </div>
       <div className="flex gap-8 justify-center  my-10">
         <button
