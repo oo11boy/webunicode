@@ -10,7 +10,7 @@ import { PriceProtfolio } from "@/lib/PriceProtfolio";
 import ImagePortfolioCard from "./ImagePortfolioCard";
 
 
-export default function Step4({id, step, setStep, setFormData, formData }) {
+export default function Step4({id, setStep, setFormData, formData }) {
   const [domainNeeded, setDomainNeeded] = useState(false);
   const [extraHosting, setExtraHosting] = useState(0);
   const [selection, setSelection] = useState("");
@@ -72,7 +72,7 @@ export default function Step4({id, step, setStep, setFormData, formData }) {
           
           setSelection={setSelection}
         />
-        <ImagePortfolioCard id={formData.portfolioid} infoorder={infoorder} />
+        <ImagePortfolioCard id={formData.portfolioid || id} infoorder={infoorder} />
       </div>
 
       <div className="flex flex-col xl:!flex-row h-auto xl:!h-[220px] mt-6 gap-x-4 justify-center items-start w-full">
