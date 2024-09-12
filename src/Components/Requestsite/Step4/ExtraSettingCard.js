@@ -31,7 +31,7 @@ export default function ExtraSettingCard({domainNeeded,setDomainNeeded,extraHost
           <div className='mb-8'>
             <label className="block text-lg font-semibold text-gray-700 mb-2">
             
-            مقدار حدودی محصولات:
+            اندازه شرکت شما چقدر است؟
             </label>
             <div className="flex text-[10px] sm:text-sm mt-2">
               {companyOptions.map((option) => (

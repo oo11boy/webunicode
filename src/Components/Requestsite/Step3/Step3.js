@@ -6,7 +6,7 @@ import './Step3.css'
 import CategoryBtn from "@/Components/UiComponents/Buttons/CategoryBtn";
 import TemplateDemo from "../TemplateDemo";
 
-export default function Step3({ step, setStep, setFormData }) {
+export default function Step3({ step, setStep, setFormData, id }) {
   const [category, setCategory] = useState("all");
   const [chooseTemplate, setChooseTemplate] = useState(null);
 
@@ -32,7 +32,9 @@ export default function Step3({ step, setStep, setFormData }) {
         portfolioid: chooseTemplate.id,
       }));
   }, [chooseTemplate]);
-
+  useEffect(() => {
+    id > 0 && setStep(4);
+  }, [id]);
   return (
     <div className="w-full">
       <h3 className="text-3xl font-semibold my-10 text-center text-[#9844F1]">
@@ -54,6 +56,17 @@ export default function Step3({ step, setStep, setFormData }) {
           {chooseTemplate && <TemplateDemo item={chooseTemplate} />}
         </div>
         <div className="lg:w-3/4 w-full grid-container max-h-[53vh]">
+          {PortfolioDb.map((item, index) => (
+            <PortofolioCards
+              item={item}
+              key={index}
+              category={category}
+              requestTemplate={requestTemplate}
+            />
+          ))}
+          {chooseTemplate && <TemplateDemo item={chooseTemplate} />}
+        </div>
+        <div className="w-3/4 grid-container max-h-[53vh]">
           {PortfolioDb.map((item, index) => (
             <PortofolioCards
               item={item}

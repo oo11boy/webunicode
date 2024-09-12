@@ -1,23 +1,8 @@
 import Link from "next/link";
 import "../../Requestsite/Step3/PortofolioCards/PortofolioCards.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import { useEffect, useState } from "react";
-import { PortfolioDb } from "@/lib/PortfolioDb";
 
-export default function DemoModal({
-  setIsModalOpen,
-  item,
-  setFormData,
-  requestTemplate,
-}) {
-  const handleSelectDemo = () => {
-    setFormData((prev) => ({
-      ...prev,
-      portfolioid: item.id, // Store the demo ID in formData.portfolioid
-    }));
-    setIsModalOpen(false); // Close the modal after selecting the demo
-  };
-
+export default function DemoModal({ setIsModalOpen, item, requestTemplate }) {
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full md:w-full max-w-xl">
@@ -26,7 +11,7 @@ export default function DemoModal({
             <img
               src={item.img}
               alt={item.content}
-              className="portfolio-image w-full max-h-[200px]"
+              className="portfolio-image  w-full max-h-[200px]"
             />
 
             <Link
@@ -43,7 +28,10 @@ export default function DemoModal({
             <a
               style={{ fontFamily: "iransans" }}
               class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-              onClick={() => requestTemplate(item.id)}
+              onClick={() => {
+                requestTemplate(item.id);
+                setIsModalOpen(false);
+              }}
             >
               ثبت درخواست سایت
             </a>

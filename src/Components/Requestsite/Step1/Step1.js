@@ -2,7 +2,7 @@ import { PortfolioDb } from "@/lib/PortfolioDb";
 import { useEffect, useState } from "react";
 import { FaStore, FaBuilding, FaIndustry } from "react-icons/fa";
 
-export default function Step2({ step, setStep, id, setFormData }) {
+export default function Step2({ step, setStep, id }) {
   const [selectedType, setSelectedType] = useState("");
 
   const siteTypes = [
@@ -21,6 +21,9 @@ export default function Step2({ step, setStep, id, setFormData }) {
     return selectedType !== "";
   };
 
+  useEffect(()=>{
+    id>0 && setStep(2) 
+  },[id])
 
   return (
     <div className="flex step1 min-h-[80vh] step1 flex-col justify-center items-center">
