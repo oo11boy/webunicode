@@ -4,7 +4,7 @@ export default function WhyUsCard({randomColors,content,index}) {
   return (
     <div
     key={index}
-    className="sm:w-[49%] lg:w-[32%] h-[250px] xl:h-[210px] flex rounded-lg flex-col justify-start items-start p-8"
+    className="w-[100%] sm:w-[49%] lg:w-[32%] h-[250px] xl:h-[210px] flex rounded-lg flex-col justify-start items-start p-8"
     style={{ backgroundColor: randomColors[index] }} // اعمال رنگ منحصر به فرد به عنوان بک‌گراند
   >
     <div className="border rounded-full p-4 bg-white">
