@@ -11,7 +11,7 @@ import React from "react";
 import "./WhyUs.css"
 import WhyUsCard from "./WhyUsCard";
 
-export default function WhyUs() {
+export default function WhyUs({bgcolor}) {
   // تابع برای تولید رنگ تصادفی بدون تکرار
   const getUniqueRandomColors = (numOfColors) => {
     const colors = [
@@ -79,16 +79,16 @@ export default function WhyUs() {
   const randomColors = getUniqueRandomColors(cardContent.length);
 
   return (
-    <div dir="rtl" className="container single-why-us !py-16">
+    <div dir="rtl" className={`container ${bgcolor} single-why-us !py-16`}>
       <TopSectionText
         toptext={"دلایل انتخاب ما"}
         maintext={"برای طراحی سایت"}
         linecolor={"red"}
       />
       <div className="flex gap-y-6 flex-wrap justify-between mt-16 w-full items-center">
-        {cardContent.map((content, index) => (
-       <WhyUsCard randomColors={randomColors} content={content} index={index}/>
-        ))}
+        
+     <WhyUsCard cardContent={cardContent} randomColors={randomColors}/>
+     
       </div>
     </div>
   );
