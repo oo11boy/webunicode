@@ -7,7 +7,7 @@ import React from 'react'
 export default function page() {
   return (
     <div>
-        {/* <TopHeader/> */}
+        <TopHeader/>
           <WhyUs/>
         <Footer/>
     </div>
