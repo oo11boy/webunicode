@@ -1,12 +1,14 @@
 import Footer from '@/Components/Footer/Footer'
 import TopHeader from '@/Components/Header/TopHeader'
+import WhyUs from '@/Components/SinglePageComponents/WhyUs/WhyUs'
+
 import React from 'react'
 
 export default function page() {
   return (
     <div>
-        <TopHeader/>
-
+        {/* <TopHeader/> */}
+          <WhyUs/>
         <Footer/>
     </div>
   )
