@@ -1,6 +1,7 @@
 'use client'
 
 
+import Feature from '@/Components/Feature/Feature'
 import Footer from '@/Components/Footer/Footer'
 import ResoponsiveHeader from '@/Components/Header/ResoponsiveHeader'
 import TopHeader from '@/Components/Header/TopHeader'
@@ -15,6 +16,7 @@ export default function page({params}) {
         <ResoponsiveHeader/>
         <Poster />
         <WhyUs/>
+        <Feature/>
         <Footer/>
     </div>
   )
