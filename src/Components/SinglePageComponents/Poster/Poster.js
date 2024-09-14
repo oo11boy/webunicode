@@ -55,7 +55,7 @@ export default function Poster() {
             </h4>
             <RequestSiteBtn text="درخواست سایت" />
           </div>
-          <div className="relative lg:w-[50%] w-full flex justify-center">
+          <div className="relative z-50 lg:w-[50%] w-full flex justify-center">
             <div className={fade ? "show" : "fade"}>
               <div className="z-20">
                 <img
@@ -70,7 +70,8 @@ export default function Poster() {
                 />
               </div>
             </div>
-            <span className="poster-content"></span>
+            <span className="poster-content -z-10"></span>
+
           </div>
         </div>
       </div>
