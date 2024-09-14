@@ -1,10 +1,10 @@
 'use client'
 
 
-import Feature from '@/Components/Feature/Feature'
+
 import Footer from '@/Components/Footer/Footer'
 import ResoponsiveHeader from '@/Components/Header/ResoponsiveHeader'
-import TopHeader from '@/Components/Header/TopHeader'
+import Feature from '@/Components/SinglePageComponents/Feature/Feature'
 import Poster from '@/Components/SinglePageComponents/Poster/Poster'
 import WhyUs from '@/Components/SinglePageComponents/WhyUs/WhyUs'
 

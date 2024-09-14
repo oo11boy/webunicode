@@ -1,7 +1,8 @@
 import React from 'react';
-import TopSectionText from '../UiComponents/TopSectionsTitle/TopSectionText';
+
 import './Feature.css';
 import { Filter, ShoppingCart, Payment, Loyalty, Star, LocalShipping, SupportAgent, CompareArrows } from '@mui/icons-material';
+import TopSectionText from '@/Components/UiComponents/TopSectionsTitle/TopSectionText';
 
 export default function Feature() {
   const features = [
