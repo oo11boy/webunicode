@@ -7,6 +7,10 @@ animation: fadeshow 0.5s;
 .sideout{
   animation: sideout 1s;
 }
+
+.header {
+  background-color: transparent
+}
 .sticky-header {
   position: fixed;
   top: 0;
@@ -14,11 +18,14 @@ animation: fadeshow 0.5s;
   width: 100%;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  background-color: white !important;
   transition: all 0.3s ease-in-out;
   margin-top: unset!important;
 }
 
+.nav-group {
+  color: #ffffff;
+}
 .navbar-collapse {
 
   position: fixed;
