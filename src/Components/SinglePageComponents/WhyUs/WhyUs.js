@@ -11,7 +11,7 @@ import React from "react";
 import "./WhyUs.css"
 import WhyUsCard from "./WhyUsCard";
 
-export default function WhyUs({bgcolor}) {
+export default function WhyUs() {
   // تابع برای تولید رنگ تصادفی بدون تکرار
   const getUniqueRandomColors = (numOfColors) => {
     const colors = [
@@ -40,51 +40,52 @@ export default function WhyUs({bgcolor}) {
 
   const cardContent = [
     {
-      title: "رعایت اصول سئو",
+      title: "سئو اصولی",
       description:
-        "بهینه‌سازی سایت شما برای موتورهای جستجو، به منظور جذب بازدیدکنندگان بیشتر.",
+        "سایتت رو برای موتورهای جستجو بهینه می‌کنیم تا بازدید بیشتری بگیری.",
       icon: <ComputerRounded fontSize="large" />,
     },
     {
       title: "طراحی حرفه‌ای",
       description:
-        "طراحی وب‌سایت‌هایی با ظاهر جذاب و رابط کاربری بهینه برای تجربه کاربری بهتر.",
+        "سایت‌هایی با ظاهر جذاب و رابط کاربری راحت برای تجربه بهتر کاربر.",
       icon: <DesignServices fontSize="large" />,
     },
     {
-      title: "پشتیبانی مداوم",
+      title: "پشتیبانی دائم",
       description:
-        "ارائه خدمات پشتیبانی فنی 24/7 برای رفع مشکلات و نیازهای شما.",
+        "هر ساعتی از شبانه‌روز پشتیبانی فنی داریم تا مشکلت رو حل کنیم.",
       icon: <SupportAgent fontSize="large" />,
     },
     {
-      title: "سرعت بالا",
-      description: "تضمین سرعت بارگذاری بالا و عملکرد روان وب‌سایت شما.",
+      title: "سرعت فوق‌العاده",
+      description: "سایتت رو با سرعت بالا و بدون لگ اجرا می‌کنیم.",
       icon: <Speed fontSize="large" />,
     },
     {
       title: "هزینه مناسب",
-      description: "ارائه خدمات با قیمت‌های رقابتی و مناسب با بودجه شما.",
+      description: "با قیمت‌هایی که با بودجه‌ات سازگاره، خدمات ارائه می‌کنیم.",
       icon: <AttachMoney fontSize="large" />,
     },
     {
-      title: "امنیت بالا",
+      title: "امنیت تضمینی",
       description:
-        "مراقبت از داده‌ها و اطلاعات شما با استفاده از تکنولوژی‌های پیشرفته امنیتی.",
+        "با تکنولوژی‌های پیشرفته امنیتی، از اطلاعاتت به بهترین شکل محافظت می‌کنیم.",
       icon: <Security fontSize="large" />,
     },
   ];
-
+  
   // دریافت رنگ‌های تصادفی منحصر به فرد
   const randomColors = getUniqueRandomColors(cardContent.length);
 
   return (
-    <div dir="rtl" className={`container ${bgcolor} single-why-us !py-16`}>
-      <TopSectionText
-        toptext={"دلایل انتخاب ما"}
-        maintext={"برای طراحی سایت"}
-        linecolor={"red"}
-      />
+    <div dir="rtl" className={`container  single-why-us !py-16`}>
+   <TopSectionText
+  toptext={"چرا ما؟"}
+  maintext={"برای طراحی سایت"}
+  linecolor={"red"}
+/>
+
       <div className="flex gap-y-6 flex-wrap justify-between mt-16 w-full items-center">
         
      <WhyUsCard cardContent={cardContent} randomColors={randomColors}/>

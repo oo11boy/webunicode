@@ -1,5 +1,17 @@
 import "./Poster.css";
 import RequestSiteBtn from "@/Components/UiComponents/Buttons/RequestSiteBtn";
+import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+
+
+// import required modules
+import { Autoplay, EffectCards } from 'swiper/modules';
+import { PortfolioDb } from "@/lib/PortfolioDb";
 
 export default function Poster() {
   return (
@@ -16,18 +28,27 @@ export default function Poster() {
             </h4>
             <RequestSiteBtn text='درخواست سایت'/>
           </div>
-          <div className="relative lg:w-[50%] w-full flex justify-center">
-            <div className="z-20">
-              <img
-                className="w-[95%] rounded-2xl lg:skew-x-6 lg:-skew-y-6"
-                src="https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/08/1-3.jpg"
-                alt=""
-              />
-              <img
-                className="w-[40%] rounded-2xl absolute bottom-0 lg:right-0 -right-5 lg:-skew-x-12 lg:skew-y-12"
-                src="https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/08/2-3.jpg"
-                alt=""
-              />
+          <div className="relative lg:w-[50%] w-full rounded-lg flex justify-center">
+            <div className="z-20 w-full rounded-xl  absolute top-0">
+            <>
+      <Swiper
+        effect={'cards'}
+        autoplay={{ delay: 1000 }}  
+        loop={true}
+  grabCursor={true}
+  modules={[EffectCards, Autoplay]}
+         className="w-full"
+      >
+        {PortfolioDb.map((item)=>(
+  <SwiperSlide >
+  <img src={item.img} className="w-full m-auto !object-contain" alt="" srcset="" />
+</SwiperSlide>
+        ))}
+      
+       
+      </Swiper>
+    </>
+ 
             </div>
             <span className="poster-content"></span>
           </div>

@@ -35,3 +35,7 @@
     right: -50px;
     
 }
+
+.swiper-slide {
+    box-shadow: none !important;
+  }
