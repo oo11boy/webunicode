@@ -34,7 +34,7 @@ export default function ResoponsiveHeader() {
 
   return (
     <>
-      <nav className={`flex z-[99] items-center justify-between w-full !bg-transparent fixed top-0 left-0 shadow-md ${isSticky ? 'sticky-header' : ''}`}>
+      <nav className={`flex z-[99] items-center justify-between w-full bg-transparent fixed top-0 left-0 shadow-md ${isSticky ? 'sticky-header' : ''}`}>
         <div className="mx-auto p-4 flex w-full justify-between items-center">
           <div className="hidden md:flex items-center pl-[9%]">
             <a
