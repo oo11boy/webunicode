@@ -1,7 +1,4 @@
 'use client'
-
-
-
 import Footer from '@/Components/Footer/Footer'
 import ResoponsiveHeader from '@/Components/Header/ResoponsiveHeader'
 import Feature from '@/Components/SinglePageComponents/Feature/Feature'
