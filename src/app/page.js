@@ -13,16 +13,13 @@ export default function page() {
   return (
     <>
       <Header />
-      <WhyUs/>
+      <WhyUs />
       <Services />
-     
       <PortfolioSlider />
-      <CategorySelection/>
-    
+      <CategorySelection />
       <FAQ />
       <Comments />
- 
-      <ArticlesSection/>
+      <ArticlesSection />
       <Footer />
     </>
   );

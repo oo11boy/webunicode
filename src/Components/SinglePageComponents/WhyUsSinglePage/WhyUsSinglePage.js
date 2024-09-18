@@ -11,7 +11,7 @@ import React from "react";
 import "./WhyUs.css"
 import WhyUsCard from "./WhyUsCard";
 
-export default function WhyUs() {
+export default function WhyUsSinglePage() {
   // تابع برای تولید رنگ تصادفی بدون تکرار
   const getUniqueRandomColors = (numOfColors) => {
     const colors = [

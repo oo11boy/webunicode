@@ -2,8 +2,10 @@
 import Footer from '@/Components/Footer/Footer'
 import ResoponsiveHeader from '@/Components/Header/ResoponsiveHeader'
 import Feature from '@/Components/SinglePageComponents/Feature/Feature'
+import OrderSteps from '@/Components/SinglePageComponents/OrderSteps/OrderSteps'
 import Poster from '@/Components/SinglePageComponents/Poster/Poster'
-import WhyUs from '@/Components/SinglePageComponents/WhyUs/WhyUs'
+import WhyUsSinglePage from '@/Components/SinglePageComponents/WhyUsSinglePage/WhyUsSinglePage'
+import WhyUs from '@/Components/WhyUs/WhyUs'
 
 import React from 'react'
 
@@ -13,6 +15,8 @@ export default function page({params}) {
         <ResoponsiveHeader/>
         <Poster />
         <WhyUs/>
+        <WhyUsSinglePage/>
+<OrderSteps/>
         <Feature/>
         <Footer/>
     </div>
