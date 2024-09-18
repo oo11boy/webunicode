@@ -5,19 +5,19 @@ export default function HoverNav({size, isSticky}) {
     {
       title: "طراحی سایت فروشگاهی",
       icon: "icon-cart",
-      to: '1',
+      to: 'store',
       id: 1,
     },
     {
       title: "طراحی سایت شرکتی",
       icon: "icon-office",
-      to: '2',
+      to: 'company',
       id: 2,
     },
     {
       title: "طراحی سایت اختصاصی",
       icon: "icon-user-tie",
-      to: '3',
+      to: 'resume',
       id: 3,
     },
   ];
