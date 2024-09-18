@@ -152,19 +152,19 @@ export default function FAQ({singlepageid}) {
         <div class="flex flex-wrap md:flex-nowrap items-center">
     
           <div class="accordion-box relative">
-           <div class="faq-style-one w-92 md:w-[80%] default-padding mt-8 mb-20">
+           <div class="faq-style-one w-92 md:!w-[350px] lg:!w-[500px] default-padding mt-8 mb-20">
               {accordions.map((item, index) => (
                 <Accordions key={index} {...item} index={index} isExpand={isExpand} setIsExpand={setIsExpand}/>
               ))}
             </div>
           </div>
-          <div class="w-full">
-            <div class="faq-thumb  mr-0 md:mr-10">
+          <div class="w-full flex justify-center">
+            <div class="faq-thumb lg:!w-[400px] md:!w-[300px] md:mr-10">
               <img
                 decoding="async"
                 src="/image/FAQ-img.png"
                 alt="FAQ Thumbnail"
-                className="w-80 md:w-full m-auto"
+                className="w-full md:w-full m-auto"
               />
             </div>
           </div>
