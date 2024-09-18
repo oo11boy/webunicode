@@ -1,6 +1,7 @@
 'use client'
 import Footer from '@/Components/Footer/Footer'
 import ResoponsiveHeader from '@/Components/Header/ResoponsiveHeader'
+import PortfolioSlider from '@/Components/PortfolioSlider/PortfolioSlider'
 import Feature from '@/Components/SinglePageComponents/Feature/Feature'
 import OrderSteps from '@/Components/SinglePageComponents/OrderSteps/OrderSteps'
 import Poster from '@/Components/SinglePageComponents/Poster/Poster'
@@ -17,6 +18,7 @@ export default function page({params}) {
         <WhyUs/>
         <WhyUsSinglePage/>
 <OrderSteps/>
+        <PortfolioSlider filteredCategory='store'/>
         <Feature/>
         <Footer/>
     </div>

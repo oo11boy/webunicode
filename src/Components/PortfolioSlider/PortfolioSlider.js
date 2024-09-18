@@ -8,7 +8,20 @@ import ViewMoreBtn from "../UiComponents/Buttons/ViewMoreBtn";
 import { Autoplay } from "swiper/modules";
 import { PortfolioDb } from "@/lib/PortfolioDb";
 
-export default function PortfolioSlider() {
+export default function PortfolioSlider({filteredCategory}) {
+  const filterPortfolio = () => {
+    if (filteredCategory === 'store') {
+      return PortfolioDb.filter(item => item.category === 'store');
+    } else if (filteredCategory === 'company') {
+      return PortfolioDb.filter(item => item.category === 'company');
+    } else if (filteredCategory === 'resume') {
+      return PortfolioDb.filter(item => item.category === 'resume');
+    } else {
+      return PortfolioDb;
+    }
+  };
+
+  const filteredPortfolio = filterPortfolio();
 
   return (
     <div className="container-field flex justify-center flex-col items-center py-20 bg-cover bg-[#F7F7F7] portfolio-slider-section">
@@ -25,7 +38,6 @@ export default function PortfolioSlider() {
         loop={true}
         spaceBetween={30}
         breakpoints={{
-          // when window width is >= 640px
           290: {
             slidesPerView: 1,
             spaceBetween: 20,
@@ -34,13 +46,10 @@ export default function PortfolioSlider() {
             slidesPerView: 2,
             spaceBetween: 20,
           },
-
-          // when window width is >= 768px
           1200: {
             slidesPerView: 3,
             spaceBetween: 30,
           },
-          // when window width is >= 1024px
           1500: {
             slidesPerView: 3,
             spaceBetween: 30,
@@ -48,7 +57,8 @@ export default function PortfolioSlider() {
         }}
         className="Portfolio container"
       >
-        {PortfolioDb.map((item, index) => (
+        
+        {filteredPortfolio.map((item, index) => (
           <SwiperSlide key={item.id}>
             <SlideCard items={item} />
           </SwiperSlide>
