@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect } from "react";
 import HamburgerMenu from "@/Components/Header/HamburgerMenu/HamburgerMenu";
 import HoverNav from "@/Components/Header/NavbarItems/HoverNav";
@@ -38,7 +39,7 @@ export default function ResoponsiveHeader() {
         <div className="mx-auto p-4 flex w-full justify-between items-center">
           <div className="hidden md:flex items-center pl-[9%]">
             <a
-              href="/contact-us"
+              href="/ContactUs"
               className="text-sm font-medium text-white bg-blue-800 px-4 py-2 rounded-lg hover:bg-blue-900"
             >
               سوالی دارید؟
@@ -48,7 +49,7 @@ export default function ResoponsiveHeader() {
           <div className="hidden md:flex items-center m-auto" id="navbar-menu">
             <ul className={`flex flex-row space-x-8 ml-auto items-center ${isSticky ? 'text-black' : 'text-white'}`}>
               <NavLinks isSticky={isSticky} title={"خانه"} to={"#"} size={"xs"} />
-              <NavLinks isSticky={isSticky} title={"درباره‌ی ما"} to={"#"} size={"xs"} />
+              <NavLinks isSticky={isSticky} title={"درباره‌ی ما"} to={"../ContactUs"} size={"xs"} />
               <HoverNav isSticky={isSticky} size={"xs"} />
               <NavLinks isSticky={isSticky} title={"فروشگاه"} to={"#"} size={"xs"} />
               <NavLinks isSticky={isSticky} title={"نمونه کارها"} to={"#"} size={"xs"} />
