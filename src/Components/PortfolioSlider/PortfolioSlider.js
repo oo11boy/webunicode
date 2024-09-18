@@ -8,14 +8,10 @@ import ViewMoreBtn from "../UiComponents/Buttons/ViewMoreBtn";
 import { Autoplay } from "swiper/modules";
 import { PortfolioDb } from "@/lib/PortfolioDb";
 
-export default function PortfolioSlider({filteredCategory}) {
+export default function PortfolioSlider({singlepageid}) {
   const filterPortfolio = () => {
-    if (filteredCategory === 'store') {
-      return PortfolioDb.filter(item => item.category === 'store');
-    } else if (filteredCategory === 'company') {
-      return PortfolioDb.filter(item => item.category === 'company');
-    } else if (filteredCategory === 'resume') {
-      return PortfolioDb.filter(item => item.category === 'resume');
+    if (singlepageid) {
+      return PortfolioDb.filter(item => item.category === singlepageid);
     } else {
       return PortfolioDb;
     }
