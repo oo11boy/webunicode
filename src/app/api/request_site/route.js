@@ -7,6 +7,8 @@ export async function POST(request) {
       const { name, phone, email, portfolioid, type, selection, comdomain, extrahost } = data;
   
       if (!name || !phone || !email || !type || !portfolioid ) {
+        
+        
         return new Response(
           JSON.stringify({ error: "Missing required fields" }),
           {
@@ -20,7 +22,7 @@ export async function POST(request) {
         "INSERT INTO request_site (name, phone, email, portfolioid, type, selection, comdomain, extrahost) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
         [name, phone, email, portfolioid, type, selection, comdomain, extrahost]
       );
-  
+
       return new Response(
         JSON.stringify({
           message: "Data inserted successfully",
@@ -32,6 +34,7 @@ export async function POST(request) {
         }
       );
     } catch (error) {
+    console.log('error', error);
       return new Response(JSON.stringify({ error: "Error inserting data" }), {
         status: 500,
         headers: { "Content-Type": "application/json" },

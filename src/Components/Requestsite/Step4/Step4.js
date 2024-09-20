@@ -96,7 +96,7 @@ export default function Step4({id, setStep, setFormData, formData }) {
           infoorder={infoorder}
           checkout={checkout}
         />
-        <SubmitBtnCard setStep={setStep} />
+        <SubmitBtnCard setStep={setStep} formData={formData}/>
       </div>
     </div>
   );
