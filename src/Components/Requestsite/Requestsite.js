@@ -23,7 +23,7 @@ export default function Requestsite({portfolioid}) {
     selection:"",
     comdomain:"",
     extrahost:""
-
+    
   });
  
 
