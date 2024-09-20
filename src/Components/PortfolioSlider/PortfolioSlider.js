@@ -62,7 +62,7 @@ export default function PortfolioSlider({singlepageid}) {
       </Swiper>
 
       
-      <ViewMoreBtn text={'نمایش سایر نمونه کارها'}/>
+      <ViewMoreBtn link="../listportfolio" text={'نمایش سایر نمونه کارها'}/>
     </div>
   );
 }

@@ -1,8 +1,30 @@
+import NavbarItems from "../Header/NavbarItems/NavbarItems";
+import { SitePhone } from "../UiComponents/Contact/Contact";
 import Title from "../UiComponents/H4Title/Title";
-import Icon from "../UiComponents/Icon/icon";
 import SmallLogo from "../UiComponents/SiteLogo/SiteLogo";
+import SocialIcons from "../UiComponents/SocialIcons/SocialIcons";
 
 export default function Footer() {
+  const navChildren = [
+    {
+      title: "طراحی سایت فروشگاهی",
+      icon: "icon-cart",
+      to: "store",
+      id: 1,
+    },
+    {
+      title: "طراحی سایت شرکتی",
+      icon: "icon-office",
+      to: "company",
+      id: 2,
+    },
+    {
+      title: "طراحی سایت رزومه ای",
+      icon: "icon-user-tie",
+      to: "resume",
+      id: 3,
+    },
+  ];
   return (
     <div className="container-field bg-gray-900 text-light pt-10">
       <footer className="relative overflow-hidden">
@@ -14,101 +36,59 @@ export default function Footer() {
           {/* Logo and Info Section */}
 
           <div className="about text-start lg:mx-auto">
-          <SmallLogo/>
-            <p className="mb-8 mt-4 leading-loose">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-              استفاده از طراحان گرافیک است.
+            <SmallLogo />
+            <p className="mb-8 mt-4 yekan leading-loose">
+            یونیکد مرجع طراحی انواع سایت های مختلف با قیمتی ارزان و کیفیتی متاسب میتواند شما را در بهبود کسب و کارتان همراهی نماید
             </p>
             <div className="opening-hours">
               <h5 className="text-red-500 mb-2">ساعات کاری</h5>
               <ul>
                 <li className="flex justify-between">
-                  <span>شنبه تا چهارشنبه:</span>
-                  <span className="text-gray-400">2pm – 2pm</span>
+                  <span>شنبه تا جمعه:</span>
+                  <span className="text-gray-400">9:00 - 21:00</span>
                 </li>
-                <li className="flex justify-between">
-                  <span>پنج شنبه:</span>
-                  <span className="text-gray-400">تعطیل</span>
-                </li>
+             
               </ul>
             </div>
           </div>
 
           {/* Links Section */}
           <div className="company-links lg:mx-auto">
-            <Title text="شرکت ما" />
-            <ul className="space-y-4">
-              <li>
-                <a href="#">پروفایل شرکت</a>
-              </li>
-              <li>
-                <a href="#">مرکز کمک</a>
-              </li>
-              <li>
-                <a href="#">مراقب</a>
-              </li>
-              <li>
-                <a href="#">طرح و قیمت گذاری</a>
-              </li>
-              <li>
-                <a href="#">تماس با ما</a>
-              </li>
-            </ul>
+            <Title text="دسترسی سریع" />
+            <NavbarItems hiddenitem={true} footerview={true} />
           </div>
 
           <div className="services-links lg:mx-auto">
             <Title text="خدمات ما" />
             <ul className="space-y-4">
-              <li>
-                <a href="#">مدیریت سرمایه گذاری</a>
-              </li>
-              <li>
-                <a href="#">برنامه ریزی کسب و کار</a>
-              </li>
-              <li>
-                <a href="#">توصیه های مالی</a>
-              </li>
-              <li>
-                <a href="#">استراتژی مالیاتی</a>
-              </li>
-              <li>
-                <a href="#">استراتژی بیمه</a>
-              </li>
+              {navChildren.map((item) => (
+                <li key={item.id}>
+                  <a href={`../${item.to}`}>{item.title}</a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Newsletter Section */}
-          <div className="newsletter lg:mx-auto">
-            <Title text="لورم ایپسوم" />
-            <p className="mb-4 leading-loose">
-              به لیست مشترکین ما بپیوندید تا جدیدترین ها را دریافت کنید اخبار و
-              پیشنهادات ویژه
-            </p>
-            <form className="flex">
-              <input
-                type="email"
-                placeholder="ایمیل ..."
-                className="p-2 w-full bg-gray-700 text-white"
-              />
-              <button type="submit" className="bg-red-500 text-white p-2 ml-2">
-                عضویت
-              </button>
-            </form>
+          <div className="newsletter  w-full lg:mx-auto">
+            <Title text="نماد اعتماد" />
 
-            <ul className="social-icons flex justify-between w-[50%] mt-4">
-              <li>
-                <Icon icon="linkedin" />
-              </li>
-              <li>
-                <Icon icon="instagram" />
-              </li>
-              <li>
-                <Icon icon="telegram" />
-              </li>
-              <li>
-                <Icon icon="facebook" />
-              </li>
-            </ul>
+            <div className="bg-white rounded-lg mb-4 flex justify-center items-center w-full">
+              <a
+                target="_blank"
+                href="https://trustseal.enamad.ir/?id=467521&Code=8RJb5Bl8uzBsckWVX7RfaZnom53ODxSQ"
+                className="flex justify-center items-center w-full"
+              >
+                <img
+                  alt="نماد اعتماد"
+                  className="h-[180px]"
+                  src="http://unicodewebdesign.com/_next/image?url=%2Fimg%2Fnamad.png&w=256&q=75"
+                />
+              </a>
+            </div>
+
+         
+            <SocialIcons size={'text-2xl'}/>
           </div>
         </div>
 
@@ -116,21 +96,20 @@ export default function Footer() {
         <div className="footer-bottom bg-black text-gray-500 text-center w-full py-4">
           <div className="container flex flex-wrap w-full lg:flex-nowrap justify-between items-end">
             <div className="mx-auto sm:m-[unset]">
-              <span className="sm:m-[unset]">
-                تمامی حقوق برای قالب یونیکد محفوظ است. ددددددد
+              <span className="sm:m-[unset] alibaba flex justify-center items-center">
+                <p> تمامی حقوق برای </p>
+               
+                 <a href="../" className="mx-2 text-yellow-300">قالب یونیکد</a> 
+               <p>
+               محفوظ است.
+               </p>
+            
               </span>
             </div>
-            <ul className="flex justify-between sm:flex-nowrap sm:w-[30%] mx-auto sm:m-[unset] mt-2">
-              <li>
-                <a href="#">مقررات</a>
-              </li>
-              <li>
-                <a href="#">خط</a>
-              </li>
-              <li>
-                <a href="#">پشتیبانی</a>
-              </li>
-            </ul>
+            <div className="flex justify-center items-center mt-4 w-full sm:flex-none sm:!w-[unset] sm:!mt-[unset]">
+            <SitePhone/>
+            </div>
+         
           </div>
         </div>
       </footer>

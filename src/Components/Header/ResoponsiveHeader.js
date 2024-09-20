@@ -47,12 +47,12 @@ export default function ResoponsiveHeader() {
           </div>
 
           <div className="hidden md:flex items-center m-auto" id="navbar-menu">
-            <ul className={`flex flex-row space-x-8 ml-auto items-center ${isSticky ? 'text-black' : 'text-white'}`}>
-              <NavLinks isSticky={isSticky} title={"خانه"} to={"#"} size={"xs"} />
-              <NavLinks isSticky={isSticky} title={"درباره‌ی ما"} to={"../ContactUs"} size={"xs"} />
+            <ul  className={`flex flex-row-reverse gap-x-8 ml-auto items-center ${isSticky ? 'text-black' : 'text-white'}`}>
+              <NavLinks isSticky={isSticky} title={"خانه"} to={"../"} size={"xs"} />
               <HoverNav isSticky={isSticky} size={"xs"} />
-              <NavLinks isSticky={isSticky} title={"فروشگاه"} to={"#"} size={"xs"} />
-              <NavLinks isSticky={isSticky} title={"نمونه کارها"} to={"#"} size={"xs"} />
+              <NavLinks isSticky={isSticky} title={"نمونه کارها"} to={"../listportfolio"} size={"xs"} />
+              <NavLinks isSticky={isSticky} title={"ارتباط با ما"} to={"../ContactUs"} size={"xs"} />
+              <NavLinks isSticky={isSticky} title={"درباره‌ی ما"} to={"#"} size={"xs"} />
             </ul>
           </div>
 

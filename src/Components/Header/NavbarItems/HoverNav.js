@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function HoverNav({size, isSticky}) {
+export default function HoverNav({size, isSticky,hiddenitem}) {
   const navChildren = [
     {
       title: "طراحی سایت فروشگاهی",
@@ -22,7 +22,7 @@ export default function HoverNav({size, isSticky}) {
     },
   ];
   return (
-    <li class={`relative group flex items-center gap-2 text-${size} xl:text-[17px] ${isSticky ? 'text-black' : ''}`}>
+    <li class={`${hiddenitem && '!hidden'} relative group flex items-center gap-2 text-${size} xl:text-[17px] ${isSticky ? 'text-black' : ''}`}>
       طراحی سایت
       <ul class="absolute opacity-0 group-hover:opacity-100  text-black bg-white text-right top-10 right-0 mt-1 py-2 w-auto rounded-lg shadow-lg z-10 transition-opacity duration-400 ease-in">
         {navChildren.map((item) => (
