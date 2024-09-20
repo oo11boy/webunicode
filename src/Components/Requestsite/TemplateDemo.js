@@ -21,9 +21,6 @@ export default function TemplateDemo({ item }) {
           قالب انتخابی شما
         </span>
       </div>
-      {/* <div className="p-2 cursor-pointer">
-        <ClearIcon />
-      </div> */}
     </div>
   );
 }
