@@ -42,7 +42,7 @@ export default async function ArticlesSection() {
           </div>
         </div>
         <div className="flex justify-center items-center w-full mb-5">
-          <ViewMoreBtn link={"./blog"} text={"مشاهده تمام مقالات"} />
+          <ViewMoreBtn link={"./blogs"} text={"مشاهده تمام مقالات"} />
         </div>
       </div>
     </div>

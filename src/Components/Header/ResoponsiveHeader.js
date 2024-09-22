@@ -35,7 +35,7 @@ export default function ResoponsiveHeader() {
 
   return (
     <>
-      <nav className={`flex z-[99] items-center justify-between w-full bg-transparent fixed top-0 left-0 shadow-md ${isSticky ? 'sticky-header' : ''}`}>
+       <nav className={`flex z-[99] items-center justify-between w-full bg-transparent fixed top-0 left-0 shadow-md ${isSticky ? 'sticky-header' : ''}`}>
         <div className="mx-auto p-4 flex w-full justify-between items-center">
           <div className="hidden md:flex items-center pl-[9%]">
             <a
@@ -51,6 +51,8 @@ export default function ResoponsiveHeader() {
               <NavLinks isSticky={isSticky} title={"خانه"} to={"../"} size={"xs"} />
               <HoverNav isSticky={isSticky} size={"xs"} />
               <NavLinks isSticky={isSticky} title={"نمونه کارها"} to={"../listportfolio"} size={"xs"} />
+              <NavLinks isSticky={isSticky} title={"وبلاگ"} to={"../blogs"} size={"xs"} />
+            
               <NavLinks isSticky={isSticky} title={"ارتباط با ما"} to={"../ContactUs"} size={"xs"} />
               <NavLinks isSticky={isSticky} title={"درباره‌ی ما"} to={"#"} size={"xs"} />
             </ul>
