@@ -54,7 +54,7 @@ export default function ResoponsiveHeader() {
               <NavLinks isSticky={isSticky} title={"وبلاگ"} to={"../blogs"} size={"xs"} />
             
               <NavLinks isSticky={isSticky} title={"ارتباط با ما"} to={"../ContactUs"} size={"xs"} />
-              <NavLinks isSticky={isSticky} title={"درباره‌ی ما"} to={"#"} size={"xs"} />
+              <NavLinks isSticky={isSticky} title={"درباره‌ی ما"} to={"../AboutUs"} size={"xs"} />
             </ul>
           </div>
 
