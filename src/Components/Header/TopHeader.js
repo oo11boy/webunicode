@@ -52,7 +52,10 @@ export default function TopHeader() {
         </div>
         {/* <div className="w-1/4 logosite  pr-[10%] text-right h-[100px] items-center flex justify-end bg-[#CFD2D5] absolute top-[-10px] z-1 right-[25px]"></div> */}
         <div className="w-1/4 logosite  pr-[10%] text-right h-[100px] items-center flex justify-end bg-white absolute top-0  right-5 z-[1]">
-          <SmallLogo skew={15} />
+         
+         <a href="../">
+         <SmallLogo skew={15} />
+          </a> 
         </div>
       </div>
       {/* </div> */}

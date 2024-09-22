@@ -47,7 +47,19 @@
     font-weight: 400;
     font-style: normal;
 }
+.alibaba{
+    font-family: "alibaba"!important;
+}
+.iransans{
+    font-family: "iransans"!important;
 
+}
+.yekan{
+    font-family: "yekan"!important;
+}
+.vazir{
+    font-family: "vazir"!important;
+}
 h3{
     font-family: "iransans";
 }

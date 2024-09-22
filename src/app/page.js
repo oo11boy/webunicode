@@ -25,7 +25,8 @@ export default async function Page() {
       <CategorySelection />
       <FAQ />
       <Comments />
-      <ArticlesSection  />
+      <ArticlesSection />
+  
       <Footer />
     </>
   );
