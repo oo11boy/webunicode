@@ -3,6 +3,8 @@ import React from "react";
 import { redirect } from "next/navigation";
 import { getPosts } from "@/lib/DataFetching";
 import Singlepost from "@/Components/BlogComponent/SinglePost/Singlepost";
+import TopHeader from "@/Components/Header/TopHeader";
+import Footer from "@/Components/Footer/Footer";
 
 
 
@@ -14,6 +16,11 @@ export default async function page({ params }) {
   !findpost && redirect("../");
 
   return (
-   <Singlepost findpost={findpost} id={id}/>
+    <>
+      <TopHeader />
+      <Singlepost findpost={findpost} id={id}/>
+      <Footer/>
+      </>
+ 
   );
 }

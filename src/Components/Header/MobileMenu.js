@@ -33,16 +33,10 @@ export default function MobileMenu({ close, status }) {
 
   const navItems = [
     {
-      title: "نمونه کارها",
-      icon: "icon-briefcase",
-      to: "1",
-      id: 1,
-    },
-    {
-      title: "فروشگاه",
-      icon: "icon-cart",
-      to: "2",
-      id: 2,
+      title: "خانه",
+      icon: "icon-home3",
+      to: "../",
+      id: 7,
     },
     {
       title: "طراحی سایت",
@@ -53,33 +47,47 @@ export default function MobileMenu({ close, status }) {
         {
           title: "طراحی سایت فروشگاهی",
           icon: "icon-cart",
-          to: "3,1",
+          to: "../store",
           id: 4,
         },
         {
           title: "طراحی سایت شرکتی",
           icon: "icon-office",
-          to: "3,2",
+          to: "../company",
           id: 5,
         },
         {
-          title: "طراحی سایت اختصاصی",
+          title: "طراحی سایت رزومه ای",
           icon: "icon-user-tie",
-          to: "3,3",
+          to: "../resume",
           id: 6,
         },
       ],
     },
+ 
     {
-      title: "خانه",
-      icon: "icon-home3",
-      to: "4",
-      id: 7,
+      title: "نمونه کارها",
+      icon: "icon-briefcase",
+      to: "../listportfolio",
+      id: 1,
     },
+    {
+      title: "وبلاگ",
+      icon: "icon-cart",
+      to: "../blogs",
+      id: 2,
+    },
+
     {
       title: "درباره‌ی ما",
       icon: "icon-info",
       to: "5",
+      id: 8,
+    },
+    {
+      title: "ارتباط با ما",
+      icon: "icon-info",
+      to: "../ContactUs",
       id: 8,
     },
   ];

@@ -1,6 +1,4 @@
 import React from "react";
-import ResoponsiveHeader from "@/Components/Header/ResoponsiveHeader";
-import Footer from "@/Components/Footer/Footer";
 import "./SinglePost.css";
 import TopBar from "./TopBar";
 import SideBar from "./SideBar";
@@ -8,8 +6,8 @@ import MainContent from "./MainContent";
 export default function Singlepost({ findpost }) {
   return (
     <>
-      <ResoponsiveHeader />
-      <div dir="rtl" className="w-[90%] SinglePost  mx-auto">
+    
+      <div dir="rtl" className="w-[90%] SinglePost mt-20  mx-auto">
         <main class="mt-10 ">
           <TopBar findpost={findpost} />
 
@@ -20,7 +18,6 @@ export default function Singlepost({ findpost }) {
         </main>
       </div>
 
-      <Footer />
     </>
   );
 }

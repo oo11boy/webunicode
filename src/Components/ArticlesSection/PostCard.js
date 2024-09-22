@@ -3,7 +3,7 @@ import ImageWithLoader from "../UiComponents/ImageWithLoader/Image";
 export const PostCard = ({ item, className, heightcard }) => (
     <a
       className={`group relative block rounded-xl focus:outline-none ${className}`}
-      href={`blog/${item.id}`}
+      href={`blogs/${item.id}`}
  
     >
       <div
