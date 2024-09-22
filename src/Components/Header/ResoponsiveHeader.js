@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect } from "react";
 import HamburgerMenu from "@/Components/Header/HamburgerMenu/HamburgerMenu";
 import HoverNav from "@/Components/Header/NavbarItems/HoverNav";
@@ -8,6 +9,7 @@ import SmallLogo from "@/Components/UiComponents/SiteLogo/SiteLogo";
 export default function ResoponsiveHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  
 
   const toggleMenu = () => {
     setIsOpen((e) => !e);
@@ -33,11 +35,11 @@ export default function ResoponsiveHeader() {
 
   return (
     <>
-      <nav className={`flex z-[99] items-center justify-between w-full mt-5 bg-white shadow-md ${isSticky ? 'sticky-header' : ''}`}>
+      <nav className={`flex z-[99] items-center justify-between w-full bg-transparent fixed top-0 left-0 shadow-md ${isSticky ? 'sticky-header' : ''}`}>
         <div className="mx-auto p-4 flex w-full justify-between items-center">
           <div className="hidden md:flex items-center pl-[9%]">
             <a
-              href="/contact-us"
+              href="/ContactUs"
               className="text-sm font-medium text-white bg-blue-800 px-4 py-2 rounded-lg hover:bg-blue-900"
             >
               سوالی دارید؟
@@ -45,12 +47,12 @@ export default function ResoponsiveHeader() {
           </div>
 
           <div className="hidden md:flex items-center m-auto" id="navbar-menu">
-            <ul className="flex flex-row space-x-8 ml-auto items-center">
-              <NavLinks title={"خانه"} to={"#"} size={"xs"} />
-              <NavLinks title={"درباره‌ی ما"} to={"#"} size={"xs"} />
-              <HoverNav size={"xs"} />
-              <NavLinks title={"فروشگاه"} to={"#"} size={"xs"} />
-              <NavLinks title={"نمونه کارها"} to={"#"} size={"xs"} />
+            <ul  className={`flex flex-row-reverse gap-x-8 ml-auto items-center ${isSticky ? 'text-black' : 'text-white'}`}>
+              <NavLinks isSticky={isSticky} title={"خانه"} to={"../"} size={"xs"} />
+              <HoverNav isSticky={isSticky} size={"xs"} />
+              <NavLinks isSticky={isSticky} title={"نمونه کارها"} to={"../listportfolio"} size={"xs"} />
+              <NavLinks isSticky={isSticky} title={"ارتباط با ما"} to={"../ContactUs"} size={"xs"} />
+              <NavLinks isSticky={isSticky} title={"درباره‌ی ما"} to={"#"} size={"xs"} />
             </ul>
           </div>
 
