@@ -23,7 +23,6 @@ export default function Step2({ step, setStep, id }) {
 
   useEffect(() => {
     id > 0 && setStep(2);
-    console.log('hello');
     
   }, [id]);
 

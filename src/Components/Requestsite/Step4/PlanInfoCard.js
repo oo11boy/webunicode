@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function PlanInfoCard({ checkout, infoorder }) {
-  console.log(checkout)
+
   return (
     <div className="w-full lg:!w-3/4 h-full py-4">
       <h2 className="text-md lg:!text-2xl mb-8 font-bold text-gray-900">

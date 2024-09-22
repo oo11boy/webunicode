@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function Step2({ step, setStep, formData, setFormData }) {
+export default function Step2({ step, setStep, formData, setFormData,portfolioid }) {
   const [isNextDisabled, setIsNextDisabled] = useState(true);
 
   // Update button state whenever form data changes
@@ -8,6 +8,7 @@ export default function Step2({ step, setStep, formData, setFormData }) {
     const { name, phone, email } = formData;
     if (name && phone && email) {
       setIsNextDisabled(false); // Enable the button if all fields are filled
+     
     } else {
       setIsNextDisabled(true); // Disable the button if any field is empty
     }
@@ -18,6 +19,7 @@ export default function Step2({ step, setStep, formData, setFormData }) {
     setFormData({
       ...formData,
       [name]: value, // Update formData with input values
+      portfolioid:portfolioid
     });
   };
 

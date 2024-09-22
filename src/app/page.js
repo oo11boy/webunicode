@@ -9,7 +9,13 @@ import CategorySelection from "@/Components/CategorySelection/CategorySelection"
 import Footer from "@/Components/Footer/Footer";
 import WhyUs from "@/Components/WhyUs/WhyUs";
 import ArticlesSection from "@/Components/ArticlesSection/ArticlesSection";
-export default function page() {
+import { getPosts } from "@/lib/DataFetching";
+
+
+
+export default async function Page() {
+
+
   return (
     <>
       <Header />
@@ -20,6 +26,7 @@ export default function page() {
       <FAQ />
       <Comments />
       <ArticlesSection />
+  
       <Footer />
     </>
   );

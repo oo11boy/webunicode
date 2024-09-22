@@ -65,7 +65,6 @@ export default function Step3({ step, setStep, setFormData, id }) {
               requestTemplate={requestTemplate}
             />
           ))}
-          {chooseTemplate && <TemplateDemo item={chooseTemplate} />}
         </div>
       </div>
       <div className="flex gap-8 justify-center  my-10">
