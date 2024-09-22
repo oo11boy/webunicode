@@ -1,0 +1,167 @@
+.mainarticle h1,
+.mainarticle div h1 {
+  font-size: 25px;
+  margin: 5px 0;
+  font-weight: 700;
+}
+.mainarticle h2,
+.mainarticle div h2 {
+  font-size: 20px;
+  margin: 20px 0;
+  font-weight: 600;
+}
+.mainarticle ol{
+  margin-right: 10px;
+}
+.mainarticle h3,
+.mainarticle div h3 {
+  font-size: 20px;
+  margin: 20px 0;
+  font-weight: bold;
+  color: rgb(28, 28, 119);
+}
+.mainarticle h4,
+.mainarticle div h4 {
+  font-size: 18px;
+  margin:10px 0;
+  font-weight: 700;
+}
+.mainarticle p,
+.mainarticle div p {
+  margin: 5px 0;
+}
+
+.mainarticle a,
+.mainarticle div a {
+  color: blue;
+  font-weight: 800;
+}
+.mainarticle ul li {
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.mainarticle ul {
+  list-style-type: circle;
+  margin: 2% 2%;
+}
+@media only screen and (max-width: 600px) {
+  .mainarticle h1,
+  .mainarticle div h1 {
+    font-size: 25px;
+    margin: 5px 0;
+    font-weight: 700;
+  }
+  .mainarticle h2,
+  .mainarticle div h2 {
+    font-size: 20px;
+    margin: 40px 0;
+    font-weight: bold;
+  }
+  .mainarticle h3,
+  .mainarticle div h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: rgb(28, 28, 119);
+    font-weight: bold;
+  }
+  .mainarticle h4,
+  .mainarticle div h4 {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+}
+
+.mainarticle img {
+  width: 95%;
+  border-radius: 20px;
+  margin: 20px 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.faqarticle{
+  background-color: antiquewhite;
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+  margin-top: 5%;
+}
+.faqarticle::before {
+content: 'سوالات متداول این مقاله';
+font-weight: bold;
+color: red;
+}
+.faqarticle h3{
+  font-weight: bold;
+  
+  margin: 1%;
+}
+.faqarticle h3::before {
+  content: ''; /* اضافه کردن این خط برای نمایش شبه‌عنصر */
+  display: inline-block; /* این خط به شبه‌عنصر اجازه می‌دهد تا به درستی نمایش داده شود */
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 10px;
+}
+
+.faqarticle p{
+ 
+  margin: 1%;
+}
+.qdiv{
+  background-color: rgb(245, 244, 243);
+  width: 100%;
+  padding: 10px;
+ 
+  margin-top: 2.5%;
+}
+
+.qdiv h2{
+  font-size: 20px;
+font-weight: bold;
+padding: 20px 0;
+}
+.qdiv h2::before{
+  content: ''; /* اضافه کردن این خط برای نمایش شبه‌عنصر */
+  display: inline-block; /* این خط به شبه‌عنصر اجازه می‌دهد تا به درستی نمایش داده شود */
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  margin-left: 10px;
+}
+.qdiv img{
+  width: 100%;
+
+}
+.qdiv h3{
+  padding: 10px 0;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(22, 22, 145);
+}
+.postsingle *{
+  text-align: justify;
+}
+
+.underarticle{
+  width: 100%;
+  padding: 10px;
+
+   border-radius: 15px;
+   background-color: rgba(0, 255, 255, 0.342);
+   margin: 30px 0;
+}
+
+.SinglePost h1{
+    font-family: "alibaba";
+}
+.SinglePost p{
+    font-family: "iransans";
+}
+.SinglePost h2, .SinglePost h3 , .SinglePost h4{
+    font-family: "yekan";
+}

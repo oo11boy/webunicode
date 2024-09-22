@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect } from "react";
 import HamburgerMenu from "@/Components/Header/HamburgerMenu/HamburgerMenu";
 import HoverNav from "@/Components/Header/NavbarItems/HoverNav";
@@ -33,7 +34,7 @@ export default function ResoponsiveHeader() {
 
   return (
     <>
-      <nav className={`flex z-[99] items-center justify-between w-full mt-5 bg-white shadow-md ${isSticky ? 'sticky-header' : ''}`}>
+      <nav   className={`flex z-[99] items-center justify-between w-full mt-5 bg-white shadow-md ${isSticky ? 'sticky-header' : ''}`}>
         <div className="mx-auto p-4 flex w-full justify-between items-center">
           <div className="hidden md:flex items-center pl-[9%]">
             <a
