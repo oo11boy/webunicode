@@ -18,7 +18,7 @@ export default function AllPosts({dataposts}) {
         return (
           <a
             class="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl p-5"
-            href={`../blog/${item.id}`}
+            href={`../blogs/${item.id}`}
             title={item.h1title}
           >
             <div class="aspect-w-16 aspect-h-11">
