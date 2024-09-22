@@ -15,7 +15,7 @@ export default function AboutUs() {
               maintext={"ما کی هستیم؟"}
               linecolor={"red"}
             />
-            <div className="flex mt-12">
+            <div className="flex flex-col lg:!flex-row mt-12">
               <div className="w-full leading-loose p-5">
                 <span>
                   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و
