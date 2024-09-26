@@ -24,7 +24,7 @@ export default function page({ params }) {
     <div>
       <ResoponsiveHeader />
       <Poster singlepageid={singlepage}/>
-      <WhyUs />
+      <WhyUs singlepageid={singlepage} />
       <WhyUsSinglePage />
       <Feature singlepageid={singlepage}/>
       <PortfolioSlider singlepageid={singlepage} />

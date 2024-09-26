@@ -13,7 +13,7 @@ export default function ImagePortfolioCard({infoorder,id}) {
       <ImageWithLoader 
         src={infoorder.img}
         className="portfolio-image object-top h-full object-cover"
-        alt="Portfolio"
+        alt={infoorder.title}
       />
       <button className="hover-eye-button text-white text-sm hover:text-black hover:bg-white transition-all">
       <VisibilityIcon className="w-6 h-6" />

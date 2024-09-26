@@ -142,7 +142,7 @@ export default function Feature({singlepageid}) {
   
  
       <div className='container flex justify-between gap-y-16 flex-wrap pt-16'>
-      <TopSectionText linecolor={'white'} maincolor={'#fff'} maintext={'امکانات قالب فروشگاهی' } toptext={'برخی از'} />
+      <TopSectionText linecolor={'white'} maincolor={'#fff'} maintext={'امکانات' } toptext={'برخی از'} />
 
         {features.map((feature, index) => (
           <div key={index} className='featurecard w-full sm:!w-[49%] lg:!w-[33%] xl:!w-[24%] flex gap-y-3 justify-center items-center flex-col'>

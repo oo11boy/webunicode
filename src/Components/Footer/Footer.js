@@ -29,7 +29,7 @@ export default function Footer() {
     <div className="container-field bg-gray-900 text-light pt-10">
       <footer className="relative overflow-hidden">
         <div className="absolute lg:pl-2 lg:-bottom-60 overflow-hidden right-0 w-16 sm:w-24 md:w-32 lg:w-48 opacity-30">
-          <img src="/image/footer-img.png" alt="" />
+          <img src="/image/footer-img.png" alt="طراحی سایت ارزان و با کیفیت" />
         </div>
         {/* Company Information */}
         <div className="footer-content container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:h-80 mt-20 lg:gap-0 gap-20 text-sm text-white">

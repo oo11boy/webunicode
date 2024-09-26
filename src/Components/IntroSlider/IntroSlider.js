@@ -57,7 +57,7 @@ export default function IntroSlider() {
         <div className="h-3/4 sharpbgslider absolute right-0">
           <img
             src="https://validthemes.net/themeforest/wp/consua/wp-content/uploads/2023/07/3.png"
-            alt=""
+            alt="طراحی سایت ارزان و با کیفیت"
           />
         </div>
 

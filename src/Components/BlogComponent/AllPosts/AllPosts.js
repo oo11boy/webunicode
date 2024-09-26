@@ -25,7 +25,7 @@ export default function AllPosts({dataposts}) {
               <img
                 class="w-full object-cover rounded-xl h-[200px]"
                 src={item.mainimg}
-                alt="Image Description"
+                alt={item.h1title}
               />
             </div>
             <div class="my-6">
@@ -38,7 +38,7 @@ export default function AllPosts({dataposts}) {
               <img
                 class="size-8 rounded-full"
                 src="/image/logo.webp"
-                alt="سفارش طراحی سایت ارزان"
+                alt={item.h1title}
               />
               <div>
                 <h5 class="text-sm text-gray-800">یونیکد</h5>
