@@ -1,28 +1,13 @@
-"use client"
-import React, { useEffect, useState } from 'react'
+import ResponsiveIframe from "@/Components/UiComponents/ResponsiveIframe/ResponsiveIframe";
 
-import ResponsiveIframe from '@/Components/UiComponents/ResponsiveIframe/ResponsiveIframe'
-import { useRouter } from 'next/navigation'
-import { PortfolioDb } from '@/lib/PortfolioDb'
+export const metadata = {
+  title: "مشاهده دمو قالب",
+
+  author: "unicodewebdeisgn",
+};
 
 export default function Page({ params }) {
-  const { portfolioid } = params
-  const router = useRouter()
-const [url,seturl]=useState(null)
+  const { portfolioid } = params;
 
-  useEffect(() => {
-
-    const validPortfolio = PortfolioDb.some(item => item.id === parseInt(portfolioid))
-
-    if (!validPortfolio) {
-      router.push('/')
-    }else {
-      const filter=PortfolioDb.find((item)=>item.id==portfolioid)
-    seturl(filter.link)
-    }
-  }, [portfolioid, router])
-
-  return (
-    <ResponsiveIframe  url={url} id={portfolioid}/>
-  )
+  return <ResponsiveIframe id={portfolioid} />;
 }

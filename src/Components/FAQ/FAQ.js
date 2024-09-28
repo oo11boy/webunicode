@@ -163,7 +163,7 @@ export default function FAQ({singlepageid}) {
               <img
                 decoding="async"
                 src="/image/FAQ-img.png"
-                alt="FAQ Thumbnail"
+                alt="سوالات متداول"
                 className="w-full md:w-full m-auto"
               />
             </div>

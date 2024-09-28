@@ -5,8 +5,24 @@ import TabletIcon from "@mui/icons-material/Tablet";
 import DesktopWindowsIcon from "@mui/icons-material/DesktopWindows";
 import SmallLogo from "@/Components/UiComponents/SiteLogo/SiteLogo";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { PortfolioDb } from "@/lib/PortfolioDb";
 
-const ResponsiveIframe = ({ url ,id}) => {
+const ResponsiveIframe = ({ id }) => {
+  const router = useRouter();
+  const [url, seturl] = useState(null);
+
+  useEffect(() => {
+    const validPortfolio = PortfolioDb.some((item) => item.id === parseInt(id));
+
+    if (!validPortfolio) {
+      router.push("/");
+    } else {
+      const filter = PortfolioDb.find((item) => item.id == id);
+      seturl(filter.link);
+    }
+  }, [id, router]);
+
   const [size, setSize] = useState("desktop");
 
   const sizes = {

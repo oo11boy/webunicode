@@ -7,7 +7,7 @@ export default function ImgSlide({items,fadeKey}) {
       key={fadeKey}  // استفاده از کلید جدید برای ایجاد انیمیشن مجدد
       className={` bottom-0 fadeimg`}
       src={items.img}
-      alt=""
+      alt={items.titr}
     />
   </div>
   )

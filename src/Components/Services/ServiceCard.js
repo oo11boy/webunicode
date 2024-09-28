@@ -12,7 +12,7 @@ export default function ServiceCard({ item }) {
           <img
             class="w-[100px] max-w-[unset]"
             src="/image/feature_icon.png"
-            alt=""
+            alt={item.title}
           />
           <span class="absolute top-5 left-10">{item.icon}</span>
        
