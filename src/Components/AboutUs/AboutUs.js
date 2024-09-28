@@ -5,6 +5,7 @@ import ImageWithLoader from "../UiComponents/ImageWithLoader/Image";
 import TopSectionText from "../UiComponents/TopSectionsTitle/TopSectionText";
 import SocialIcons from "../UiComponents/SocialIcons/SocialIcons";
 import AboutUsBox from "./AboutUsBox";
+import Footer from "../Footer/Footer";
 
 export default function AboutUs() {
   return (
@@ -45,6 +46,7 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }
