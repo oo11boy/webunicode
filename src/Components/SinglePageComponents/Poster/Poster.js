@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from "react";
 import "./Poster.css";
 import RequestSiteBtn from "@/Components/UiComponents/Buttons/RequestSiteBtn";

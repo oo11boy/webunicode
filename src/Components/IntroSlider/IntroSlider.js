@@ -9,22 +9,9 @@ import { Navigation, EffectFade, Autoplay } from "swiper/modules";
 import ImgSlide from "./ImgSlide/ImgSlide";
 import ContentSlider from "./ContentSlider/ContentSlider";
 import PrevNextButton from "./PrevNextButton/PrevNextButton";
+import { infointroslider } from "@/lib/DataFetching";
 
 export default function IntroSlider() {
-  const infointroslider = [
-    {
-      id: 1,
-      img: "https://png.pngtree.com/png-clipart/20231115/original/pngtree-shopper-girl-lifestyle-flying-photo-png-image_13567112.png",
-      titr: "سفارش طراحی سایت فروشگاهی",
-      info: `سفارش طراحی سایت فروشگاهی ارزان و با کیفیت در تهران و سراسر ایران به کسب‌وکارها این امکان را می‌دهد تا با هزینه کم، یک فروشگاه آنلاین حرفه‌ای و کارآمد ایجاد کنند`,
-    },
-    {
-      id: 2,
-      img: "https://www.nicepng.com/png/full/253-2532179_our-company-company.png",
-      titr: "سفارش طراحی سایت شرکتی",
-      info: `سفارش طراحی سایت شرکتی ارزان به کسب‌وکارها این امکان را می‌دهد تا با کمترین هزینه، یک وب‌سایت حرفه‌ای و تاثیرگذار داشته باشند. این خدمات شامل طراحی گرافیکی زیبا، بهینه‌سازی برای موتورهای جستجو (SEO)، و ارائه بخش‌های مختلف برای معرفی شرکت و خدمات آن است.`,
-    },
-  ];
 
   const [fadeKey, setFadeKey] = useState(0);
 
@@ -32,10 +19,6 @@ export default function IntroSlider() {
     setFadeKey((prevKey) => prevKey + 1);
   };
 
-  const handleTouchEnd = (swiper) => {
-    // تغییر به اسلاید بعدی در هنگام لمس
-    swiper.slideNext();
-  };
 
   return (
     <div className="w-100 z-0 h-screen bg-slider-mob Introslider relative">

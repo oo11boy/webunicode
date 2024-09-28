@@ -3,7 +3,14 @@ import "./SinglePost.css";
 import TopBar from "./TopBar";
 import SideBar from "./SideBar";
 import MainContent from "./MainContent";
-export default function Singlepost({ findpost }) {
+import { getPosts } from "@/lib/DataFetching";
+export default async function Singlepost({ id }) {
+
+  const dataposts = await getPosts();
+
+  const findpost = await dataposts.filter((item) => item.id == id)[0];
+  !findpost && redirect("../");
+
   return (
     <>
     
