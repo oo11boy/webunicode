@@ -1,8 +1,5 @@
 import { getPosts } from "@/lib/DataFetching";
 
-
-
-
 export default async function sitemap() {
   const dataposts = await getPosts();
   const posts = dataposts.map((item) => ({
