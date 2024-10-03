@@ -11,7 +11,9 @@ import SmallLogo from "@/Components/UiComponents/SiteLogo/SiteLogo";
 
 export default function TopHeader() {
   const [isMobile, setIsMobile] = useState(false);
-  const [IsSticky,setIsSticky]=useState(false)
+  const [IsSticky, setIsSticky] = useState(false);
+
+  
   const handleResize = () => {
     setIsMobile(window.innerWidth < 1100);
   };
@@ -39,26 +41,19 @@ export default function TopHeader() {
   }, []);
   return (
     <>
-      {/* <div className="navbar-header w-100"> */}
       <div className="flex w-full  text-center items-center justify-between">
-        <div className="top-navbar  h-[50px]">
-          {/* <div className="w-full"> */}
-            <ContactNavbar />
-          {/* </div> */}
+        <div className="top-navbar lg:h-[50px]">
+        {!isMobile && <ContactNavbar />}
           <div className="h-full w-full pt-1 m-auto flex justify-between items-center z-[2]">
             {isMobile || IsSticky ? <ResoponsiveHeader /> : <NavbarItems />}
- 
           </div>
         </div>
-        {/* <div className="w-1/4 logosite  pr-[10%] text-right h-[100px] items-center flex justify-end bg-[#CFD2D5] absolute top-[-10px] z-1 right-[25px]"></div> */}
         <div className="w-1/4 logosite  pr-[10%] text-right h-[100px] items-center flex justify-end bg-white absolute top-0  right-5 z-[1]">
-         
-         <a href="../">
-         <SmallLogo skew={15} />
-          </a> 
+          <a href="../">
+            <SmallLogo skew={15} />
+          </a>
         </div>
       </div>
-      {/* </div> */}
     </>
   );
 }

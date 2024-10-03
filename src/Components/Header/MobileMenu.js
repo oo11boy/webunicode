@@ -81,14 +81,14 @@ export default function MobileMenu({ close, status }) {
     {
       title: "درباره‌ی ما",
       icon: "icon-info",
-      to: "5",
+      to: "../AboutUs",
       id: 8,
     },
     {
       title: "ارتباط با ما",
       icon: "icon-info",
       to: "../ContactUs",
-      id: 8,
+      id: 9,
     },
   ];
 
