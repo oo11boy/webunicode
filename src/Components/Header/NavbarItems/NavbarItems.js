@@ -12,7 +12,7 @@ export default function NavbarItems({footerview,hiddenitem}) {
         <NavLinks title={"نمونه کارها"} to={"../listportfolio"} />
         <NavLinks title={"وبلاگ"} to={"../blogs"} />
         <NavLinks title={"ارتباط با ما"} to={"../ContactUs"} />
-        <NavLinks title={"درباره‌ی ما"} to={"#"} />
+        <NavLinks title={"درباره‌ی ما"} to={"../AboutUs"} />
          </ul>
     // </div>
   );
