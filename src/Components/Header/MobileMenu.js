@@ -41,7 +41,6 @@ export default function MobileMenu({ close, status }) {
     {
       title: "طراحی سایت",
       icon: "icon-circle-left",
-      to: "3",
       id: 3,
       items: [
         {
@@ -121,9 +120,10 @@ export default function MobileMenu({ close, status }) {
               key={item.id}
               className={`nav-item ${openItemId === item.id ? "active" : ""}`}
             >
-              <div
+              <a
                 onClick={() => handleToggle(item.id)}
                 className={`nav-link ${openItemId === item.id ? "text-red-500" : ""}`}
+                href={item.to}
               >
                 <i
                   className={
@@ -133,7 +133,7 @@ export default function MobileMenu({ close, status }) {
                   }
                 ></i>
                 {item.title}
-              </div>
+              </a>
               {item.items && (
                 <ul className="sub-menu">
                   {item.items.map((subItem) => (
