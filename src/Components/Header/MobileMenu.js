@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./MobileMenu.css";
 import SmallLogo from "@/Components/UiComponents/SiteLogo/SiteLogo";
+import MobileNavLinks from "./NavbarItems/MobileNavLinks";
 
 export default function MobileMenu({ close, status }) {
   const [openItemId, setOpenItemId] = useState(null);
@@ -36,30 +37,33 @@ export default function MobileMenu({ close, status }) {
       title: "خانه",
       icon: "icon-home3",
       to: "../",
+      param: '/',
       id: 7,
     },
     {
       title: "طراحی سایت",
       icon: "icon-circle-left",
-      to: "3",
       id: 3,
       items: [
         {
           title: "طراحی سایت فروشگاهی",
           icon: "icon-cart",
           to: "../store",
+          param: '/store',
           id: 4,
         },
         {
           title: "طراحی سایت شرکتی",
           icon: "icon-office",
           to: "../company",
+          param: '/company',
           id: 5,
         },
         {
           title: "طراحی سایت رزومه ای",
           icon: "icon-user-tie",
           to: "../resume",
+          param: '/resume',
           id: 6,
         },
       ],
@@ -69,12 +73,14 @@ export default function MobileMenu({ close, status }) {
       title: "نمونه کارها",
       icon: "icon-briefcase",
       to: "../listportfolio",
+      param: '/listportfolio',
       id: 1,
     },
     {
       title: "وبلاگ",
       icon: "icon-cart",
       to: "../blogs",
+      param: '/blogs',
       id: 2,
     },
 
@@ -82,15 +88,19 @@ export default function MobileMenu({ close, status }) {
       title: "درباره‌ی ما",
       icon: "icon-info",
       to: "../AboutUs",
+      param: '/AboutUs',
       id: 8,
     },
     {
       title: "ارتباط با ما",
       icon: "icon-info",
       to: "../ContactUs",
+      param: '/ContactUs',
       id: 9,
     },
   ];
+  
+  
 
   return (
     <>
@@ -115,40 +125,7 @@ export default function MobileMenu({ close, status }) {
           <SmallLogo skew={0}/>
           </a>
         </div>
-        <ul className="nav-list">
-          {navItems.map((item) => (
-            <li
-              key={item.id}
-              className={`nav-item ${openItemId === item.id ? "active" : ""}`}
-            >
-              <div
-                onClick={() => handleToggle(item.id)}
-                className={`nav-link ${openItemId === item.id ? "text-red-500" : ""}`}
-              >
-                <i
-                  className={
-                    openItemId === item.id && item.items
-                      ? "icon-circle-down"
-                      : item.icon
-                  }
-                ></i>
-                {item.title}
-              </div>
-              {item.items && (
-                <ul className="sub-menu">
-                  {item.items.map((subItem) => (
-                    <li key={subItem.id} className="sub-item">
-                      <a href={subItem.to} className="sub-link">
-                        <i className={subItem.icon}></i> {subItem.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              )}
-              <hr />
-            </li>
-          ))}
-        </ul>
+        <MobileNavLinks navItems={navItems} openItemId={openItemId} handleToggle={handleToggle}/>
       </div>
     </>
   );

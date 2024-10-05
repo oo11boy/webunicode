@@ -7,9 +7,6 @@ export default function ImagePortfolioCard({infoorder,id}) {
  
     <div className="!h-[250px] sm:!h-full w-[95%] m-auto sm:!m-[unset] sm:!w-1/3">
     <a href={`../viewportfolio/${id}`} target='_blank' className="image-container !m-auto !max-w-full !h-full">
-      <img
-      
-      />
       <ImageWithLoader 
         src={infoorder.img}
         className="portfolio-image object-top h-full object-cover"
