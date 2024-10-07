@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 
 export default function HoverNav({size, isSticky, hiddenitem}) {
   const pathName = usePathname();
-  console.log('pathName', pathName);
   
   const navChildren = [
     {
