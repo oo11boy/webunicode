@@ -27,14 +27,14 @@ export default function MobileNavLinks({ navItems, openItemId, handleToggle }) {
             </a>
 
             {item.items && isOpen && (
-              <ul className="sub-menu">
+              <ul className="sub-menu transition-all">
                 {item.items.map((subItem) => {
                   const isActiveSubMenu = subItem.param === pathName;
                   
                   return (
                     <li
                       key={subItem.id}
-                      className={`sub-item ${
+                      className={`sub-item transition-all ${
                         isActiveSubMenu ? "text-red-500" : ""
                       }`}
                     >

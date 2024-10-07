@@ -8,7 +8,6 @@ export async function GET(request) {
 
     // Fetch submenu data
     const [subMenuRows] = await pool.query('SELECT * FROM submenu');
-console.log(subMenuRows)
     // Create a map to easily find submenus by their menuid
     const submenuMap = subMenuRows.reduce((map, submenu) => {
       if (!map[submenu.menuid]) {

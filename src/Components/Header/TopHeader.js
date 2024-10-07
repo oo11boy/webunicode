@@ -3,16 +3,17 @@
 import React, { useState, useEffect } from "react";
 import "@/app/icons.css";
 import NavbarItems from "@/Components/Header/NavbarItems/NavbarItems";
-
 import "./Header.css";
 import ContactNavbar from "./ContactNavbar";
 import ResoponsiveHeader from "./ResoponsiveHeader";
 import SmallLogo from "@/Components/UiComponents/SiteLogo/SiteLogo";
+import { usePathname } from "next/navigation";
+
 
 export default function TopHeader() {
   const [isMobile, setIsMobile] = useState(false);
   const [IsSticky, setIsSticky] = useState(false);
-
+  const pathName = usePathname();
   
   const handleResize = () => {
     setIsMobile(window.innerWidth < 1100);
@@ -45,7 +46,7 @@ export default function TopHeader() {
         <div className="top-navbar lg:h-[50px]">
         {!isMobile && <ContactNavbar />}
           <div className="h-full w-full pt-1 m-auto flex justify-between items-center z-[2]">
-            {isMobile || IsSticky ? <ResoponsiveHeader /> : <NavbarItems />}
+            {isMobile || IsSticky ? <ResoponsiveHeader pathName={pathName}/> : <NavbarItems pathName={pathName}/>}
           </div>
         </div>
         <div className="w-1/4 logosite  pr-[10%] text-right h-[100px] items-center flex justify-end bg-white absolute top-0  right-5 z-[1]">

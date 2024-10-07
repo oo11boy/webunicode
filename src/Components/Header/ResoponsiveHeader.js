@@ -6,7 +6,7 @@ import NavLinks from "@/Components/Header/NavbarItems/NavLinks";
 import MobileMenu from "./MobileMenu";
 import SmallLogo from "@/Components/UiComponents/SiteLogo/SiteLogo";
 
-export default function ResoponsiveHeader() {
+export default function ResoponsiveHeader({pathName}) {
   const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   
@@ -48,13 +48,12 @@ export default function ResoponsiveHeader() {
 
           <div className="hidden md:flex items-center m-auto" id="navbar-menu">
             <ul  className={`flex flex-row-reverse gap-x-8 ml-auto items-center ${isSticky ? 'text-black' : ''}`}>
-              <NavLinks isSticky={isSticky} title={"خانه"} to={"../"} size={"sm"} />
-              <HoverNav isSticky={isSticky} size={"xs"} />
-              <NavLinks isSticky={isSticky} title={"نمونه کارها"} to={"../listportfolio"} size={"sm"} />
-              <NavLinks isSticky={isSticky} title={"وبلاگ"} to={"../blogs"} size={"sm"} />
-            
-              <NavLinks isSticky={isSticky} title={"ارتباط با ما"} to={"../ContactUs"} size={"sm"} />
-              <NavLinks isSticky={isSticky} title={"درباره‌ی ما"} to={"../AboutUs"} size={"sm"} />
+              <NavLinks isSticky={isSticky} title={"خانه"} to={"../"} param='/' pathName={pathName} size={"sm"} />
+              <HoverNav isSticky={isSticky} size={"xs"} pathName={pathName} />
+              <NavLinks isSticky={isSticky} title={"نمونه کارها"} to={"../listportfolio"} param='/listportfolio' pathName={pathName} size={"sm"} />
+              <NavLinks isSticky={isSticky} title={"وبلاگ"} to={"../blogs"} param='/blogs' pathName={pathName} size={"sm"} />
+              <NavLinks isSticky={isSticky} title={"ارتباط با ما"} to={"../ContactUs"} param='/ContactUs' pathName={pathName} size={"sm"} />
+              <NavLinks isSticky={isSticky} title={"درباره‌ی ما"} to={"../AboutUs"} param='/AboutUs' pathName={pathName} size={"sm"} />
             </ul>
           </div>
 

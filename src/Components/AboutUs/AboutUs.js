@@ -6,12 +6,13 @@ import TopSectionText from "../UiComponents/TopSectionsTitle/TopSectionText";
 import SocialIcons from "../UiComponents/SocialIcons/SocialIcons";
 import AboutUsBox from "./AboutUsBox";
 import Footer from "../Footer/Footer";
+import ResoponsiveHeader from "../Header/ResoponsiveHeader";
 
 export default function AboutUs() {
   return (
     <>
       <TopHeader />
-      <section dir="rtl" class="bg-white mt-10 dark:bg-gray-900">
+      <section dir="rtl" class="bg-white mt-14 dark:bg-gray-900">
         <div class="container px-6 py-12 mx-auto">
           <div class="text-center ">
             <p class="font-medium text-blue-500 dark:text-blue-400 alibaba">
