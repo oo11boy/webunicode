@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 export async function getPosts() {
-  let res = await fetch(`${process.env.NEXT_PUBLIC_API}/posts`);
+  let res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts`);
   let post = await res.json();
   if (!post) notFound();
   return post;

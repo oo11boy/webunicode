@@ -8,7 +8,7 @@ export default function SubmitBtnCard({setStep, formData}) {
   async function postData () {
     try {
       setLoading(true)
-      await axios.post(`${process.env.NEXT_PUBLIC_API}/request_site`, formData)
+      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/request_site`, formData)
       setStep(5)
     } catch (error) {
       console.log('error', error);
