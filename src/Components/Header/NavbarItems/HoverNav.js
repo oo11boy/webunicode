@@ -22,7 +22,7 @@ export default function HoverNav({size, isSticky, hiddenitem}) {
       id: 2,
     },
     {
-      title: "طراحی سایت اختصاصی",
+      title: "طراحی سایت رزومه ای",
       icon: "icon-user-tie",
       to: 'resume',
       param: '/resume',

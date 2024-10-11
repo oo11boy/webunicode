@@ -14,11 +14,11 @@ export default function Poster({ singlepageid }) {
         description: 'اگر به دنبال سایتی برای فروش محصولاتتان هستید یونیکد میتواند شما را در طراحی سایت ارزان فروشگاهی یاری نماید.',
       
         images: [
-          { main: "https://i-wp.ir/wp-content/uploads/2022/11/custom1.jpg", small: "/image/storeresponsive.png" },
-          { main: "https://i-wp.ir/wp-content/uploads/2024/08/aroj.jpg", small: "/image/store2res.png" },
-          { main: "https://i-wp.ir/wp-content/uploads/2024/05/lighto.jpg", small: "/image/storeres3.png" },
-          { main: "https://i-wp.ir/wp-content/uploads/2024/06/petland.jpg", small: "/image/storeres4.png" },
-          { main: "https://i-wp.ir/wp-content/uploads/2022/11/cosmetic.jpg", small: "/image/storeres5.png" },
+          { main: "/image/custom1.jpg", small: "/image/storeresponsive.png" },
+          { main: "/image/aroj.jpg", small: "/image/store2res.png" },
+          { main: "/image/lighto.jpg", small: "/image/storeres3.png" },
+          { main: "/image/petland.jpg", small: "/image/storeres4.png" },
+          { main: "/image/cosmetic.jpg", small: "/image/storeres5.png" },
         ],
       }
     ] : singlepageid === 'company' ? [
@@ -27,8 +27,8 @@ export default function Poster({ singlepageid }) {
         description: 'اگر به دنبال سایتی برای معرفی کسب و کار و شرکت خودتان هستید یونیکد میتواند شما را در طراحی سایت شرکتی یاری نماید.',
       
         images: [
-          { main: "https://wp-theme.xyz/images/1_1.jpg", small: "/image/c1.png" },
-          { main: "https://wp-theme.xyz/images/4_1.jpg", small: "/image/c2.png" },
+          { main: "/image/c11.png", small: "/image/c1.png" },
+          { main: "/image/c22.png", small: "/image/c2.png" },
           ],
       }
     ] : singlepageid === 'resume' ? [

@@ -1,12 +1,9 @@
-import { SocialDistance } from "@mui/icons-material";
+
 import TopHeader from "../Header/TopHeader";
-import { SiteEmail, SitePhone } from "../UiComponents/Contact/Contact";
-import ImageWithLoader from "../UiComponents/ImageWithLoader/Image";
-import TopSectionText from "../UiComponents/TopSectionsTitle/TopSectionText";
-import SocialIcons from "../UiComponents/SocialIcons/SocialIcons";
+import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import AboutUsBox from "./AboutUsBox";
 import Footer from "../Footer/Footer";
-import ResoponsiveHeader from "../Header/ResoponsiveHeader";
+
 
 export default function AboutUs() {
   return (
@@ -24,17 +21,16 @@ export default function AboutUs() {
             </h1>
           </div>
 
-          <div className="relative m-auto mt-10">
+          <div className="relative w-max-[1000px] h-[600px] flex justify-center items-center m-auto mt-10">
             <img
-              className="m-auto w-[1000px] rounded-xl"
+              className="m-auto rounded-xl h-full object-cover w-full"
               src="/image/about.jpg"
               alt=""
             />
-            <div className="absolute m-auto inset-0 w-[1000px] bg-black opacity-50"></div>
-            <img
-              className="absolute w-48 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
-              src="/image/play-icon.png"
-              alt="Play Icon"
+            <div className="absolute m-auto inset-0 bg-black opacity-50"></div>
+      
+
+<PlayCircleFilledIcon   className="absolute text-[#3B82F6] text-9xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
             />
           </div>
 
