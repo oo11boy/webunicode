@@ -17,6 +17,7 @@ export default function AllPosts({dataposts}) {
       {dataposts.map((item) => {
         return (
           <a
+           key={item.id}
             class="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl p-5"
             href={`../blogs/${item.id}`}
             title={item.h1title}

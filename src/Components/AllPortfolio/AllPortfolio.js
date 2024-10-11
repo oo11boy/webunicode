@@ -33,7 +33,8 @@ export default function AllPortfolio() {
       />
       <div className="container filteredItems h-lvh overflow-auto flex flex-wrap justify-between gap-y-4 mt-5 mb-10">
         {filteredItems.map((item) => (
-          <AllPortfolioCard item={item} animateItems={animateItems} />
+          
+          <AllPortfolioCard key={item.id}  item={item} animateItems={animateItems} />
         ))}
       </div>
     </>
