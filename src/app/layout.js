@@ -11,6 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="fa">
       <head>
         <link rel="stylesheet" href="../Styles.css" />
+        <meta name="enamad" content="12184300" /> 
       </head>
 
       <body>{children}</body>

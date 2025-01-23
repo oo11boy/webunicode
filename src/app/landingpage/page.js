@@ -1,95 +1,41 @@
-"use client";
+import Comments from "@/Components/Comments/Comments";
+import FAQ from "@/Components/FAQ/FAQ";
+import Footer from "@/Components/Footer/Footer";
+import LandingForm from "@/Components/LandingPageComponents/LandingForm";
+import LandingHeader from "@/Components/LandingPageComponents/LandingHeader";
+import LandingHowPay from "@/Components/LandingPageComponents/LandingHowPay";
+import LandingPlans from "@/Components/LandingPageComponents/LandingPlans";
+import LandingTypeTheme from "@/Components/LandingPageComponents/LandingTypeTheme";
 import PortfolioSlider from "@/Components/PortfolioSlider/PortfolioSlider";
-import Requestsite from "@/Components/Requestsite/Requestsite";
 import TopSectionText from "@/Components/UiComponents/TopSectionsTitle/TopSectionText";
 import React from "react";
-import Snowfall from "react-snowfall";
 
 export default function page() {
   return (
     <div dir="rtl" className="bg-[#E3EFFB] w-full snowd">
-   
 
-      <div className="w-full relative">
-        <img
-          src="image/banner.png"
-          className="w-full object-cover h-[200px]  md:!h-[auto] md:!object-fill"
-          alt=""
-        />
-           <Snowfall speed={[0.1,0.4]} changeFrequency={5} />
-      </div>
-
-      <div className="my-4">
-        <div className="flex flex-col justify-center items-center w-[90%] lg:w-[70%] m-auto text-center"> 
-      <TopSectionText toptext={'قدم اول'} linecolor={'red'}  maintext={'انتخاب پلن'}/>
-          <p className="mt-4">
-            هر کسب‌وکاری برای شروع به یه سری معیارهای مهم نیاز داره؛ مثل یه نقشه
-            راه که بهتون کمک کنه بهترین مسیر رو انتخاب کنید. این معیارها می‌تونن
-            شامل وسعت کسب‌وکار، بودجه، مشتری‌های هدف و عواملی باشن که توی انتخاب
-            یه پلن مناسب نقش دارن.
-          </p>
-          <p className="pb-4">
-            ما با توجه به نیاز شما، یه سری پلن‌ها و دسته‌بندی‌های مختلف آماده
-            کردیم تا بتونید با خیال راحت و با توجه به نیاز و هدفتون، بهترین
-            گزینه رو انتخاب کنید.
-          </p>
-        </div>
-        <div className="w-[90%] m-auto flex-wrap mt-4 flex justify-between items-center gap-4">
-  {/* تصویر اول */}
-  <div className="w-full sm:!w-[48%] lg:!w-[23%]">
-    <img className="w-full rounded-lg " src="image/33.png" alt="plan" />
-  </div>
-
-  {/* تصویر دوم */}
-  <div className="w-full sm:!w-[48%] lg:!w-[23%]">
-    <img className="w-full rounded-lg " src="image/33.png" alt="plan" />
-  </div>
-
-  {/* تصویر سوم */}
-  <div className="w-full sm:!w-[48%] lg:!w-[23%]">
-    <img className="w-full rounded-lg " src="image/33.png" alt="plan" />
-  </div>
-
-  {/* تصویر چهارم */}
-  <div className="w-full sm:!w-[48%] lg:!w-[23%]">
-    <img className="w-full rounded-lg " src="image/33.png" alt="plan" />
-  </div>
-</div>
-      </div>
-      <div className="my-4">
-      
+      <LandingHeader />
+      <LandingTypeTheme/>
+      <LandingPlans />
       <div className="w-[90%] m-auto flex-wrap mt-4 flex justify-between items-center gap-4">
-<PortfolioSlider bgcolor=""/>
+      <PortfolioSlider bgcolor="" />
+      </div>
+      <LandingForm />
+      <LandingHowPay />
+<FAQ/>
+<Comments/>
+<div 
+  className="flex h-[100vh] justify-center items-center bg-cover bg-center " 
+  style={{ backgroundImage: "url('/image/Slide5.jpg')" }}
+>
+  <div className="text-center text-white">
+    <h2 className="text-3xl font-bold mb-4">تماس با کارشناسان</h2>
+    <p className="text-xl">۰۹۳۵۴۵۰۲۳۶۹</p>
+    <img src="" alt="" />
+  </div>
 </div>
-    </div>
-
-
-
-
-      <div className="my-4">
-        <div className="flex flex-col justify-center items-center w-[90%] lg:w-[70%] m-auto text-center"> 
-      <TopSectionText toptext={'قدم دوم'} linecolor={'red'}  maintext={'تنظیم قرارداد'}/>
-          <p className="mt-4">
-            هر کسب‌وکاری برای شروع به یه سری معیارهای مهم نیاز داره؛ مثل یه نقشه
-            راه که بهتون کمک کنه بهترین مسیر رو انتخاب کنید. این معیارها می‌تونن
-            شامل وسعت کسب‌وکار، بودجه، مشتری‌های هدف و عواملی باشن که توی انتخاب
-            یه پلن مناسب نقش دارن.
-          </p>
-          <p className="pb-4">
-            ما با توجه به نیاز شما، یه سری پلن‌ها و دسته‌بندی‌های مختلف آماده
-            کردیم تا بتونید با خیال راحت و با توجه به نیاز و هدفتون، بهترین
-            گزینه رو انتخاب کنید.
-          </p>
-        </div>
-        <div className="w-[90%] m-auto flex-wrap mt-4 flex justify-between items-center gap-4">
-
-</div>
+<Footer/>
       </div>
 
-
-
-
-      
-    </div>
   );
 }

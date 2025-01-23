@@ -1,6 +1,6 @@
-import { PortfolioDb } from "@/lib/PortfolioDb";
 import { useEffect, useState } from "react";
-import { FaStore, FaBuilding, FaIndustry } from "react-icons/fa";
+import { FaStore, FaBuilding } from "react-icons/fa";
+import { MdHomeRepairService } from "react-icons/md";
 import SiteType from "./SiteType";
 
 export default function Step2({ step, setStep, id }) {
@@ -9,7 +9,7 @@ export default function Step2({ step, setStep, id }) {
   const siteTypes = [
     { label: "فروشگاهی", value: "store", icon: <FaStore /> },
     { label: "شرکتی", value: "company", icon: <FaBuilding /> },
-    { label: "رزومه‌ای", value: "resume", icon: <FaIndustry /> },
+    { label: "خدماتی", value: "service", icon: <MdHomeRepairService /> },
   ];
 
   const handleSelectType = (value) => {

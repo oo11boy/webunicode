@@ -256,10 +256,11 @@ export const PortfolioDb = [
         id: 34,
         name: " قالب پزشکی",
         link: "https://upthemes.ir/medico/",
+        category: "service",
         img: "https://upthemes.ir/wp-content/uploads/2023/11/1111.jpg",
         icon: "icon-heart-broken",
         content: "قالب پزشکی با طراحی مناسب برای کلینیک‌ها و بیمارستان‌ها.",
-        category: "store"
+     
       },
       {
         id: 35,
@@ -268,7 +269,7 @@ export const PortfolioDb = [
         img: "https://upthemes.ir/wp-content/uploads/2023/11/222.jpg",
         icon: "icon-heart-broken",
         content: "برای وبسایت‌های پزشکی و بهداشتی طراحی شده است.",
-        category: "store"
+      
       },
       {
         id: 36,
@@ -277,16 +278,17 @@ export const PortfolioDb = [
         img: "https://upthemes.ir/wp-content/uploads/2024/01/dental-2.jpg",
         icon: "icon-heart-broken",
         content: "قالب ویژه دندانپزشکی با امکانات تخصصی.",
-        category: "store"
+        category: "service"
       },
       {
         id: 37,
         name: " شخصی پزشکی",
+        category: "service",
         link: "https://upthemes.ir/personal-doctor/",
         img: "https://upthemes.ir/wp-content/uploads/2024/01/personal-doctor1.jpg",
         icon: "icon-heart-broken",
         content: "برای پزشکان شخصی و متخصصین طراحی شده است.",
-        category: "resume"
+        category: "service"
       },
       {
         id: 38,
@@ -304,7 +306,7 @@ export const PortfolioDb = [
         img: "https://media.rtlcdn.com/2023/12/3157f30713a0fce3f01b71375d0399d2c472661eb84724.webp",
         icon: "icon-heart-broken",
         content: "طراحی ویژه برای دندانپزشکان با امکانات مدرن.",
-        category: "store"
+        category: "service"
       },
       
       {
@@ -314,7 +316,7 @@ export const PortfolioDb = [
         img: "https://ghaleblake.ir/landing/wp-content/uploads/2022/09/1.jpeg",
         icon: "icon-user-tie",
         content: "قالب رزومه حرفه‌ای با طراحی مدرن و تمیز.",
-        category: "resume"
+        category: "service"
       },
       
       {
@@ -324,7 +326,7 @@ export const PortfolioDb = [
         img: "https://ghaleblake.ir/landing/wp-content/uploads/2022/09/s2.jpeg",
         icon: "icon-user-tie",
         content: "طراحی ویژه برای رزومه‌های شخصی و حرفه‌ای.",
-        category: "resume"
+        category: "service"
       },
       {
         id: 51,
@@ -333,7 +335,7 @@ export const PortfolioDb = [
         img: "https://ghaleblake.ir/landing/wp-content/uploads/2023/04/s3-2-min.png",
         icon: "icon-user-tie",
         content: "برای ایجاد رزومه‌های حرفه‌ای با طراحی خاص.",
-        category: "resume"
+        category: "service"
       },
       {
         id: 52,
@@ -342,6 +344,6 @@ export const PortfolioDb = [
         img: "https://ghaleblake.ir/landing/wp-content/uploads/2022/09/savis-4.jpeg",
         icon: "icon-user-tie",
         content: "برای رزومه‌های شخصی با طراحی مدرن و کاربرپسند.",
-        category: "resume"
+        category: "service"
       }
 ];

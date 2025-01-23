@@ -7,8 +7,9 @@ import CategoryBtn from "@/Components/UiComponents/Buttons/CategoryBtn";
 import TemplateDemo from "../TemplateDemo";
 import PortofolioCards from "./PortofolioCards/PortofolioCards";
 
-export default function Step3({ step, setStep, setFormData, id }) {
+export default function Step3({ step, setStep, setFormData, id ,formData}) {
   const [category, setCategory] = useState("all");
+  console.log(formData)
   const [chooseTemplate, setChooseTemplate] = useState(null);
 
   const requestTemplate = (id) => {
@@ -19,7 +20,7 @@ export default function Step3({ step, setStep, setFormData, id }) {
     { id: 1, title: "همه قالب‌ها", category: "all" },
     { id: 2, title: "قالب‌های فروشگاهی", category: "store" },
     { id: 3, title: "قالب‌های شرکتی", category: "company" },
-    { id: 4, title: "قالب‌های رزومه‌ای", category: "resume" },
+    { id: 4, title: "قالب‌های خدماتی", category: "service" },
   ];
 
   const chooseCategory = (value) => {

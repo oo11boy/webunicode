@@ -50,16 +50,23 @@ export default function Step4({id, setStep, setFormData, formData }) {
   }, [infoorder, selection]);
 
   const storeOptions = [
-    { label: "زیر 100 محصول", value: "under_100" },
-    { label: "100 تا 1000 محصول", value: "100_to_1000" },
-    { label: "بیش از 1000 محصول", value: "above_1000" },
+    { label: "اقتصادی", value: "basic" },
+    { label: "استاندارد", value: "standard" },
+    { label: "اختصاصی", value: "vip" },
   ];
 
   const companyOptions = [
-    { label: "شرکتم کوچک است", value: "small_company" },
-    { label: "شرکتم بزرگ است", value: "large_company" },
+    { label: "شرکتم کوچک است (اقتصادی)", value: "basic" },
+    { label: "شرکتم بزرگ است (استاندارد)", value: "standard" },
+    { label: "پلن و طراحی اختصاصی", value: "vip" },
   ];
 
+
+  const serviceOptions = [
+    { label: "سایتم کوچک است (اقتصادی)", value: "basic" },
+    { label: "سایتم استاندارد است (استاندارد)", value: "standard" },
+    { label: "پلن و طراحی اختصاصی", value: "vip" },
+  ];
   return (
     <div className="w-[95%] step4 h-[80vh] py-1 md:py-[unset] overflow-y-auto mx-auto">
       <div className="flex flex-col-reverse sm:!flex-row  sm:!h-[180px] mt-6 gap-x-4 justify-center items-start w-full">
@@ -83,6 +90,7 @@ export default function Step4({id, setStep, setFormData, formData }) {
           extraHosting={extraHosting}
           setExtraHosting={setExtraHosting}
           companyOptions={companyOptions}
+          serviceOptions={serviceOptions}
           storeOptions={storeOptions}
           setSelection={setSelection}
           Selection={selection}

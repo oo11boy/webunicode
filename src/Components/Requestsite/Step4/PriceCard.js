@@ -13,10 +13,10 @@ export default function PriceCard({ checkout, infoorder, formData }) {
           (checkout
             ? checkout.price
             : infoorder.category == "store"
-            ? 6 * 1000000
+            ? 8.9 * 1000000
             : infoorder.category == "company"
-            ? 4 * 1000000
-            : 2 * 1000000) +
+            ? 5.9 * 1000000
+            : 5.9 * 1000000) +
             (formData.comdomain ? 1000000 : 0) +
             (formData.extrahost == 5
               ? 500000
