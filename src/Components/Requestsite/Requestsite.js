@@ -26,7 +26,7 @@ export default function Requestsite({portfolioid}) {
   });
 
   return (
-    <div className="bg-[#9844F1] Requestsite flex flex-col min-h-lvh">
+    <div className="bg-[#9844F1] !w-full Requestsite flex flex-col min-h-lvh">
       <div className="flex h-[8vh] lg:h-[10vh] bg-[#9844F1] mx-auto w-[80%] items-center">
         {steptitle.map((item, index) => (
           <React.Fragment key={index}>

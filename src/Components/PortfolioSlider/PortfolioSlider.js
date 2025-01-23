@@ -8,7 +8,7 @@ import ViewMoreBtn from "../UiComponents/Buttons/ViewMoreBtn";
 import { Autoplay } from "swiper/modules";
 import { PortfolioDb } from "@/lib/PortfolioDb";
 
-export default function PortfolioSlider({singlepageid}) {
+export default function PortfolioSlider({singlepageid,bgcolor="#F7F7F7"}) {
   const filterPortfolio = () => {
     if (singlepageid) {
       return PortfolioDb.filter(item => item.category === singlepageid);
@@ -20,7 +20,7 @@ export default function PortfolioSlider({singlepageid}) {
   const filteredPortfolio = filterPortfolio();
 
   return (
-    <div className="container-field flex justify-center flex-col items-center py-20 bg-cover bg-[#F7F7F7] portfolio-slider-section">
+    <div className={`container-field flex justify-center flex-col items-center py-20 bg-cover bg-[${bgcolor}] portfolio-slider-section`}>
     <TopSectionsTitle toptext={'اندکی از'} maintext={'نمونه کارها'} linecolor={'red'} maincolor={'black'}/>
       <Swiper
       modules={[ Autoplay]}
