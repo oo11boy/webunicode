@@ -1,3 +1,4 @@
+import EnamadBadge from "../EnamadBadge";
 import NavbarItems from "../Header/NavbarItems/NavbarItems";
 import { SitePhone } from "../UiComponents/Contact/Contact";
 import Title from "../UiComponents/H4Title/Title";
@@ -71,20 +72,10 @@ export default function Footer() {
 
           {/* Newsletter Section */}
           <div className="newsletter  w-full lg:mx-auto">
-            <Title text="نماد اعتماد" />
+        
 
-            <div className="bg-white rounded-lg mb-4 flex justify-center items-center w-full">
-              <a
-                target="_blank"
-                href="https://trustseal.enamad.ir/?id=467521&Code=8RJb5Bl8uzBsckWVX7RfaZnom53ODxSQ"
-                className="flex justify-center items-center w-full"
-              >
-                <img
-                  alt="نماد اعتماد"
-                  className="h-[180px]"
-                  src="http://unicodewebdesign.com/_next/image?url=%2Fimg%2Fnamad.png&w=256&q=75"
-                />
-              </a>
+            <div className=" rounded-lg mb-4 flex justify-center items-center w-full">
+         <EnamadBadge/>
             </div>
 
          

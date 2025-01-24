@@ -16,7 +16,7 @@ const LandingHowPay = () => {
     سایت ما دارای نماد اعتماد از وزارت صنعت، معدن و تجارت است و اطلاعات ما در این سازمان ثبت شده‌است. برای مشاهده نماد اعتماد به انتهای صفحه مراجعه کنید.
     </p>
     
-    <div className="flex flex-wrap justify-center gap-6 p-6">
+    <div className="flex yekan flex-wrap justify-center gap-6 p-6">
       {/* مرحله ۱: تنظیم قرارداد */}
       <div className="w-64 bg-white shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-9 space-y-3 relative overflow-hidden">
         <div className="w-24 h-24 bg-violet-500 rounded-full absolute -right-5 -top-7">

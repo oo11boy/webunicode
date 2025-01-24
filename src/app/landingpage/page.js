@@ -1,5 +1,8 @@
 import Comments from "@/Components/Comments/Comments";
+import EnamadBadge from "@/Components/EnamadBadge";
 import FAQ from "@/Components/FAQ/FAQ";
+import "../fonts.css";
+
 import Footer from "@/Components/Footer/Footer";
 import LandingForm from "@/Components/LandingPageComponents/LandingForm";
 import LandingHeader from "@/Components/LandingPageComponents/LandingHeader";
@@ -9,6 +12,7 @@ import LandingTypeTheme from "@/Components/LandingPageComponents/LandingTypeThem
 import PortfolioSlider from "@/Components/PortfolioSlider/PortfolioSlider";
 import TopSectionText from "@/Components/UiComponents/TopSectionsTitle/TopSectionText";
 import React from "react";
+import FloatingContact from "@/Components/LandingPageComponents/FloatingContact";
 
 export default function page() {
   return (
@@ -25,16 +29,17 @@ export default function page() {
 <FAQ/>
 <Comments/>
 <div 
-  className="flex h-[100vh] justify-center items-center bg-cover bg-center " 
+  className="flex relative h-[50vh] justify-center items-center bg-cover bg-center " 
   style={{ backgroundImage: "url('/image/Slide5.jpg')" }}
 >
-  <div className="text-center text-white">
+  <div className="text-center yekan text-white">
     <h2 className="text-3xl font-bold mb-4">تماس با کارشناسان</h2>
-    <p className="text-xl">۰۹۳۵۴۵۰۲۳۶۹</p>
-    <img src="" alt="" />
+    <p className="text-xl">۰۲۱۹۱۶۹۰۳۷۵</p>
+
   </div>
 </div>
 <Footer/>
+<FloatingContact/>
       </div>
 
   );
