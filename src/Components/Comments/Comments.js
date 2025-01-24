@@ -38,7 +38,7 @@ export default function Comments() {
           }}
           className="comments commentcontainer absolute  !pb-[10%] md:!pb-[5%] top-60 lg:top-80"
         >
-          {infocomment.map((item, index) => (
+          {infocomment.map((item) => (
             <SwiperSlide key={item.id}>
               <CardComment item={item} />
             </SwiperSlide>
