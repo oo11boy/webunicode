@@ -9,10 +9,10 @@ import LandingHeader from "@/Components/LandingPageComponents/LandingHeader";
 import LandingHowPay from "@/Components/LandingPageComponents/LandingHowPay";
 import LandingPlans from "@/Components/LandingPageComponents/LandingPlans";
 import LandingTypeTheme from "@/Components/LandingPageComponents/LandingTypeTheme";
-import PortfolioSlider from "@/Components/PortfolioSlider/PortfolioSlider";
 import TopSectionText from "@/Components/UiComponents/TopSectionsTitle/TopSectionText";
 import React from "react";
 import FloatingContact from "@/Components/LandingPageComponents/FloatingContact";
+import AllPortfolio from "@/Components/AllPortfolio/AllPortfolio";
 
 export default function page() {
   return (
@@ -22,7 +22,13 @@ export default function page() {
       <LandingTypeTheme/>
       <LandingPlans />
       <div className="w-[90%] m-auto flex-wrap mt-4 flex justify-between items-center gap-4">
-      <PortfolioSlider bgcolor="" />
+         <div className="flex flex-col justify-center items-center w-[90%] lg:w-[70%] m-auto text-center"> 
+       <TopSectionText toptext={'لیست'} linecolor={'red'}  maintext={'نمونه کارها'}/>
+       <p className="my-4">
+   چند قالب پیش‌فرض برای انتخاب شما آماده شده است. پس از انتخاب قالب مورد نظر، آن را برای شخصی‌سازی به ما اطلاع دهید.
+</p>
+         </div>
+      <AllPortfolio status={false} />
       </div>
       <LandingForm />
       <LandingHowPay />

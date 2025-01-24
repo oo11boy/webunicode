@@ -1,9 +1,9 @@
 import React from 'react'
 import { FilterAlt, Store, Business, Badge } from "@mui/icons-material";
 
-export default function AllPortfolioFilterBar({selectedFilter,setSelectedFilter}) {
+export default function AllPortfolioFilterBar({status=true,selectedFilter,setSelectedFilter}) {
   return (
-    <div dir="rtl" className="mt-20 overflow-auto container FilterBar flex justify-start gap-x-5">
+    <div dir="rtl" className={`${status && 'mt-20'} overflow-auto container FilterBar flex justify-start gap-x-5`}>
      <button
           onClick={() => setSelectedFilter("همه")}
           className={`flex items-center gap-2 px-4 py-2 text-white rounded transition ${
@@ -29,12 +29,12 @@ export default function AllPortfolioFilterBar({selectedFilter,setSelectedFilter}
           <Business /> شرکتی
         </button>
         <button
-          onClick={() => setSelectedFilter("resume")}
+          onClick={() => setSelectedFilter("service")}
           className={`flex items-center gap-2 px-4 py-2 text-white rounded transition ${
-            selectedFilter === "resume" ? "bg-red-700" : "bg-red-600"
+            selectedFilter === "service" ? "bg-red-700" : "bg-red-600"
           }`}
         >
-          <Badge /> رزومه‌ای
+          <Badge /> خدماتی
         </button>
   </div>
   )
