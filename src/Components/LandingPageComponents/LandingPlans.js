@@ -6,6 +6,14 @@ export default function LandingPlans() {
     <div className="my-4">
       <div className="flex flex-col justify-center items-center w-[90%] lg:w-[70%] m-auto text-center">
         <TopSectionText toptext={'قدم دوم'} linecolor={'red'} maintext={'انتخاب پلن'} />
+       
+<video
+  src="https://unicodewebdesign.storage.iran.liara.space/video/l2.mp4"
+  controls
+  className=" max-h-[300px] mt-4 rounded-lg shadow-lg"
+>
+</video>
+       
         <p className="mt-4">
           هر کسب‌وکاری برای شروع به یه سری معیارهای مهم نیاز داره؛ مثل یه نقشه
           راه که بهتون کمک کنه بهترین مسیر رو انتخاب کنید. این معیارها می‌تونن

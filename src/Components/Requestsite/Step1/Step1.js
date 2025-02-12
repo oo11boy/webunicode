@@ -3,18 +3,21 @@ import { FaStore, FaBuilding } from "react-icons/fa";
 import { MdHomeRepairService } from "react-icons/md";
 import SiteType from "./SiteType";
 
-export default function Step2({ step, setStep, id }) {
+export default function Step1({ step, setStep, id }) {
   const [selectedType, setSelectedType] = useState("");
 
   const siteTypes = [
     { label: "فروشگاهی", value: "store", icon: <FaStore /> },
     { label: "شرکتی", value: "company", icon: <FaBuilding /> },
     { label: "خدماتی", value: "service", icon: <MdHomeRepairService /> },
+    { label: "اختصاصی", value: "vip", icon: <MdHomeRepairService /> },
+  
   ];
 
   const handleSelectType = (value) => {
     setSelectedType(value);
     // Store the selected type in formData
+
   };
 
   const isNextButtonEnabled = () => {
@@ -23,6 +26,7 @@ export default function Step2({ step, setStep, id }) {
 
   useEffect(() => {
     id > 0 && setStep(2);
+
     
   }, [id]);
 

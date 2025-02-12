@@ -9,4 +9,9 @@ export const PriceProtfolio = [
   { id: 3, Category: "store", selection: "basic", host: 5, price: 8900000 },
   { id: 3, Category: "store", selection: "standard", host: 10, price: 14900000 },
   { id: 3, Category: "store", selection: "vip", host: 15, price: 25900000 },
+
+  { id: 3, Category: "vip", selection: "company", host: 5, price: 18900000 },
+  { id: 3, Category: "vip", selection: "store", host: 10, price: 25900000 },
+  { id: 3, Category: "vip", selection: "service", host: 15, price: 18900000 },
+  { id: 3, Category: "vip", selection: "other", host: 0, price: 0 },
 ];

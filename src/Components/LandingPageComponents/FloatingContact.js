@@ -22,8 +22,8 @@ export default function FloatingContact() {
 
         {/* بخش تماس با ما */}
         <div className='bg-red-500 w-full md:w-auto flex justify-center items-center p-3 md:p-2 md:rounded-lg shadow-lg'>
-          <a  href="tel:02191690375" 
-          target="_blank"  className='text-white text-xl md:text-xl'>تماس با ۰۲۱۹۱۶۹۰۳۷۵</a>
+          <a  href="tel:09332884700" 
+          target="_blank"  className='text-white text-xl md:text-xl'>تماس با ۰۹۳۳۲۸۸۴۷۰۰</a>
         </div>
       </div>
     </div>

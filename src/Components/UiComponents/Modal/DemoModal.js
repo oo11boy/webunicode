@@ -5,6 +5,7 @@ import ImageWithLoader from "../ImageWithLoader/Image";
 import './Modal.css'
 
 export default function DemoModal({ setIsModalOpen, item, requestTemplate }) {
+
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
       <div className="modal bg-white p-8 rounded-lg shadow-lg w-full md:w-full max-w-xl">

@@ -5,11 +5,19 @@ import TopSectionText from '../UiComponents/TopSectionsTitle/TopSectionText';
 export default function LandingTypeTheme() {
   return (
     <div className="flex py-8 flex-col justify-center items-center m-auto w-[90%] lg:w-[70%] text-center">
+
       <TopSectionText
         toptext={"قدم اول"}
         linecolor={"red"}
         maintext={"انتخاب نوع قالب"}
       />
+
+<video
+  src="https://unicodewebdesign.storage.iran.liara.space/video/l1.mp4"
+  controls
+  className=" max-h-[300px] mt-4 rounded-lg shadow-lg"
+>
+</video>
 
       <div className="mt-8 space-y-6">
     

@@ -416,7 +416,7 @@ export const PortfolioDb = [
         icon: "icon-office",
         content: "قالب شرکتی برای تجارت با طراحی پیشرفته."
     },
-    ,
+    
     {
         id: 46,
         name: "خدماتی - املاک",
@@ -445,9 +445,7 @@ export const PortfolioDb = [
         img: "https://demoes.aramis-co.ir/landing/assets/img/d37.png",
         icon: "icon-office",
         content: "قالب خبری با طراحی پیشرفته."
-    },
-
-    
+    }, 
     {
         id: 49,
         name: "خدماتی - گردشگری",
@@ -457,4 +455,13 @@ export const PortfolioDb = [
         icon: "icon-office",
         content: "قالب گردشگری با طراحی پیشرفته."
     },
+  {
+    id: 50,
+    name: "اختصاصی",
+    category: "vip",
+    link: "#",
+    img: "./image/VIP.webp",
+    icon: "icon-office",
+    content: "قالب گردشگری با طراحی پیشرفته."
+    }
 ];

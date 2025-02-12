@@ -45,7 +45,7 @@ export default function Requestsite({portfolioid}) {
         ))}
       </div>
       <div className="w-[95%] steps m-auto sm:container min-h-[85vh] bg-white rounded-2xl">
-        {step == 1 && <Step1 id={portfolioid} setStep={setStep} step={step} setFormData={setFormData} />}
+        {step == 1 && <Step1 id={portfolioid} setFormData={setFormData} setStep={setStep} step={step} />}
         {step == 2 && <Step2 setStep={setStep} portfolioid={portfolioid} step={step} formData={formData} setFormData={setFormData}/>}
         {step == 3 && <Step3 id={portfolioid} setStep={setStep} formData={formData} step={step} setFormData={setFormData} />}
         {step == 4 && <Step4 id={portfolioid} setStep={setStep} step={step} formData={formData}  setFormData={setFormData}/>}

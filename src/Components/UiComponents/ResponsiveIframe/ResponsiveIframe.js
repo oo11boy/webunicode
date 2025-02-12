@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { PortfolioDb } from "@/lib/PortfolioDb";
 
 const ResponsiveIframe = ({ id }) => {
+
   const router = useRouter();
   const [url, seturl] = useState(null);
 
@@ -16,10 +17,15 @@ const ResponsiveIframe = ({ id }) => {
     const validPortfolio = PortfolioDb.some((item) => item.id === parseInt(id));
 
     if (!validPortfolio) {
-      router.push("/");
+ 
     } else {
       const filter = PortfolioDb.find((item) => item.id == id);
-      seturl(filter.link);
+      if(filter){
+        seturl(filter.link);
+      }else{
+        router.push("/");
+      }
+   
     }
   }, [id, router]);
 

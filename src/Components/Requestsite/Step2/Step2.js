@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function Step2({ step, setStep, formData, setFormData,portfolioid }) {
+
   const [isNextDisabled, setIsNextDisabled] = useState(true);
 
   // Update button state whenever form data changes

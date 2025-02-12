@@ -11,13 +11,17 @@ import ImagePortfolioCard from "./ImagePortfolioCard";
 
 
 export default function Step4({id, setStep, setFormData, formData }) {
+
   const [domainNeeded, setDomainNeeded] = useState(false);
   const [extraHosting, setExtraHosting] = useState(0);
-  const [selection, setSelection] = useState("");
+  const [selection, setSelection] = useState('');
+  
   const [infoorder, setInfoOrder] = useState("");
 
   const [checkout, setCheckout] = useState("");
-
+useEffect(()=>{
+  formData.type=="vip" ? setSelection('company') : setSelection('basic')
+},[formData.type])
   useEffect(() => {
     const findportfolio = PortfolioDb.filter(
       (item) => item.id == formData.portfolioid || item.id ==id
@@ -67,6 +71,12 @@ export default function Step4({id, setStep, setFormData, formData }) {
     { label: "سایتم استاندارد است (استاندارد)", value: "standard" },
     { label: "پلن و طراحی اختصاصی", value: "vip" },
   ];
+  const vipOptions = [
+    { label: "شرکتی", value: "company" },
+    { label: "فروشگاهی ", value: "store" },
+    { label: "خدماتی", value: "service" },
+    { label: "سایر", value: "other" },
+  ];
   return (
     <div className="w-[95%] step4 h-[80vh] py-1 md:py-[unset] overflow-y-auto mx-auto">
       <div className="flex flex-col-reverse sm:!flex-row  sm:!h-[180px] mt-6 gap-x-4 justify-center items-start w-full">
@@ -92,6 +102,7 @@ export default function Step4({id, setStep, setFormData, formData }) {
           companyOptions={companyOptions}
           serviceOptions={serviceOptions}
           storeOptions={storeOptions}
+          vipOptions={vipOptions}
           setSelection={setSelection}
           Selection={selection}
         />

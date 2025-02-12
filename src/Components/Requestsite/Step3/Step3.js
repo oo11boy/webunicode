@@ -1,4 +1,4 @@
-import { PortfolioDb } from "@/lib/PortfolioDb";
+
 import React, { useEffect, useState } from "react";
 
 import './Step3.css'
@@ -6,21 +6,25 @@ import './Step3.css'
 import CategoryBtn from "@/Components/UiComponents/Buttons/CategoryBtn";
 import TemplateDemo from "../TemplateDemo";
 import PortofolioCards from "./PortofolioCards/PortofolioCards";
+import { PortfolioDb } from "@/lib/PortfolioDb";
 
 export default function Step3({ step, setStep, setFormData, id ,formData}) {
+
   const [category, setCategory] = useState("all");
-  console.log(formData)
+
   const [chooseTemplate, setChooseTemplate] = useState(null);
 
   const requestTemplate = (id) => {
-    const template = PortfolioDb.find((item) => item.id === id);
+    const template = PortfolioDb.find((item) => item.id == id);
     setChooseTemplate(template);
   };
+
   const categories = [
     { id: 1, title: "همه قالب‌ها", category: "all" },
     { id: 2, title: "قالب‌های فروشگاهی", category: "store" },
     { id: 3, title: "قالب‌های شرکتی", category: "company" },
     { id: 4, title: "قالب‌های خدماتی", category: "service" },
+    { id: 5, title: "قالب‌های اختصاصی", category: "vip" },
   ];
 
   const chooseCategory = (value) => {
