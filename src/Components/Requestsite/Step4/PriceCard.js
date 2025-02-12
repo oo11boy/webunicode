@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function PriceCard({ checkout, infoorder, formData }) {
-console.log(checkout)
+
   const priceFormat = (number) => {
     return new Intl.NumberFormat().format(number);
   };
