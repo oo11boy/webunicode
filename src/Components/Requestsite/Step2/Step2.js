@@ -1,27 +1,56 @@
 import React, { useState, useEffect } from "react";
 
-export default function Step2({ step, setStep, formData, setFormData,portfolioid }) {
-
+export default function Step2({ step, setStep, formData, setFormData, portfolioid }) {
   const [isNextDisabled, setIsNextDisabled] = useState(true);
+  const [phoneError, setPhoneError] = useState("");
+  const [emailError, setEmailError] = useState("");
 
   // Update button state whenever form data changes
   useEffect(() => {
     const { name, phone, email } = formData;
-    if (name && phone && email) {
-      setIsNextDisabled(false); // Enable the button if all fields are filled
-     
+    const isPhoneValid = validatePhone(phone);
+    const isEmailValid = validateEmail(email);
+
+    if (name && isPhoneValid && isEmailValid) {
+      setIsNextDisabled(false); // Enable the button if all fields are filled and valid
     } else {
-      setIsNextDisabled(true); // Disable the button if any field is empty
+      setIsNextDisabled(true); // Disable the button if any field is empty or invalid
     }
   }, [formData]);
+
+  const validatePhone = (phone) => {
+    const phoneRegex = /^09\d{9}$/;
+    return phoneRegex.test(phone);
+  };
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value, // Update formData with input values
-      portfolioid:portfolioid
+      portfolioid: portfolioid,
     });
+
+    if (name === "phone") {
+      if (!validatePhone(value)) {
+        setPhoneError("شماره تلفن باید با 09 شروع شود و 11 رقم باشد.");
+      } else {
+        setPhoneError("");
+      }
+    }
+
+    if (name === "email") {
+      if (!validateEmail(value)) {
+        setEmailError("لطفاً یک آدرس ایمیل معتبر وارد کنید.");
+      } else {
+        setEmailError("");
+      }
+    }
   };
 
   return (
@@ -44,6 +73,7 @@ export default function Step2({ step, setStep, formData, setFormData,portfolioid
           className="bg-[#F7F8F9] border mb-4 border-gray-500 w-[85%] md:w-[60%] p-8 rounded-xl"
           placeholder="شماره تماس"
         />
+        {phoneError && <p className="text-red-500 text-sm mb-4">{phoneError}</p>}
         <input
           type="email"
           name="email"
@@ -52,6 +82,7 @@ export default function Step2({ step, setStep, formData, setFormData,portfolioid
           className="bg-[#F7F8F9] w-[85%] md:w-[60%] border mb-4 border-gray-500 p-8 rounded-xl"
           placeholder="آدرس ایمیل"
         />
+        {emailError && <p className="text-red-500 text-sm mb-4">{emailError}</p>}
       </form>
 
       <div className="flex gap-8">

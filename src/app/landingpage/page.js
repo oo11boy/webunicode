@@ -43,7 +43,7 @@ export default function page() {
       <LandingHeader />
       <LandingTypeTheme />
       <LandingPlans />
-      <div className="w-[90%] m-auto flex-wrap mt-4 flex justify-between items-center gap-4">
+      <div style={{direction:"rtl"}} className="w-[90%] m-auto flex-wrap mt-4 flex justify-between items-center gap-4">
         <div className="flex flex-col justify-center items-center w-[90%] lg:w-[70%] m-auto text-center">
           <TopSectionText
             toptext={"لیست"}

@@ -3,7 +3,7 @@ import TopSectionText from '../UiComponents/TopSectionsTitle/TopSectionText';
 
 export default function LandingPlans() {
   return (
-    <div className="my-4">
+    <div style={{direction:"rtl"}} className="my-4 ">
       <div className="flex flex-col justify-center items-center w-[90%] lg:w-[70%] m-auto text-center">
         <TopSectionText toptext={'قدم دوم'} linecolor={'red'} maintext={'انتخاب پلن'} />
        

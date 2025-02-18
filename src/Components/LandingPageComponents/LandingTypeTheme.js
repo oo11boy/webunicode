@@ -4,7 +4,7 @@ import TopSectionText from '../UiComponents/TopSectionsTitle/TopSectionText';
 
 export default function LandingTypeTheme() {
   return (
-    <div className="flex py-8 flex-col justify-center items-center m-auto w-[90%] lg:w-[70%] text-center">
+    <div style={{direction:"rtl"}} className="flex py-8 flex-col justify-center items-center m-auto w-[90%] lg:w-[70%] text-center">
 
       <TopSectionText
         toptext={"قدم اول"}

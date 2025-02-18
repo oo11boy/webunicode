@@ -1145,6 +1145,10 @@ video {
   max-height: 200px;
 }
 
+.max-h-\[300px\] {
+  max-height: 300px;
+}
+
 .max-h-\[53vh\] {
   max-height: 53vh;
 }

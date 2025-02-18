@@ -7,7 +7,7 @@ export default function LandingForm() {
   
     <div>
 
-    <div className="flex flex-col justify-center items-center w-[90%] lg:w-[70%] m-auto text-center"> 
+    <div  style={{direction:"rtl"}} className="flex flex-col justify-center items-center w-[90%] lg:w-[70%] m-auto text-center"> 
   <TopSectionText toptext={'قدم سوم'} linecolor={'red'}  maintext={'تنظیم قرارداد'}/>
     
 <video

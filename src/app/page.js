@@ -9,6 +9,13 @@ import CategorySelection from "@/Components/CategorySelection/CategorySelection"
 import Footer from "@/Components/Footer/Footer";
 import WhyUs from "@/Components/WhyUs/WhyUs";
 import ArticlesSection from "@/Components/ArticlesSection/ArticlesSection";
+import LandingTypeTheme from "@/Components/LandingPageComponents/LandingTypeTheme";
+import LandingPlans from "@/Components/LandingPageComponents/LandingPlans";
+import AllPortfolio from "@/Components/AllPortfolio/AllPortfolio";
+import TopSectionText from "@/Components/UiComponents/TopSectionsTitle/TopSectionText";
+import LandingForm from "@/Components/LandingPageComponents/LandingForm";
+import LandingHowPay from "@/Components/LandingPageComponents/LandingHowPay";
+import FloatingContact from "@/Components/LandingPageComponents/FloatingContact";
 
 export const metadata = {
   title: "طراحی سایت ارزان در تهران و ایران | قیمت از 1 میلیون تومان",
@@ -40,14 +47,45 @@ export default async function Page() {
     <>
       <Header />
       <WhyUs />
+      
       <Services />
-      <PortfolioSlider />
-      <CategorySelection />
+           <LandingTypeTheme />
+              <LandingPlans />
+       <div style={{direction:"rtl"}} className="w-[90%] m-auto flex-wrap mt-4 flex justify-between items-center gap-4">
+         <div className="flex flex-col justify-center items-center w-[90%] lg:w-[70%] m-auto text-center">
+           <TopSectionText
+             toptext={"لیست"}
+             linecolor={"red"}
+             maintext={"نمونه کارها"}
+           />
+           <p className="my-4">
+             چند قالب پیش‌فرض برای انتخاب شما آماده شده است. پس از انتخاب قالب
+             مورد نظر، آن را برای شخصی‌سازی به ما اطلاع دهید.
+           </p>
+         </div>
+         <AllPortfolio status={false} />
+       </div>
+
+      {/* <CategorySelection /> */}
+      <LandingForm />
+      <LandingHowPay />
       <FAQ />
       <Comments />
       <ArticlesSection />
-  
+      <div
+        className="flex relative h-[50vh] justify-center items-center bg-cover bg-center "
+        style={{ backgroundImage: "url('/image/Slide5.jpg')" }}
+      >
+        <div className="text-center yekan text-white">
+          <h2 className="text-3xl font-bold mb-4">تماس با کارشناسان</h2>
+          <p className="text-xl">۰۹۳۳۲۸۸۴۷۰۰</p>
+        </div>
+      </div>
       <Footer />
+      <div dir="rtl">
+      <FloatingContact />
+      </div>
+           
     </>
   );
 }

@@ -4,8 +4,9 @@ import { ClipLoader } from 'react-spinners';
 
 export default function SubmitBtnCard({ setStep, formData }) {
   const [loading, setLoading] = useState(false);
-
+console.log(formData)
   async function postData() {
+  
     try {
       setLoading(true);
 
@@ -24,6 +25,8 @@ export default function SubmitBtnCard({ setStep, formData }) {
             phone: formData.phone,
             type: formData.type,
             selection: formData.selection,
+            portfolioid:formData.portfolioid,
+            emailaddress: formData.email,
            })
         )
       );
