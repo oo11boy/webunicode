@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaTelegram, FaWhatsapp } from 'react-icons/fa';
 import './LandingPage.css'
 export default function FloatingContact() {
   return (
@@ -11,6 +11,7 @@ export default function FloatingContact() {
     <div className='fixed z-50 bottom-0 w-full md:w-auto'>
  
       <div className='flex flex-col items-start md:items-center md:mr-4'>
+        <div className='flex'>
         <a 
           href="https://wa.me/09354502369" 
           target="_blank" 
@@ -20,6 +21,16 @@ export default function FloatingContact() {
           <FaWhatsapp className='text-white' style={{ fontSize: '2.5rem' }} />
         </a>
 
+        <a 
+          href="https://t.me/unicodewebdesign" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className='bg-blue-500 p-3 mb-2 mr-3 rounded-full shadow-lg hover:bg-blue-600 transition-colors duration-300 md:mb-2'
+        >
+          <FaTelegram className='text-white' style={{ fontSize: '2.5rem' }} />
+        </a>
+        </div>
+     
         {/* بخش تماس با ما */}
         <div className='bg-red-500 w-full md:w-auto flex justify-center items-center p-3 md:p-2 md:rounded-lg shadow-lg'>
           <a  href="tel:09332884700" 

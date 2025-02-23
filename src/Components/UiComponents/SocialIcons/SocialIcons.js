@@ -6,7 +6,7 @@ export default function SocialIcons({size}) {
     <a href="#">
       <span class={`icon-github ${size}`}></span>
     </a>
-    <a href="https://instagram/unicodewebdesign">
+    <a href="https://instagram.com/unicodewebdesign">
     
       <span class={`icon-instagram ${size}`}></span>
     </a>

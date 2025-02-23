@@ -12,6 +12,7 @@ import TopSectionText from "@/Components/UiComponents/TopSectionsTitle/TopSectio
 import React from "react";
 import FloatingContact from "@/Components/LandingPageComponents/FloatingContact";
 import AllPortfolio from "@/Components/AllPortfolio/AllPortfolio";
+import { CheckCircle } from "@mui/icons-material";
 
 export const metadata = {
   title: "جشنواره زمستانه طراحی سایت – 50 درصد تخفیف ویژه",
@@ -43,6 +44,7 @@ export default function page() {
       <LandingHeader />
       <LandingTypeTheme />
       <LandingPlans />
+      
       <div style={{direction:"rtl"}} className="w-[90%] m-auto flex-wrap mt-4 flex justify-between items-center gap-4">
         <div className="flex flex-col justify-center items-center w-[90%] lg:w-[70%] m-auto text-center">
           <TopSectionText
@@ -54,6 +56,7 @@ export default function page() {
             چند قالب پیش‌فرض برای انتخاب شما آماده شده است. پس از انتخاب قالب
             مورد نظر، آن را برای شخصی‌سازی به ما اطلاع دهید.
           </p>
+
         </div>
         <AllPortfolio status={false} />
       </div>
@@ -67,11 +70,15 @@ export default function page() {
       >
         <div className="text-center yekan text-white">
           <h2 className="text-3xl font-bold mb-4">تماس با کارشناسان</h2>
-          <p className="text-xl">۰۹۳۳۲۸۸۴۷۰۰</p>
+          <p className="text-xl">۰۹۳۳۲۸۸۴۷۰۰
+
+            <br />
+            ۰۹۳۵۴۵۰۲۳۶۹
+          </p>
         </div>
       </div>
       <Footer />
-      <FloatingContact />
+    
     </div>
   );
 }

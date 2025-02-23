@@ -78,13 +78,15 @@ export default async function Page() {
       >
         <div className="text-center yekan text-white">
           <h2 className="text-3xl font-bold mb-4">تماس با کارشناسان</h2>
-          <p className="text-xl">۰۹۳۳۲۸۸۴۷۰۰</p>
+          <p className="text-xl">۰۹۳۳۲۸۸۴۷۰۰
+            
+          <br />
+            ۰۹۳۵۴۵۰۲۳۶۹
+          </p>
         </div>
       </div>
       <Footer />
-      <div dir="rtl">
-      <FloatingContact />
-      </div>
+
            
     </>
   );
