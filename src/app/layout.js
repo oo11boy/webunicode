@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="stylesheet" href="../Styles.css" />
         <meta name="enamad" content="12184300" /> 
+        <meta name="google-site-verification" content="uaZQCkjdDH-yvDQJPE3SO7AogbkddpyjuLDdw_HuGCU" />
       </head>
 
       <body>{children}
