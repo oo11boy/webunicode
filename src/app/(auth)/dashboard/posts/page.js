@@ -13,7 +13,7 @@ export default function PostsPage() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch("/api/posts");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts`);
       const data = await res.json();
       setPosts(data);
       setLoading(false);
