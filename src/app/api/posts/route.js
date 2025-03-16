@@ -5,12 +5,18 @@ export async function GET() {
     const [rows] = await pool.query("SELECT * FROM posts");
     return new Response(JSON.stringify(rows), {
       status: 200,
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*", // یا دامنه کلاینتت
+      },
     });
   } catch (error) {
     return new Response(JSON.stringify({ error: "Error fetching data" }), {
       status: 500,
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
     });
   }
 }
