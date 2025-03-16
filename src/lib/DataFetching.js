@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
+import { apiUrl } from "./ApiUrl";
 
 export async function getPosts() {
-  let res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts`, {
+  let res = await fetch(`${apiUrl}/posts`, {
     cache: "no-store", // جلوگیری از کش شدن داده‌ها
   });
 
