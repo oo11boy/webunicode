@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react"; // Removed useMemo since it's not needed at the top level
+import { useState, useEffect, useRef } from "react";
 import Modal from "@/Components/auth/Modal";
 import { apiUrl } from "@/lib/ApiUrl";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
+import CategoryForm from "./CategoryForm";
+import CategoriesTable from "./CategoriesTable";
 
 // Initial empty form data for categories
 const initialCategoryFormData = {
@@ -12,58 +12,7 @@ const initialCategoryFormData = {
   link: "",
 };
 
-// Define CategoryForm as a regular function component
-function CategoryForm({ isEditModalOpen, formData, error, handleChange, onSubmit, onCancel }) {
-  return (
-    <form onSubmit={onSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 gap-6">
-        <div className="space-y-2">
-          <label className="block text-sm font-semibold text-gray-700">متن دسته‌بندی</label>
-          <input
-            name="text"
-            value={formData.text}
-            onChange={handleChange}
-            placeholder="متن دسته‌بندی را وارد کنید"
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all shadow-sm hover:shadow-md"
-            required
-          />
-        </div>
-        <div className="space-y-2">
-          <label className="block text-sm font-semibold text-gray-700">لینک</label>
-          <input
-            name="link"
-            value={formData.link}
-            onChange={handleChange}
-            placeholder="لینک دسته‌بندی را وارد کنید"
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all shadow-sm hover:shadow-md"
-            required
-          />
-        </div>
-      </div>
-      {error && <p className="text-red-600 text-sm font-medium">{error}</p>}
-      <div className="flex justify-end gap-4">
-        <button
-          type="button"
-          onClick={onCancel}
-          className="px-5 py-2.5 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition-colors font-medium"
-        >
-          انصراف
-        </button>
-        <button
-          type="submit"
-          className="px-5 py-2.5 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors font-medium shadow-md hover:shadow-lg"
-        >
-          {isEditModalOpen ? "ذخیره تغییرات" : "ثبت دسته‌بندی"}
-        </button>
-      </div>
-    </form>
-  );
-}
-
-// Optionally memoize the CategoryForm component if needed
-const MemoizedCategoryForm = React.memo(CategoryForm);
-
-export default function Categories() {
+export default function CategoriesPage() {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
@@ -117,7 +66,7 @@ export default function Categories() {
       if (res.ok) {
         setIsAddModalOpen(false);
         fetchCategories();
-        setFormData(initialCategoryFormData); // Reset form
+        setFormData(initialCategoryFormData);
       } else {
         const data = await res.json();
         setError(data.error || "خطایی رخ داد");
@@ -138,7 +87,7 @@ export default function Categories() {
       if (res.ok) {
         setIsEditModalOpen(false);
         fetchCategories();
-        setFormData(initialCategoryFormData); // Reset form after successful edit
+        setFormData(initialCategoryFormData);
       } else {
         const data = await res.json();
         setError(data.error || "خطایی رخ داد");
@@ -161,12 +110,18 @@ export default function Categories() {
   };
 
   const handleCancel = () => {
-    setFormData(initialCategoryFormData); // Reset form on cancel
+    setFormData(initialCategoryFormData);
     setIsAddModalOpen(false);
     setIsEditModalOpen(false);
   };
 
-  if (loading) return <p className="text-center mt-10">در حال بارگذاری...</p>;
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"></div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -175,7 +130,7 @@ export default function Categories() {
           <h1 className="text-2xl md:text-3xl font-bold">مدیریت دسته‌بندی‌ها</h1>
           <button
             onClick={() => {
-              setFormData(initialCategoryFormData); // Reset form before opening add modal
+              setFormData(initialCategoryFormData);
               setIsAddModalOpen(true);
             }}
             className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
@@ -183,49 +138,15 @@ export default function Categories() {
             افزودن دسته‌بندی جدید
           </button>
         </div>
-        <div className="bg-white p-4 md:p-6 rounded-xl shadow-lg overflow-x-auto">
-          <table className="w-full table-auto">
-            <thead>
-              <tr className="bg-gray-200 text-gray-700">
-                <th className="p-3 text-right">شناسه</th>
-                <th className="p-3 text-right">متن</th>
-                <th className="p-3 text-right">لینک</th>
-                <th className="p-3 text-right">عملیات</th>
-              </tr>
-            </thead>
-            <tbody>
-              {categories.map((category) => (
-                <tr key={category.id} className="border-t hover:bg-gray-50">
-                  <td className="p-3">{category.id}</td>
-                  <td className="p-3">{category.text}</td>
-                  <td className="p-3">{category.link}</td>
-                  <td className="p-3 flex gap-2 justify-end">
-                    <button
-                      onClick={() => openEditModal(category)}
-                      className="text-blue-600 hover:text-blue-800"
-                    >
-                      <EditIcon />
-                    </button>
-                    <button
-                      onClick={() => handleDelete(category.id)}
-                      className="text-red-600 hover:text-red-800"
-                    >
-                      <DeleteIcon />
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <CategoriesTable
+          categories={categories}
+          handleDelete={handleDelete}
+          openEditModal={openEditModal}
+        />
       </div>
 
-      <Modal
-        isOpen={isAddModalOpen}
-        onClose={handleCancel}
-        title="افزودن دسته‌بندی جدید"
-      >
-        <MemoizedCategoryForm
+      <Modal isOpen={isAddModalOpen} onClose={handleCancel} title="افزودن دسته‌بندی جدید">
+        <CategoryForm
           isEditModalOpen={false}
           formData={formData}
           error={error}
@@ -235,12 +156,8 @@ export default function Categories() {
         />
       </Modal>
 
-      <Modal
-        isOpen={isEditModalOpen}
-        onClose={handleCancel}
-        title="ویرایش دسته‌بندی"
-      >
-        <MemoizedCategoryForm
+      <Modal isOpen={isEditModalOpen} onClose={handleCancel} title="ویرایش دسته‌بندی">
+        <CategoryForm
           isEditModalOpen={true}
           formData={formData}
           error={error}

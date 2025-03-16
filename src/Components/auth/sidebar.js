@@ -14,7 +14,7 @@ export default function Sidebar({ setPage }) {
 
   return (
     <div className="w-64 bg-gray-800 text-white min-h-screen p-4 flex flex-col shadow-lg">
-      <h2 className="text-2xl font-bold mb-6">پنل مدیریت</h2>
+      <h2 className="text-2xl font-bold mb-6">پنل مدیریت یونیکد</h2>
       <nav className="flex-1">
         <ul className="space-y-4">
           <li

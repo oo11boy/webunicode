@@ -7,6 +7,7 @@ import Sidebar from "@/Components/auth/sidebar";
 import PostsPage from "@/Components/auth/posts/posts";
 import Categories from "@/Components/auth/categories/categories";
 import Uploads from "@/Components/auth/Uploads/Uploads";
+import Dashboard from "@/Components/auth/Dashboard/Dashboard";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -22,7 +23,7 @@ export default function DashboardPage() {
     <div dir="rtl" className="flex min-h-screen yekan bg-gray-100">
       <Sidebar setPage={setPage} />
       <div className="flex-1 p-4 md:p-6">
-        {Page == "dashboard" && <h2>dash</h2> }
+        {Page == "dashboard" && <Dashboard/>}
         
         {Page == "manage-posts" && (
           <PostsPage />

@@ -3,7 +3,7 @@ import cloudinary from "@/lib/cloudinary";
 
 export async function GET() {
   try {
-    // Set a timeout for the API calls (10 seconds)
+    // تنظیم تایم‌اوت برای درخواست‌ها
     const timeoutPromise = (promise, ms) => {
       return new Promise((resolve, reject) => {
         const timeout = setTimeout(() => {
@@ -22,6 +22,7 @@ export async function GET() {
       });
     };
 
+    // دریافت تصاویر
     const imageResult = await timeoutPromise(
       cloudinary.api.resources({
         resource_type: "image",
@@ -29,9 +30,10 @@ export async function GET() {
         prefix: "uploads/",
         type: "upload",
       }),
-      10000 // 10 seconds timeout
+      10000
     );
 
+    // دریافت ویدیوها
     const videoResult = await timeoutPromise(
       cloudinary.api.resources({
         resource_type: "video",
@@ -44,15 +46,24 @@ export async function GET() {
 
     const allResources = [...imageResult.resources, ...videoResult.resources];
 
-    return NextResponse.json({ resources: allResources }, { status: 200 });
+    // محاسبه حجم کل مصرفی (در بایت)
+    const totalUsageBytes = allResources.reduce((sum, resource) => sum + resource.bytes, 0);
+
+    return NextResponse.json(
+      {
+        resources: allResources,
+        totalUsageBytes, // حجم کل مصرفی در بایت
+      },
+      { status: 200 }
+    );
   } catch (error) {
     console.error("خطا در دریافت لیست فایل‌ها:", error);
     return NextResponse.json(
-      { 
+      {
         error: "خطا در دریافت لیست فایل‌ها",
         details: error.message,
-        code: error.code 
-      }, 
+        code: error.code,
+      },
       { status: 500 }
     );
   }

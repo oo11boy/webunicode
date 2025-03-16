@@ -12,20 +12,24 @@ export default function Uploads() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  // Fetch uploaded files from Cloudinary
+  // Fetch uploaded files from Cloudinary on mount
   useEffect(() => {
     fetchUploads();
   }, []);
 
   const fetchUploads = async () => {
     try {
-      // This would typically come from an API endpoint
-      // For now, we'll simulate it. In a real app, you'd need to create an API route
-      const response = await fetch("/api/upload/list"); // You'll need to create this endpoint
+      const response = await fetch("/api/upload/list", {
+        cache: "no-store", // Prevent caching to ensure fresh data
+      });
+      if (!response.ok) {
+        throw new Error("Failed to fetch uploads");
+      }
       const data = await response.json();
       setUploads(data.resources || []);
     } catch (error) {
       console.error("Error fetching uploads:", error);
+      setMessage("خطا در بارگذاری لیست فایل‌ها");
     }
   };
 
@@ -45,23 +49,35 @@ export default function Uploads() {
     const formData = new FormData();
     formData.append("file", file);
 
+    // Optimistic update: Create a temporary upload object
+    const tempUpload = {
+      public_id: `temp_${Date.now()}`,
+      secure_url: URL.createObjectURL(file),
+      resource_type: file.type.startsWith("video") ? "video" : "image",
+    };
+    setUploads((prev) => [tempUpload, ...prev]);
+
     try {
       const response = await fetch("/api/upload", {
         method: "POST",
         body: formData,
       });
-      
+
       const data = await response.json();
-      
+
       if (response.ok) {
         setMessage("فایل با موفقیت آپلود شد");
         setFile(null);
-        fetchUploads(); // Refresh the list
+        // Replace the temporary upload with the real one
+        await fetchUploads(); // Fetch the latest list
       } else {
+        // Remove the temporary upload if the request fails
+        setUploads((prev) => prev.filter((upload) => upload.public_id !== tempUpload.public_id));
         setMessage(data.error || "خطا در آپلود فایل");
       }
     } catch (error) {
-      setMessage("خطا در اتصال به سرور");
+      setUploads((prev) => prev.filter((upload) => upload.public_id !== tempUpload.public_id));
+      setMessage("خطا در اتصال به سرور: " + error.message);
     } finally {
       setLoading(false);
     }
@@ -69,6 +85,10 @@ export default function Uploads() {
 
   const handleDelete = async (publicId) => {
     if (!confirm("آیا مطمئن هستید که می‌خواهید این فایل را حذف کنید؟")) return;
+
+    // Optimistic update: Remove the item immediately
+    const deletedUpload = uploads.find((upload) => upload.public_id === publicId);
+    setUploads((prev) => prev.filter((upload) => upload.public_id !== publicId));
 
     try {
       const response = await fetch("/api/upload/delete", {
@@ -79,12 +99,14 @@ export default function Uploads() {
 
       if (response.ok) {
         setMessage("فایل با موفقیت حذف شد");
-        fetchUploads();
       } else {
+        // Revert the optimistic update if the delete fails
+        setUploads((prev) => [...prev, deletedUpload].sort((a, b) => b.public_id - a.public_id));
         setMessage("خطا در حذف فایل");
       }
     } catch (error) {
-      setMessage("خطا در اتصال به سرور");
+      setUploads((prev) => [...prev, deletedUpload].sort((a, b) => b.public_id - a.public_id));
+      setMessage("خطا در اتصال به سرور: " + error.message);
     }
   };
 
