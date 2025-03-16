@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Sidebar from "@/Components/auth/sidebar";
 import PostsPage from "@/Components/auth/posts/posts";
 import Categories from "@/Components/auth/categories/categories";
+import Uploads from "@/Components/auth/Uploads/Uploads";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -27,6 +28,7 @@ export default function DashboardPage() {
           <PostsPage />
         )}
         {Page === "categories" && <Categories />}
+        {Page === "uploads" && <Uploads />}
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
-"use client";
-
+// Components/auth/sidebar.jsx
 import { useState } from "react";
 import Link from "next/link";
 import DashboardIcon from "@mui/icons-material/Dashboard";
@@ -8,6 +7,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import EditIcon from "@mui/icons-material/Edit";
 import CategoryIcon from "@mui/icons-material/Category";
+import UploadIcon from "@mui/icons-material/CloudUpload";
 
 export default function Sidebar({ setPage }) {
   const [isPostsOpen, setIsPostsOpen] = useState(false);
@@ -54,7 +54,19 @@ export default function Sidebar({ setPage }) {
                 <CategoryIcon fontSize="small" />
                 دسته بندی
               </li>
+            
             </ul>
+          </li>
+
+   
+
+
+              <li
+            onClick={() => setPage("uploads")}
+            className="flex items-center cursor-pointer py-2 px-3 rounded-lg hover:bg-gray-700 transition-colors gap-2"
+          >
+            <UploadIcon />
+            مدیریت فایل‌ها
           </li>
         </ul>
       </nav>

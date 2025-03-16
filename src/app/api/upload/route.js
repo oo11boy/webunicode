@@ -1,6 +1,5 @@
-import { writeFile } from "fs/promises";
-import { join } from "path";
 import { NextResponse } from "next/server";
+import cloudinary from "@/lib/cloudinary";
 
 export async function POST(request) {
   try {
@@ -30,13 +29,23 @@ export async function POST(request) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    // مسیر ذخیره‌سازی فایل
-    const fileName = `${Date.now()}-${file.name}`;
-    const path = join(process.cwd(), "public/uploads", fileName);
-    await writeFile(path, buffer);
+    // آپلود فایل به Cloudinary
+    const uploadResult = await new Promise((resolve, reject) => {
+      const stream = cloudinary.uploader.upload_stream(
+        {
+          resource_type: file.type.startsWith("video") ? "video" : "image",
+          folder: "uploads", // پوشه‌ای که فایل‌ها در Cloudinary ذخیره می‌شوند
+        },
+        (error, result) => {
+          if (error) reject(error);
+          else resolve(result);
+        }
+      );
+      stream.end(buffer);
+    });
 
     // URL فایل آپلود‌شده
-    const url = `/uploads/${fileName}`;
+    const url = uploadResult.secure_url;
 
     return NextResponse.json({ url }, { status: 200 });
   } catch (error) {
