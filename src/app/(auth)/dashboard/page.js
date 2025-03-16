@@ -32,7 +32,7 @@ export default function DashboardPage() {
       <Sidebar setPage={setPage} />
 
       {/* Main Content */}
-      <div className="flex-1 p-4 md:p-6 md:mr-64 md:mt-0">
+      <div className="flex-1 p-4 md:p-6  md:mt-0">
         <DashContent Page={Page} />
       </div>
     </div>
