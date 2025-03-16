@@ -1,4 +1,3 @@
-// pages/login.jsx
 "use client";
 
 import { useState } from "react";
@@ -10,13 +9,30 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const router = useRouter();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (username === "admin" && password === "123") {
-      localStorage.setItem("isLoggedIn", "true");
-      router.push("/dashboard");
-    } else {
-      setError("نام کاربری یا رمز عبور اشتباه است");
+    setError("");
+
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("token", data.token); // ذخیره توکن JWT
+        router.push("/dashboard");
+      } else {
+        setError(data.message || "نام کاربری یا رمز عبور اشتباه است");
+      }
+    } catch (err) {
+      setError("خطا در ارتباط با سرور");
     }
   };
 
