@@ -1,20 +1,20 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react"; // Removed useMemo since it's not needed at the top level
 import Modal from "@/Components/auth/Modal";
 import { apiUrl } from "@/lib/ApiUrl";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-// فرم اولیه خالی برای دسته‌بندی‌ها
+// Initial empty form data for categories
 const initialCategoryFormData = {
   text: "",
   link: "",
 };
 
-// کامپوننت جداگانه برای فرم
-const CategoryForm = React.memo(
-  ({ isEditModalOpen, formData, error, handleChange, onSubmit, onCancel }) => (
+// Define CategoryForm as a regular function component
+function CategoryForm({ isEditModalOpen, formData, error, handleChange, onSubmit, onCancel }) {
+  return (
     <form onSubmit={onSubmit} className="space-y-6">
       <div className="grid grid-cols-1 gap-6">
         <div className="space-y-2">
@@ -57,8 +57,11 @@ const CategoryForm = React.memo(
         </button>
       </div>
     </form>
-  )
-);
+  );
+}
+
+// Optionally memoize the CategoryForm component if needed
+const MemoizedCategoryForm = React.memo(CategoryForm);
 
 export default function Categories() {
   const [categories, setCategories] = useState([]);
@@ -114,7 +117,7 @@ export default function Categories() {
       if (res.ok) {
         setIsAddModalOpen(false);
         fetchCategories();
-        setFormData(initialCategoryFormData); // ریست فرم
+        setFormData(initialCategoryFormData); // Reset form
       } else {
         const data = await res.json();
         setError(data.error || "خطایی رخ داد");
@@ -135,7 +138,7 @@ export default function Categories() {
       if (res.ok) {
         setIsEditModalOpen(false);
         fetchCategories();
-        setFormData(initialCategoryFormData); // ریست فرم بعد از ویرایش موفق
+        setFormData(initialCategoryFormData); // Reset form after successful edit
       } else {
         const data = await res.json();
         setError(data.error || "خطایی رخ داد");
@@ -158,7 +161,7 @@ export default function Categories() {
   };
 
   const handleCancel = () => {
-    setFormData(initialCategoryFormData); // ریست فرم هنگام انصراف
+    setFormData(initialCategoryFormData); // Reset form on cancel
     setIsAddModalOpen(false);
     setIsEditModalOpen(false);
   };
@@ -172,7 +175,7 @@ export default function Categories() {
           <h1 className="text-2xl md:text-3xl font-bold">مدیریت دسته‌بندی‌ها</h1>
           <button
             onClick={() => {
-              setFormData(initialCategoryFormData); // ریست فرم قبل از باز کردن مودال افزودن
+              setFormData(initialCategoryFormData); // Reset form before opening add modal
               setIsAddModalOpen(true);
             }}
             className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
@@ -222,7 +225,7 @@ export default function Categories() {
         onClose={handleCancel}
         title="افزودن دسته‌بندی جدید"
       >
-        <CategoryForm
+        <MemoizedCategoryForm
           isEditModalOpen={false}
           formData={formData}
           error={error}
@@ -237,7 +240,7 @@ export default function Categories() {
         onClose={handleCancel}
         title="ویرایش دسته‌بندی"
       >
-        <CategoryForm
+        <MemoizedCategoryForm
           isEditModalOpen={true}
           formData={formData}
           error={error}
