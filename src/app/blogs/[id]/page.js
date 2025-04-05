@@ -1,10 +1,9 @@
 import React from "react";
-import Head from "next/head";
 import { getPosts } from "@/lib/DataFetching";
 import Singlepost from "@/Components/BlogComponent/SinglePost/Singlepost";
-import TopHeader from "@/Components/Header/TopHeader";
 import Footer from "@/Components/Footer/Footer";
 import { generateArticleSchema } from "@/lib/generateArticleSchema";
+import Header from "@/Components/Header/Header";
 
 export async function generateMetadata({ params }) {
   const { id } = params;
@@ -56,7 +55,7 @@ export default async function Page({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <TopHeader />
+      <Header />
       <Singlepost id={id} />
       <Footer />
     </>

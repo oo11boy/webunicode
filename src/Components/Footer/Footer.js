@@ -1,5 +1,5 @@
+import { navItems } from "@/lib/NavbarDb";
 import EnamadBadge from "../EnamadBadge";
-import NavbarItems from "../Header/NavbarItems/NavbarItems";
 import { SitePhone } from "../UiComponents/Contact/Contact";
 import Title from "../UiComponents/H4Title/Title";
 import SmallLogo from "../UiComponents/SiteLogo/SiteLogo";
@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Logo and Info Section */}
 
           <div className="about text-start lg:mx-auto">
-            <SmallLogo />
+            <SmallLogo color={"text-white"}/>
             <p className="mb-8 mt-4 yekan leading-loose">
             یونیکد مرجع طراحی انواع سایت های مختلف با قیمتی ارزان و کیفیتی متاسب میتواند شما را در بهبود کسب و کارتان همراهی نماید
             </p>
@@ -56,7 +56,13 @@ export default function Footer() {
           {/* Links Section */}
           <div className="company-links lg:mx-auto">
             <Title text="دسترسی سریع" />
-            <NavbarItems hiddenitem={true} footerview={true} />
+            <ul className="space-y-4">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <a href={`../${item.to}`}>{item.title}</a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="services-links lg:mx-auto">

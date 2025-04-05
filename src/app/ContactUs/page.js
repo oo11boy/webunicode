@@ -1,10 +1,10 @@
 import Footer from '@/Components/Footer/Footer'
-import TopHeader from '@/Components/Header/TopHeader'
 import { SiteEmail, SitePhone } from '@/Components/UiComponents/Contact/Contact'
 import SocialIcons from '@/Components/UiComponents/SocialIcons/SocialIcons'
 import { SocialDistance } from '@mui/icons-material'
 import ImageWithLoader from '@/Components/UiComponents/ImageWithLoader/Image'
 import React from 'react'
+import Header from '@/Components/Header/Header'
 
 
 
@@ -20,7 +20,7 @@ export async function generateMetadata() {
 export default function page() {
   return (
     <div>
-           <TopHeader />
+           <Header />
         <section dir='rtl' class="bg-white mt-14 dark:bg-gray-900">
     <div class="container px-6 py-12 mx-auto">
         <div class="text-center ">

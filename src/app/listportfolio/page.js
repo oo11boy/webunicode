@@ -1,6 +1,6 @@
 import AllPortfolio from "@/Components/AllPortfolio/AllPortfolio";
 import Footer from "@/Components/Footer/Footer";
-import TopHeader from "@/Components/Header/TopHeader";
+import Header from "@/Components/Header/Header";
 import React from "react";
 
 
@@ -16,7 +16,7 @@ export async function generateMetadata() {
 export default function page() {
   return (
     <div>
-      <TopHeader />
+      <Header />
       <div>
 
       </div>

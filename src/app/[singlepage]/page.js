@@ -1,7 +1,7 @@
 import Comments from "@/Components/Comments/Comments";
 import FAQ from "@/Components/FAQ/FAQ";
 import Footer from "@/Components/Footer/Footer";
-import ResoponsiveHeader from "@/Components/Header/ResoponsiveHeader";
+import Header from "@/Components/Header/Header";
 import PortfolioSlider from "@/Components/PortfolioSlider/PortfolioSlider";
 import Feature from "@/Components/SinglePageComponents/Feature/Feature";
 import Poster from "@/Components/SinglePageComponents/Poster/Poster";
@@ -53,7 +53,7 @@ export default function page({ params }) {
 
   return (
     <div>
-      <ResoponsiveHeader />
+      <Header />
       <Poster singlepageid={singlepage} />
       <WhyUs singlepageid={singlepage} />
       <WhyUsSinglePage />

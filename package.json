@@ -22,6 +22,7 @@
     "cloudinary": "^2.6.0",
     "dotenv": "^16.4.5",
     "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1",
     "mysql2": "^3.11.0",
     "natural": "^8.0.1",
     "next": "14.2.7",

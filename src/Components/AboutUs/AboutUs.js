@@ -1,5 +1,4 @@
 
-import TopHeader from "../Header/TopHeader";
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import AboutUsBox from "./AboutUsBox";
 import Footer from "../Footer/Footer";
@@ -8,7 +7,7 @@ import Footer from "../Footer/Footer";
 export default function AboutUs() {
   return (
     <>
-      <TopHeader />
+  
       <section dir="rtl" class="bg-white mt-14 dark:bg-gray-900">
         <div class="container px-6 py-12 mx-auto">
           <div class="text-center ">

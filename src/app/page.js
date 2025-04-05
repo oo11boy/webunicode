@@ -13,8 +13,6 @@ import AllPortfolio from "@/Components/AllPortfolio/AllPortfolio";
 import TopSectionText from "@/Components/UiComponents/TopSectionsTitle/TopSectionText";
 import LandingForm from "@/Components/LandingPageComponents/LandingForm";
 import LandingHowPay from "@/Components/LandingPageComponents/LandingHowPay";
-import FloatingContact from "@/Components/LandingPageComponents/FloatingContact";
-import TopHeader from "@/Components/Header/TopHeader";
 
 export const metadata = {
   title: "طراحی سایت ارزان در تهران و ایران | قیمت از 1 میلیون تومان",
@@ -43,9 +41,8 @@ export const metadata = {
 export default async function Page() {
   return (
     <>
-      <TopHeader />
+     <Header/>
       <WhyUs />
-
       <Services />
       <LandingTypeTheme />
       <LandingPlans />

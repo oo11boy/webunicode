@@ -10,11 +10,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa">
+      
       <head>
         <link rel="stylesheet" href="../Styles.css" />
         <meta name="enamad" content="12184300" /> 
         <meta name="google-site-verification" content="uaZQCkjdDH-yvDQJPE3SO7AogbkddpyjuLDdw_HuGCU" />
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
       </head>
+
+      
 
       <body>{children}
       <div dir="rtl">
