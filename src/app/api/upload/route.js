@@ -7,49 +7,51 @@ export async function POST(request) {
     const file = formData.get("file");
 
     if (!file) {
+      console.warn("No file provided");
       return NextResponse.json({ error: "هیچ فایلی ارسال نشده است" }, { status: 400 });
     }
 
-    // بررسی نوع فایل
+    console.log("File received:", file.name, file.type, file.size);
+
     const allowedTypes = ["image/jpeg", "image/png", "image/gif", "video/mp4", "video/webm"];
     if (!allowedTypes.includes(file.type)) {
-      return NextResponse.json(
-        { error: "نوع فایل مجاز نیست. فقط تصاویر (JPEG, PNG, GIF) و ویدیوها (MP4, WebM) پشتیبانی می‌شوند" },
-        { status: 400 }
-      );
+      console.warn("Invalid file type:", file.type);
+      return NextResponse.json({ error: "نوع فایل مجاز نیست..." }, { status: 400 });
     }
 
-    // محدودیت حجم فایل (مثلاً 10 مگابایت)
-    const maxSize = 10 * 1024 * 1024; // 10MB
+    const maxSize = 10 * 1024 * 1024;
     if (file.size > maxSize) {
+      console.warn("File too large:", file.size);
       return NextResponse.json({ error: "حجم فایل باید کمتر از 10 مگابایت باشد" }, { status: 400 });
     }
 
-    // تبدیل فایل به Buffer
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    // آپلود فایل به Cloudinary
+    console.log("Uploading to Cloudinary...");
     const uploadResult = await new Promise((resolve, reject) => {
       const stream = cloudinary.uploader.upload_stream(
         {
           resource_type: file.type.startsWith("video") ? "video" : "image",
-          folder: "uploads", // پوشه‌ای که فایل‌ها در Cloudinary ذخیره می‌شوند
+          folder: "uploads",
         },
         (error, result) => {
-          if (error) reject(error);
-          else resolve(result);
+          if (error) {
+            console.error("Cloudinary Error:", error.message, error.stack);
+            reject(error);
+          } else {
+            console.log("Upload successful:", result.secure_url);
+            resolve(result);
+          }
         }
       );
       stream.end(buffer);
     });
 
-    // URL فایل آپلود‌شده
     const url = uploadResult.secure_url;
-
     return NextResponse.json({ url }, { status: 200 });
   } catch (error) {
-    console.error("خطا در آپلود فایل:", error);
-    return NextResponse.json({ error: "خطا در سرور" }, { status: 500 });
+    console.error("Server error:", error.message, error.stack);
+    return NextResponse.json({ error: error.message || "خطا در سرور" }, { status: 500 });
   }
 }

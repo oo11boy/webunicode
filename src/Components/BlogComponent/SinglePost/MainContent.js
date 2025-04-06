@@ -4,8 +4,8 @@ import React from "react";
 
 export default function MainContent({ findpost }) {
   return (
-    <div class="px-4 postsingle lg:px-1 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:!w-3/4">
-      <ToHtml html={findpost.text} />
+    <div className="px-4 postsingle lg:px-1 mt-12 text-gray-700 text-lg leading-relaxed w-full lg:!w-3/4">
+      <ToHtml content={findpost.text} />
 
       <div>
         <div className="underarticle">

@@ -159,16 +159,17 @@ function PostForm({ isEditModalOpen, formData, error, categories, handleChange, 
         </div>
 
         {/* متن اصلی پست */}
-        <div className="col-span-1 md:col-span-2 space-y-1">
-          <label className="block text-sm font-medium text-gray-700">متن اصلی پست</label>
-          <p className="text-xs text-gray-600 mt-1 leading-relaxed">
-            محتوای اصلی پست را اینجا بنویسید. از کلمات کلیدی به‌صورت طبیعی استفاده کنید.
-          </p>
-          <CustomEditor
-            value={formData.text}
-            onChange={(content) => handleChange({ target: { name: "text", value: content } })}
-          />
-        </div>
+
+<div className="col-span-1 md:col-span-2 space-y-1">
+  <label className="block text-sm font-medium text-gray-700">متن اصلی پست</label>
+  <p className="text-xs text-gray-600 mt-1 leading-relaxed">
+    محتوای اصلی پست را اینجا بنویسید. از کلمات کلیدی به‌صورت طبیعی استفاده کنید.
+  </p>
+  <CustomEditor
+    value={formData.text}
+    onChange={(content) => handleChange({ target: { name: "text", value: content } })}
+  />
+</div>
 
         {/* کلمه کلیدی */}
         <div className="space-y-1">

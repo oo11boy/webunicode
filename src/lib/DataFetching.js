@@ -2,13 +2,22 @@ import { notFound } from "next/navigation";
 import { apiUrl } from "./ApiUrl";
 
 export async function getPosts() {
-  let res = await fetch(`${apiUrl}/posts`, {
-    cache: "no-store", // جلوگیری از کش شدن داده‌ها
-  });
+  try {
+    let res = await fetch(`${apiUrl}/posts`, {
+      cache: "no-store",
+    });
 
-  let post = await res.json();
-  if (!post) notFound();
-  return post;
+    if (!res.ok) {
+      throw new Error(`خطا در دریافت پست‌ها: ${res.status}`);
+    }
+
+    let post = await res.json();
+    if (!post) notFound();
+    return post;
+  } catch (error) {
+    console.error(error);
+    throw error; // یا یک مقدار پیش‌فرض برگردانید
+  }
 }
 
 export const whyusdata = {

@@ -1,198 +1,88 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-import { IconButton, Menu, MenuItem, TextField, Button, Box, Divider, Popover } from "@mui/material";
+import React, { useState } from "react";
+import { useEditor, EditorContent, FloatingMenu } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import Underline from "@tiptap/extension-underline";
+import TextAlign from "@tiptap/extension-text-align";
+import Link from "@tiptap/extension-link";
+import Image from "@tiptap/extension-image";
+import Youtube from "@tiptap/extension-youtube";
+import TextStyle from "@tiptap/extension-text-style";
+import Color from "@tiptap/extension-color";
+import CodeBlock from "@tiptap/extension-code-block";
 import {
-  FormatBold,
-  FormatItalic,
-  FormatUnderlined,
+  Bold,
+  Italic,
+  Underline as UnderlineIcon,
   Link as LinkIcon,
-  Unlink as UnlinkIcon,
   Image as ImageIcon,
-  Videocam as VideoIcon,
-  Title as TitleIcon,
-  FormatAlignLeft,
-  FormatAlignCenter,
-  FormatAlignRight,
-  FormatAlignJustify,
-  Palette as ColorIcon,
-  Code as CodeIcon,
-} from "@mui/icons-material";
+  Video,
+  Code,
+  AlignLeft,
+  AlignCenter,
+  AlignRight,
+  AlignJustify,
+  Palette,
+} from "lucide-react";
 import { TwitterPicker } from "react-color";
 import { apiUrl } from "@/lib/ApiUrl";
 
-// تابع برای تبدیل محتوا به HTML
-const serializeToHtml = (content) => {
-  return content.innerHTML || "";
-};
-
-// تابع برای شناسایی تگ فعلی
-const getCurrentBlockTag = () => {
-  const selection = window.getSelection();
-  if (!selection.rangeCount) return "p";
-  const node = selection.anchorNode;
-  let parent = node.nodeType === 3 ? node.parentElement : node;
-  while (parent && !["H1", "H2", "H3", "H4", "H5", "H6", "P"].includes(parent.tagName)) {
-    parent = parent.parentElement;
-  }
-  return parent ? parent.tagName.toLowerCase() : "p";
-};
-
-// تابع برای بررسی وضعیت فرمت‌ها
-const isFormatActive = (command) => {
-  return document.queryCommandState(command);
-};
-
 const CustomEditor = ({ value, onChange }) => {
-  const editorRef = useRef(null);
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [colorAnchorEl, setColorAnchorEl] = useState(null);
-  const [linkUrl, setLinkUrl] = useState("");
+  const [showColorPicker, setShowColorPicker] = useState(false);
+  const [mediaMenu, setMediaMenu] = useState(false);
   const [mediaUrl, setMediaUrl] = useState("");
   const [mediaAlt, setMediaAlt] = useState("");
   const [mediaType, setMediaType] = useState("image");
   const [mediaSource, setMediaSource] = useState("upload");
   const [selectedFile, setSelectedFile] = useState(null);
-  const [selectionState, setSelectionState] = useState({
-    bold: false,
-    italic: false,
-    underline: false,
-    link: false,
-    code: false,
+
+  const editor = useEditor({
+    extensions: [
+      StarterKit.configure({
+        heading: {
+          levels: [1, 2, 3],
+        },
+      }),
+      Underline,
+      TextAlign.configure({
+        types: ["heading", "paragraph"],
+      }),
+      Link.configure({
+        openOnClick: false,
+        HTMLAttributes: {
+          class: "text-blue-400 underline cursor-pointer",
+        },
+      }),
+      Image.configure({
+        inline: false,
+      }),
+      Youtube.configure({
+        inline: false,
+        width: 640,
+        height: 360,
+      }),
+      TextStyle,
+      Color,
+      CodeBlock.configure({
+        HTMLAttributes: {
+          class: "bg-gray-800 text-gray-200 p-4 rounded-md",
+        },
+      }),
+    ],
+    content: value ? JSON.parse(value) : "",
+    onUpdate: ({ editor }) => {
+      onChange(JSON.stringify(editor.getJSON()));
+    },
+    editorProps: {
+      attributes: {
+        class: "prose prose-invert max-w-none p-6 focus:outline-none min-h-[400px] text-gray-200",
+      },
+    },
   });
-  const [savedRange, setSavedRange] = useState(null);
 
-  // تابع برای بررسی لینک
-  const isLinkActive = () => {
-    const selection = window.getSelection();
-    if (!selection.rangeCount) return false;
-    const node = selection.anchorNode;
-    let parent = node.nodeType === 3 ? node.parentElement : node;
-    while (parent && parent.tagName !== "A" && parent !== editorRef.current) {
-      parent = parent.parentElement;
-    }
-    return parent && parent.tagName === "A";
-  };
+  if (!editor) return null;
 
-  // تابع برای بررسی کد
-  const isCodeActive = () => {
-    const selection = window.getSelection();
-    if (!selection.rangeCount) return false;
-    const node = selection.anchorNode;
-    let parent = node.nodeType === 3 ? node.parentElement : node;
-    while (parent && parent.tagName !== "PRE" && parent !== editorRef.current) {
-      parent = parent.parentElement;
-    }
-    return parent && parent.tagName === "PRE";
-  };
-
-  // تنظیم محتوای اولیه و همگام‌سازی
-  useEffect(() => {
-    if (editorRef.current && value !== editorRef.current.innerHTML) {
-      editorRef.current.innerHTML = value || "";
-    }
-  }, [value]);
-
-  // تغییر محتوا
-  const handleEditorChange = () => {
-    const content = serializeToHtml(editorRef.current);
-    onChange(content);
-  };
-
-  // به‌روزرسانی وضعیت انتخاب
-  const updateSelectionState = () => {
-    setSelectionState({
-      bold: isFormatActive("bold"),
-      italic: isFormatActive("italic"),
-      underline: isFormatActive("underline"),
-      link: isLinkActive(),
-      code: isCodeActive(),
-    });
-  };
-
-  // ذخیره انتخاب کاربر
-  const saveSelection = () => {
-    const selection = window.getSelection();
-    if (selection.rangeCount > 0) {
-      setSavedRange(selection.getRangeAt(0));
-    }
-  };
-
-  // بازیابی انتخاب کاربر
-  const restoreSelection = () => {
-    if (savedRange) {
-      const selection = window.getSelection();
-      selection.removeAllRanges();
-      selection.addRange(savedRange);
-    }
-  };
-
-  // فرمت کردن متن
-  const formatText = (command) => {
-    document.execCommand(command, false, null);
-    editorRef.current.focus();
-    handleEditorChange();
-    updateSelectionState();
-  };
-
-  // تغییر تگ بلوک (h1 تا h6 یا p)
-  const setBlockTag = (tag) => {
-    document.execCommand("formatBlock", false, tag);
-    editorRef.current.focus();
-    handleEditorChange();
-    setAnchorEl(null);
-  };
-
-  // افزودن لینک
-  const addLink = () => {
-    if (linkUrl) {
-      restoreSelection();
-      document.execCommand("createLink", false, linkUrl);
-      setLinkUrl("");
-      handleEditorChange();
-      updateSelectionState();
-    }
-    setAnchorEl(null);
-    editorRef.current.focus();
-  };
-
-  // حذف لینک
-  const removeLink = () => {
-    document.execCommand("unlink", false, null);
-    editorRef.current.focus();
-    handleEditorChange();
-    updateSelectionState();
-  };
-
-  // تغییر رنگ متن
-  const handleColorChange = (color) => {
-    restoreSelection();
-    document.execCommand("foreColor", false, color.hex);
-    editorRef.current.focus();
-    handleEditorChange();
-    setColorAnchorEl(null);
-  };
-
-  // افزودن کد
-  const toggleCode = () => {
-    restoreSelection();
-    if (isCodeActive()) {
-      document.execCommand("formatBlock", false, "p");
-    } else {
-      const selection = window.getSelection();
-      if (selection.rangeCount) {
-        const range = selection.getRangeAt(0);
-        const text = range.toString();
-        const codeHtml = `<pre><code>${text}</code></pre>`;
-        document.execCommand("insertHTML", false, codeHtml);
-      }
-    }
-    editorRef.current.focus();
-    handleEditorChange();
-    updateSelectionState();
-  };
-
-  // آپلود و افزودن تصویر یا ویدیو
   const handleMediaInsert = async () => {
     let url = "";
     if (mediaSource === "upload" && selectedFile) {
@@ -204,15 +94,11 @@ const CustomEditor = ({ value, onChange }) => {
           body: formData,
         });
         const data = await res.json();
-        if (data.url) {
+        if (res.ok) {
           url = data.url;
-        } else {
-          alert("خطا در آپلود فایل");
-          return;
         }
       } catch (err) {
-        console.error("خطا در آپلود فایل:", err);
-        alert("خطا در آپلود فایل");
+        console.error("Upload failed:", err);
         return;
       }
     } else if (mediaSource === "url" && mediaUrl) {
@@ -220,349 +106,352 @@ const CustomEditor = ({ value, onChange }) => {
     }
 
     if (url) {
-      const tag =
-        mediaType === "image"
-          ? `<img src="${url}" alt="${mediaAlt || "تصویر"}" class="max-w-full h-auto my-2" />`
-          : `<video src="${url}" controls class="max-w-full my-2"></video>`;
-      document.execCommand("insertHTML", false, tag);
-      handleEditorChange();
+      if (mediaType === "image") {
+        editor.chain().focus().setImage({ src: url, alt: mediaAlt }).run();
+      } else {
+        editor.chain().focus().setYoutubeVideo({ src: url }).run();
+      }
     }
+
     setMediaUrl("");
     setMediaAlt("");
     setSelectedFile(null);
-    setAnchorEl(null);
+    setMediaMenu(false);
   };
 
-  // تنظیم ترازبندی متن
-  const setAlignment = (align) => {
-    document.execCommand(`justify${align}`, false, null);
-    editorRef.current.focus();
-    handleEditorChange();
-  };
+  const setLink = () => {
+    const previousUrl = editor.getAttributes("link").href;
+    const url = window.prompt("لطفاً آدرس لینک را وارد کنید", previousUrl);
 
-  // مدیریت رویدادهای کیبورد
-  const handleKeyDown = (e) => {
-    if (e.key === "Backspace" || e.key === "Delete") {
-      const selection = window.getSelection();
-      if (!selection.rangeCount) return;
-      const range = selection.getRangeAt(0);
-      if (range.collapsed && range.startContainer === editorRef.current) {
-        e.preventDefault();
-        editorRef.current.innerHTML = "";
-        handleEditorChange();
-      }
+    if (url === null) return;
+    if (url === "") {
+      editor.chain().focus().unsetLink().run();
+      return;
     }
-  };
 
-  // به‌روزرسانی وضعیت هنگام انتخاب متن
-  const handleSelectionChange = () => {
-    updateSelectionState();
-  };
-
-  // باز و بسته کردن منوها
-  const handleMenuOpen = (event, type) => {
-    saveSelection();
-    setAnchorEl(event.currentTarget);
-    if (type === "media") {
-      setMediaType("image");
-      setMediaSource("upload");
-    } else if (type === "link" && selectionState.link) {
-      const selection = window.getSelection();
-      if (selection.rangeCount) {
-        const range = selection.getRangeAt(0);
-        const link = range.commonAncestorContainer.parentElement.closest("a");
-        if (link) setLinkUrl(link.href);
-      }
-    }
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    setLinkUrl("");
-    setMediaUrl("");
-    setMediaAlt("");
-    setSelectedFile(null);
+    editor.chain().focus().setLink({ href: url }).run();
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        height: "100%", // پر کردن ارتفاع مودال
-      }}
-    >
-      {/* نوار ابزار استیکی */}
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 1,
-          p: 1,
-          bgcolor: "#f5f5f5",
-          borderBottom: "1px solid #ccc",
-          position: "sticky",
-          top: 0,
-          zIndex: 10,
-          flexShrink: 0,
-        }}
-      >
-        <IconButton
-          onClick={() => formatText("bold")}
+    <div className="bg-gray-900 relative rounded-lg overflow-hidden shadow-lg border border-gray-800">
+      {/* Toolbar */}
+      <div className="flex fixed left-5 top-5 items-center gap-1 p-2 bg-gray-800 border-b border-gray-700" dir="rtl">
+        {/* دکمه‌های موجود */}
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleBold().run()}
+          disabled={!editor.can().toggleBold()}
+          className={`p-2 rounded ${editor.isActive("bold") ? "bg-gray-700" : "hover:bg-gray-700"} text-gray-300`}
           title="پررنگ"
-          sx={{ bgcolor: selectionState.bold ? "#e0e0e0" : "transparent" }}
         >
-          <FormatBold />
-        </IconButton>
-        <IconButton
-          onClick={() => formatText("italic")}
-          title="ایتالیک"
-          sx={{ bgcolor: selectionState.italic ? "#e0e0e0" : "transparent" }}
+          <Bold size={18} />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleItalic().run()}
+          disabled={!editor.can().toggleItalic()}
+          className={`p-2 rounded ${editor.isActive("italic") ? "bg-gray-700" : "hover:bg-gray-700"} text-gray-300`}
+          title="کج"
         >
-          <FormatItalic />
-        </IconButton>
-        <IconButton
-          onClick={() => formatText("underline")}
+          <Italic size={18} />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleUnderline().run()}
+          disabled={!editor.can().toggleUnderline()}
+          className={`p-2 rounded ${editor.isActive("underline") ? "bg-gray-700" : "hover:bg-gray-700"} text-gray-300`}
           title="زیرخط"
-          sx={{ bgcolor: selectionState.underline ? "#e0e0e0" : "transparent" }}
         >
-          <FormatUnderlined />
-        </IconButton>
-        <IconButton onClick={() => setAlignment("Left")} title="تراز چپ">
-          <FormatAlignLeft />
-        </IconButton>
-        <IconButton onClick={() => setAlignment("Center")} title="تراز وسط">
-          <FormatAlignCenter />
-        </IconButton>
-        <IconButton onClick={() => setAlignment("Right")} title="تراز راست">
-          <FormatAlignRight />
-        </IconButton>
-        <IconButton onClick={() => setAlignment("Full")} title="تراز کامل">
-          <FormatAlignJustify />
-        </IconButton>
-        <IconButton
-          id="block-menu"
-          onClick={(e) => handleMenuOpen(e, "block")}
-          title="نوع بلوک"
+          <UnderlineIcon size={18} />
+        </button>
+        <div className="w-px h-6 bg-gray-700 mx-2" />
+
+        {/* اضافه کردن انتخاب نوع تگ */}
+        <div className="relative">
+          <select
+            onChange={(e) => {
+              const value = e.target.value;
+              if (value === "paragraph") {
+                editor.chain().focus().setParagraph().run();
+              } else if (value) {
+                editor.chain().focus().toggleHeading({ level: Number(value) }).run();
+              }
+            }}
+            className="p-2 bg-gray-700 text-gray-300 rounded hover:bg-gray-600 focus:outline-none"
+            title="نوع تگ"
+          >
+            <option value="">انتخاب تگ</option>
+            <option value="1">H1</option>
+            <option value="2">H2</option>
+            <option value="3">H3</option>
+            <option value="paragraph">پاراگراف</option>
+          </select>
+        </div>
+        <div className="w-px h-6 bg-gray-700 mx-2" />
+
+        {/* دکمه‌های ترازبندی */}
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().setTextAlign("right").run()}
+          className={`p-2 rounded ${editor.isActive({ textAlign: "right" }) ? "bg-gray-700" : "hover:bg-gray-700"} text-gray-300`}
+          title="راست‌چین"
         >
-          <TitleIcon />
-        </IconButton>
-        <Menu
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl && anchorEl.id === "block-menu")}
-          onClose={handleMenuClose}
+          <AlignRight size={18} />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().setTextAlign("center").run()}
+          className={`p-2 rounded ${editor.isActive({ textAlign: "center" }) ? "bg-gray-700" : "hover:bg-gray-700"} text-gray-300`}
+          title="وسط‌چین"
         >
-          {["h1", "h2", "h3", "h4", "h5", "h6", "p"].map((tag) => (
-            <MenuItem key={tag} onClick={() => setBlockTag(tag)}>
-              {tag.toUpperCase()}
-            </MenuItem>
-          ))}
-        </Menu>
-        <IconButton
-          id="link-menu"
-          onClick={(e) => handleMenuOpen(e, "link")}
-          title="افزودن/ویرایش لینک"
-          sx={{ bgcolor: selectionState.link ? "#e0e0e0" : "transparent" }}
+          <AlignCenter size={18} />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().setTextAlign("left").run()}
+          className={`p-2 rounded ${editor.isActive({ textAlign: "left" }) ? "bg-gray-700" : "hover:bg-gray-700"} text-gray-300`}
+          title="چپ‌چین"
         >
-          <LinkIcon />
-        </IconButton>
-        <Menu
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl && anchorEl.id === "link-menu")}
-          onClose={handleMenuClose}
+          <AlignLeft size={18} />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().setTextAlign("justify").run()}
+          className={`p-2 rounded ${editor.isActive({ textAlign: "justify" }) ? "bg-gray-700" : "hover:bg-gray-700"} text-gray-300`}
+          title="تراز کامل"
         >
-          <Box sx={{ p: 2, display: "flex", flexDirection: "column", gap: 1 }}>
-            <TextField
-              label="آدرس لینک"
-              value={linkUrl}
-              onChange={(e) => setLinkUrl(e.target.value)}
-              size="small"
-              fullWidth
-            />
-            <Button variant="contained" onClick={addLink}>
-              {selectionState.link ? "ویرایش" : "افزودن"}
-            </Button>
-            {selectionState.link && (
-              <Button variant="outlined" color="error" onClick={removeLink}>
-                حذف لینک
-              </Button>
-            )}
-          </Box>
-        </Menu>
-        <IconButton
-          onClick={(e) => {
-            saveSelection();
-            setColorAnchorEl(e.currentTarget);
-          }}
-          title="رنگ متن"
+          <AlignJustify size={18} />
+        </button>
+        <div className="w-px h-6 bg-gray-700 mx-2" />
+
+        {/* دکمه‌های لینک و رسانه */}
+        <button
+          type="button"
+          onClick={setLink}
+          className={`p-2 rounded ${editor.isActive("link") ? "bg-gray-700" : "hover:bg-gray-700"} text-gray-300`}
+          title="لینک"
         >
-          <ColorIcon />
-        </IconButton>
-        <Popover
-          open={Boolean(colorAnchorEl)}
-          anchorEl={colorAnchorEl}
-          onClose={() => setColorAnchorEl(null)}
-          anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+          <LinkIcon size={18} />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().unsetLink().run()}
+          disabled={!editor.isActive("link")}
+          className={`p-2 rounded ${editor.isActive("link") ? "hover:bg-gray-700" : "opacity-50 cursor-not-allowed"} text-gray-300`}
+          title="حذف لینک"
         >
-          <TwitterPicker onChangeComplete={handleColorChange} />
-        </Popover>
-        <IconButton
-          onClick={toggleCode}
+          <LinkIcon size={18} className="rotate-45" />
+        </button>
+        <button
+          type="button"
+          onClick={() => setMediaMenu(true)}
+          className="p-2 rounded hover:bg-gray-700 text-gray-300"
+          title="رسانه"
+        >
+          <ImageIcon size={18} />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleCodeBlock().run()}
+          className={`p-2 rounded ${editor.isActive("codeBlock") ? "bg-gray-700" : "hover:bg-gray-700"} text-gray-300`}
           title="کد"
-          sx={{ bgcolor: selectionState.code ? "#e0e0e0" : "transparent" }}
         >
-          <CodeIcon />
-        </IconButton>
-        <IconButton
-          id="media-menu"
-          onClick={(e) => handleMenuOpen(e, "media")}
-          title="افزودن تصویر/ویدیو"
+          <Code size={18} />
+        </button>
+        <button
+          type="button"
+          onClick={() => setShowColorPicker(!showColorPicker)}
+          className="p-2 rounded hover:bg-gray-700 text-gray-300"
+          title="رنگ"
         >
-          <ImageIcon />
-        </IconButton>
-        <Menu
-          anchorEl={anchorEl}
-          open={Boolean(anchorEl && anchorEl.id === "media-menu")}
-          onClose={handleMenuClose}
+          <Palette size={18} />
+        </button>
+      </div>
+
+      {/* Floating Menu */}
+      {editor && (
+        <FloatingMenu
+          editor={editor}
+          tippyOptions={{ duration: 200 }}
+          className="bg-gray-800 rounded-md shadow-lg p-1 flex gap-1 border border-gray-700"
         >
-          <Box sx={{ p: 2, display: "flex", flexDirection: "column", gap: 1, width: 300 }}>
-            <Box sx={{ display: "flex", gap: 1 }}>
-              <Button
-                variant={mediaType === "image" ? "contained" : "outlined"}
-                onClick={() => setMediaType("image")}
-              >
-                تصویر
-              </Button>
-              <Button
-                variant={mediaType === "video" ? "contained" : "outlined"}
-                onClick={() => setMediaType("video")}
-              >
-                ویدیو
-              </Button>
-            </Box>
-            <Divider />
-            <Box sx={{ display: "flex", gap: 1 }}>
-              <Button
-                variant={mediaSource === "upload" ? "contained" : "outlined"}
-                onClick={() => setMediaSource("upload")}
-              >
-                آپلود
-              </Button>
-              <Button
-                variant={mediaSource === "url" ? "contained" : "outlined"}
-                onClick={() => setMediaSource("url")}
-              >
-                لینک
-              </Button>
-            </Box>
-            {mediaSource === "upload" ? (
-              <input
-                type="file"
-                accept={mediaType === "image" ? "image/*" : "video/*"}
-                onChange={(e) => setSelectedFile(e.target.files[0])}
-              />
-            ) : (
-              <TextField
-                label="آدرس فایل"
-                value={mediaUrl}
-                onChange={(e) => setMediaUrl(e.target.value)}
-                size="small"
-                fullWidth
-              />
-            )}
-            {mediaType === "image" && (
-              <TextField
-                label="متن Alt"
-                value={mediaAlt}
-                onChange={(e) => setMediaAlt(e.target.value)}
-                size="small"
-                fullWidth
-              />
-            )}
-            <Button variant="contained" onClick={handleMediaInsert}>
+          <button
+            type="button"
+            onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
+            className={`px-2 py-1 text-sm rounded ${editor.isActive("heading", { level: 1 }) ? "bg-gray-700" : "hover:bg-gray-700"} text-gray-300`}
+          >
+            H1
+          </button>
+          <button
+            type="button"
+            onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
+            className={`px-2 py-1 text-sm rounded ${editor.isActive("heading", { level: 2 }) ? "bg-gray-700" : "hover:bg-gray-700"} text-gray-300`}
+          >
+            H2
+          </button>
+          <button
+            type="button"
+            onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
+            className={`px-2 py-1 text-sm rounded ${editor.isActive("heading", { level: 3 }) ? "bg-gray-700" : "hover:bg-gray-700"} text-gray-300`}
+          >
+            H3
+          </button>
+          <button
+            type="button"
+            onClick={() => editor.chain().focus().setParagraph().run()}
+            className={`px-2 py-1 text-sm rounded ${editor.isActive("paragraph") ? "bg-gray-700" : "hover:bg-gray-700"} text-gray-300`}
+          >
+            P
+          </button>
+        </FloatingMenu>
+      )}
+
+      {/* Color Picker */}
+      {showColorPicker && (
+        <div className="fixed top-20 left-5 z-10 p-2 bg-gray-800 rounded-md shadow-lg border border-gray-700">
+          <TwitterPicker
+            onChange={(color) => {
+              editor.chain().focus().setColor(color.hex).run();
+              setShowColorPicker(false);
+            }}
+          />
+        </div>
+      )}
+
+      {/* Media Menu */}
+      {mediaMenu && (
+        <div className="fixed top-20 left-5 z-10 p-4 bg-gray-800 rounded-md shadow-lg border border-gray-700 flex flex-col gap-3 w-80 text-gray-200" dir="rtl">
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => setMediaType("image")}
+              className={`px-3 py-1 rounded ${mediaType === "image" ? "bg-gray-700" : "bg-gray-600 hover:bg-gray-700"}`}
+            >
+              تصویر
+            </button>
+            <button
+              type="button"
+              onClick={() => setMediaType("video")}
+              className={`px-3 py-1 rounded ${mediaType === "video" ? "bg-gray-700" : "bg-gray-600 hover:bg-gray-700"}`}
+            >
+              ویدیو
+            </button>
+          </div>
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => setMediaSource("upload")}
+              className={`px-3 py-1 rounded ${mediaSource === "upload" ? "bg-gray-700" : "bg-gray-600 hover:bg-gray-700"}`}
+            >
+              آپلود
+            </button>
+            <button
+              type="button"
+              onClick={() => setMediaSource("url")}
+              className={`px-3 py-1 rounded ${mediaSource === "url" ? "bg-gray-700" : "bg-gray-600 hover:bg-gray-700"}`}
+            >
+              لینک
+            </button>
+          </div>
+          {mediaSource === "upload" ? (
+            <input
+              type="file"
+              accept={mediaType === "image" ? "image/*" : "video/*"}
+              onChange={(e) => setSelectedFile(e.target.files[0])}
+              className="w-full text-gray-300 bg-gray-700 rounded p-2 file:bg-gray-600 file:text-gray-200 file:border-0 file:rounded file:px-3 file:py-1"
+            />
+          ) : (
+            <input
+              type="text"
+              value={mediaUrl}
+              onChange={(e) => setMediaUrl(e.target.value)}
+              placeholder="آدرس فایل"
+              className="w-full p-2 bg-gray-700 rounded border border-gray-600 text-gray-200 placeholder-gray-400"
+              dir="rtl"
+            />
+          )}
+          {mediaType === "image" && (
+            <input
+              type="text"
+              value={mediaAlt}
+              onChange={(e) => setMediaAlt(e.target.value)}
+              placeholder="متن Alt"
+              className="w-full p-2 bg-gray-700 rounded border border-gray-600 text-gray-200 placeholder-gray-400"
+              dir="rtl"
+            />
+          )}
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={handleMediaInsert}
+              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded text-white"
+            >
               درج
-            </Button>
-          </Box>
-        </Menu>
-      </Box>
+            </button>
+            <button
+              type="button"
+              onClick={() => setMediaMenu(false)}
+              className="px-4 py-2 bg-gray-600 hover:bg-gray-700 rounded"
+            >
+              انصراف
+            </button>
+          </div>
+        </div>
+      )}
 
-      {/* بخش ویرایشگر */}
-      <Box sx={{ flex: 1, overflowY: "auto" }}>
-        <div
-          ref={editorRef}
-          contentEditable
-          onInput={handleEditorChange}
-          onKeyDown={handleKeyDown}
-          onMouseUp={handleSelectionChange}
-          onKeyUp={handleSelectionChange}
-          className="p-4 outline-none direction-rtl text-right custom-editor"
-          style={{ minHeight: "300px" }}
-          suppressContentEditableWarning={true}
-          placeholder="متن خود را اینجا بنویسید..."
-        />
-      </Box>
+      {/* Editor Content */}
+      <div className="bg-gray-900" dir="rtl">
+        <EditorContent editor={editor} />
+      </div>
 
-      <style jsx>{`
-        .custom-editor h1 {
+      <style jsx global>{`
+        .ProseMirror {
+          direction: rtl !important;
+          text-align: right !important;
+          background: #1f2937 !important;
+          color: #e5e7eb !important;
+        }
+        .ProseMirror p {
+          margin: 1em 0;
+          line-height: 1.6;
+        }
+        .ProseMirror h1,
+        .ProseMirror h2,
+        .ProseMirror h3 {
+          margin: 1.5em 0 1em;
+          line-height: 1.2;
+        }
+        .ProseMirror h1 {
           font-size: 2em;
-          font-weight: bold;
-          margin: 0.67em 0;
         }
-        .custom-editor h2 {
+        .ProseMirror h2 {
           font-size: 1.5em;
-          font-weight: bold;
-          margin: 0.83em 0;
         }
-        .custom-editor h3 {
-          font-size: 1.17em;
-          font-weight: bold;
-          margin: 1em 0;
+        .ProseMirror h3 {
+          font-size: 1.25em;
         }
-        .custom-editor h4 {
-          font-size: 1em;
-          font-weight: bold;
-          margin: 1.33em 0;
+        .ProseMirror img {
+          max-width: 100%;
+          height: auto;
+          margin: 1.5em 0;
+          border-radius: 8px;
         }
-        .custom-editor h5 {
-          font-size: 0.83em;
-          font-weight: bold;
-          margin: 1.67em 0;
+        .ProseMirror iframe {
+          max-width: 100%;
+          margin: 1.5em 0;
+          border-radius: 8px;
         }
-        .custom-editor h6 {
-          font-size: 0.67em;
-          font-weight: bold;
-          margin: 2.33em 0;
-        }
-        .custom-editor p {
-          font-size: 1em;
-          margin: 1em 0;
-        }
-        .custom-editor a {
-          color: #1a73e8;
-          text-decoration: underline;
-          cursor: pointer;
-        }
-        .custom-editor pre {
-          background: #f4f4f4;
-          padding: 1em;
-          border-radius: 4px;
-          font-family: "Courier New", Courier, monospace;
+        .ProseMirror pre {
           direction: ltr;
           text-align: left;
           white-space: pre-wrap;
-          margin: 1em 0;
+          font-family: "JetBrains Mono", monospace;
         }
-        .custom-editor pre code {
-          background: none;
-          padding: 0;
-          font-family: inherit;
-        }
-        .custom-editor:empty::before {
-          content: "متن خود را اینجا بنویسید...";
-          color: #aaa;
+        .ProseMirror a {
+          color: #60a5fa !important;
         }
       `}</style>
-    </Box>
+    </div>
   );
 };
 
