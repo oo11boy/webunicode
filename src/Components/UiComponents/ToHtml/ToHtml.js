@@ -6,24 +6,47 @@ import { tiptapToHtml } from "./tiptapToHtml";
 const ToHtml = ({ content }) => {
   const renderContent = () => {
     if (!content) {
+      console.log("محتوا خالی است");
       return "<p>محتوایی برای نمایش وجود ندارد</p>";
     }
 
-    // اگر رشته باشد و با < شروع شود، فرض می‌کنیم HTML است
-    if (typeof content === "string" && content.trim().startsWith("<")) {
-      return content;
+    if (typeof content === "string") {
+      // اگر با < شروع شود، فرض می‌کنیم HTML است
+      if (content.trim().startsWith("<")) {
+        console.log("محتوا به صورت HTML تشخیص داده شد");
+        return content;
+      }
+
+      // در غیر این صورت، فرض می‌کنیم JSON است
+      try {
+        console.log("تلاش برای پارسه کردن JSON...");
+        const parsedContent = JSON.parse(content);
+        console.log("محتوای پارسه‌شده:", parsedContent);
+        const html = tiptapToHtml(parsedContent);
+        console.log("خروجی HTML از tiptap:", html);
+        return html;
+      } catch (e) {
+        console.error("خطا در پارسه کردن JSON:", e);
+        return "<p>خطا در نمایش محتوا</p>";
+      }
     }
 
-    // در غیر این صورت، فرض می‌کنیم JSON است و باید تبدیل شود
+    // اگر ورودی از قبل آبجکت JSON باشد
     try {
-      return tiptapToHtml(content);
+      console.log("ورودی مستقیماً آبجکت JSON است");
+      const html = tiptapToHtml(content);
+      console.log("خروجی HTML از tiptap:", html);
+      return html;
     } catch (error) {
       console.error("خطا در تبدیل JSON به HTML:", error);
       return "<p>خطا در نمایش محتوا</p>";
     }
   };
 
-  return <div className="mainarticle" dangerouslySetInnerHTML={{ __html: renderContent() }} />;
+  const htmlContent = renderContent();
+  console.log("محتوای نهایی برای رندر:", htmlContent);
+
+  return <div className="mainarticle" dangerouslySetInnerHTML={{ __html: htmlContent }} />;
 };
 
 export default ToHtml;

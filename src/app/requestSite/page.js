@@ -1,10 +1,15 @@
-import { redirect } from 'next/navigation'
-import React from 'react'
+// app/requestSite/page.js
+import { redirect } from 'next/navigation';
+import React from 'react';
 
+export const metadata = {
+  robots: {
+    index: false, 
+    follow: false, 
+  },
+};
 
-export default function page() {
-redirect('../requestSite/create')
-  return (
-    <div>page create</div>
-  )
+export default function Page() {
+  redirect('../requestSite/create');
+  return <div>page create</div>;
 }

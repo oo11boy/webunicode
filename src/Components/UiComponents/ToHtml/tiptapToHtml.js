@@ -1,4 +1,4 @@
-import { generateHTML } from "@tiptap/core";
+import { generateHTML } from "@tiptap/html"; // تغییر import به @tiptap/html
 import StarterKit from "@tiptap/starter-kit";
 import Underline from "@tiptap/extension-underline";
 import TextAlign from "@tiptap/extension-text-align";
@@ -11,9 +11,8 @@ import CodeBlock from "@tiptap/extension-code-block";
 
 export function tiptapToHtml(jsonContent) {
   try {
-    console.log("JSON Content Input:", jsonContent); // لاگ ورودی برای دیباگ
+    console.log("JSON Content Input:", jsonContent);
 
-    // اگر ورودی رشته باشد، ابتدا آن را به JSON تبدیل می‌کنیم
     const content = typeof jsonContent === "string" ? JSON.parse(jsonContent) : jsonContent;
 
     if (!content || !content.type || !Array.isArray(content.content)) {
@@ -53,10 +52,10 @@ export function tiptapToHtml(jsonContent) {
       }),
     ]);
 
-    console.log("Generated HTML:", html); // لاگ خروجی برای دیباگ
+    console.log("Generated HTML:", html);
     return html;
   } catch (error) {
     console.error("خطا در تبدیل JSON به HTML:", error.message, error.stack);
-    throw error; // خطا را به بالا پرتاب می‌کنیم تا در ToHtml مدیریت شود
+    throw error;
   }
 }
