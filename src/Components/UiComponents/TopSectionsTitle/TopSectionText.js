@@ -1,16 +1,15 @@
-import React from 'react'
-import './TopSectionText.css'
-export default function TopSectionText({toptext,maintext,maincolor,linecolor}) {
-  return (
-    <div style={{direction:"rtl"}} className="top-section w-full justify-center flex-col flex items-center">
-   <p className={`mb-4  text-4xl before-top-section-text`}>{toptext}</p>
-    <h3 style={{color:maincolor}} className={`text-4xl text-${maincolor}`}>{maintext}</h3>
-    <div className='section-divider'>
-    <span style={{backgroundColor:linecolor}} className={`line2 bg-${linecolor}`}></span>
-       <span style={{backgroundColor:linecolor}} className={`line1 bg-${linecolor}`}></span>
-  
-    </div>
-  </div>
+import React from 'react';
+import './TopSectionText.css';
 
-  )
+export default function TopSectionText({ toptext, maintext, maincolor = 'black', linecolor }) {
+  return (
+    <header className="top-section w-full flex flex-col items-center" lang="fa">
+      <p className="mb-4 text-4xl before-top-section-text">{toptext}</p>
+      <h2 className={`text-4xl text-${maincolor}`}>{maintext}</h2>
+      <div className="section-divider">
+        <span className={`line2 bg-${linecolor}`}></span>
+        <span className={`line1 bg-${linecolor}`}></span>
+      </div>
+    </header>
+  );
 }

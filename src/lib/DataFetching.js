@@ -1,25 +1,25 @@
-import { notFound } from "next/navigation";
 import { apiUrl } from "./ApiUrl";
 
 export async function getPosts() {
   try {
     let res = await fetch(`${apiUrl}/posts`, {
-      cache: "no-store",
+      next: { revalidate: 3600 },
     });
 
     if (!res.ok) {
       throw new Error(`خطا در دریافت پست‌ها: ${res.status}`);
     }
 
-    let post = await res.json();
-    if (!post) notFound();
-    return post;
+    let posts = await res.json();
+    if (!posts || posts.length === 0) {
+      return []; // بازگشت آرایه خالی به جای notFound
+    }
+    return posts;
   } catch (error) {
-    console.error(error);
-    throw error; // یا یک مقدار پیش‌فرض برگردانید
+    console.error("خطا در دریافت پست‌ها:", error);
+    return []; // یا مقدار پیش‌فرض
   }
 }
-
 export const whyusdata = {
   maindata: {
     title: "سفارش طراحی سایت ارزان و با کیفیت در سراسر تهران و ایران",

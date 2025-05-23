@@ -40,7 +40,50 @@ font-family: 'alibaba';
 }
 
 
-
+.whyus-info-card {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 50;
+  }
+  
+  .whyus-info-card li {
+    border: 1px solid #e5e7eb;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1rem;
+    height: 150px;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (min-width: 768px) {
+    .whyus-info-card {
+      flex-direction: row;
+    }
+    .whyus-info-card li {
+      width: 150px;
+    }
+  }
+  
+  .whyus-info-card span {
+    color: #4b5563;
+  }
+  
+  .whyus-info-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-top: 0.5rem;
+  }
 @media only screen and (min-width: 992px) {
 .mainimgwhyus img{
     width: 100%;

@@ -10,3 +10,28 @@
   .blink-image {
     animation: blink 4s infinite;
   }
+
+
+  .landing-type-theme {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+  }
+  
+  @media (min-width: 1024px) {
+    .landing-type-theme {
+      width: 70%;
+    }
+  }
+  
+  .landing-type-theme video {
+    max-height: 300px;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }

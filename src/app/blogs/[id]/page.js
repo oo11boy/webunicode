@@ -56,7 +56,7 @@ export default async function Page({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <Header />
-      <Singlepost id={id} />
+      <Singlepost post={post} />
       <Footer />
     </>
   );

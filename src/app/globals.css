@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* body{
-  background-color: #F7F7F7;
-} */
-
 .container-field {
   width: 100%;
   margin: auto;

@@ -15,7 +15,7 @@ import LandingForm from "@/Components/LandingPageComponents/LandingForm";
 import LandingHowPay from "@/Components/LandingPageComponents/LandingHowPay";
 
 export const metadata = {
-  title: "طراحی سایت ارزان در تهران و ایران | قیمت از 1 میلیون تومان",
+  title: "طراحی سایت ارزان در تهران و ایران",
   description:
     "به دنبال طراحی سایت ارزان و با کیفیت مناسب هستید؟ ما می توانیم وب سایت شما را با بهترین قیمت و در کوتاه ترین زمان ممکن طراحی کنیم.",
 

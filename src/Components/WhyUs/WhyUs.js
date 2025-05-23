@@ -1,42 +1,48 @@
-import React from "react";
-import "./WhyUs.css";
+'use client';
 
-import WhyUsImageSide from "./WhyUsImageSide";
-import WhyUsTextSide from "./WhyUsTextSide";
-import { whyusdata } from "@/lib/DataFetching";
+import React, { useMemo } from 'react';
+import WhyUsImageSide from './WhyUsImageSide';
+import WhyUsTextSide from './WhyUsTextSide';
+import { whyusdata } from '@/lib/DataFetching';
+import './WhyUs.css';
 
 export default function WhyUs({ singlepageid }) {
-  const DynamicWhyUs =
-    singlepageid === "store"
+  const DynamicWhyUs = useMemo(() => {
+    return singlepageid === 'store'
       ? whyusdata.storedata
-      : singlepageid === "company"
+      : singlepageid === 'company'
       ? whyusdata.companydata
-      : singlepageid === "resume"
+      : singlepageid === 'resume'
       ? whyusdata.resumedata
-      : whyusdata.maindata; 
+      : whyusdata.maindata;
+  }, [singlepageid]);
 
   const dataToPass = Array.isArray(DynamicWhyUs) ? DynamicWhyUs[0] : DynamicWhyUs;
 
   return (
-    <div
+    <section
       dir="rtl"
-      className="whyus pb-[7.5%] lg:pb-[unset] pt-[7.4%] relative h-auto "
+      lang="fa"
+      className="whyus py-[7.5%] relative h-auto"
+      aria-labelledby="whyus-title"
     >
       <img
-        className="absolute  h-[100px] right-10 bottom-20"
+        className="absolute h-[100px] right-10 bottom-20"
         src="/image/sharpwhyus.png"
-        alt={dataToPass.title}
+        alt={`تصویر تزئینی برای ${dataToPass.title}`}
+        loading="lazy"
       />
       <img
-        className="absolute hidden lg:flex right-0 top-28 h-[200px] rounded-xl w-[200px]"
+        className="absolute hidden lg:block right-0 top-28 h-[200px] rounded-xl w-[200px]"
         src="/image/bg2whyus.jpeg"
-        alt={dataToPass.title}
+        alt={`تصویر پس‌زمینه برای ${dataToPass.title}`}
+        loading="lazy"
       />
 
       <div className="container flex flex-col lg:flex-row justify-between items-start">
-        <WhyUsImageSide DynamicWhyUs={dataToPass}/>
+        <WhyUsImageSide DynamicWhyUs={dataToPass} />
         <WhyUsTextSide DynamicWhyUs={dataToPass} />
       </div>
-    </div>
+    </section>
   );
 }
