@@ -1,0 +1,155 @@
+/* استایل‌های محتوای داخل ادیتور */
+.ck-content {
+    direction: rtl !important;
+    text-align: right !important;
+    min-height: 400px;
+    padding: 1.5rem;
+    background: #f9fafb !important; /* پس‌زمینه روشن برای کنتراست */
+    color: #1f2937 !important; /* رنگ متن تیره برای خوانایی */
+    border-radius: 8px;
+    font-family: "Vazirmatn", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  
+  /* استایل‌های هدینگ‌ها */
+  .ck-content h1 {
+    font-size: 2.5rem !important; /* اندازه بزرگ‌تر برای H1 */
+    font-weight: 800 !important; /* وزن فونت سنگین */
+    color: #111827 !important; /* رنگ تیره‌تر برای تمایز */
+    margin: 1.5rem 0 1rem !important;
+    line-height: 1.2 !important;
+    border-bottom: 2px solid #3b82f6 !important; /* خط زیرین آبی برای جذابیت */
+    padding-bottom: 0.25rem !important;
+  }
+  
+  .ck-content h2 {
+    font-size: 1.875rem !important;
+    font-weight: 700 !important;
+    color: #1f2937 !important;
+    margin: 1.25rem 0 0.75rem !important;
+    line-height: 1.3 !important;
+    border-bottom: 1px solid #6b7280 !important; /* خط زیرین خاکستری */
+    padding-bottom: 0.2rem !important;
+  }
+  
+  .ck-content h3 {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+    margin: 1rem 0 0.5rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* استایل پاراگراف‌ها */
+  .ck-content p {
+    font-size: 1.125rem !important;
+    line-height: 1.8 !important;
+    color: #4b5563 !important;
+    margin: 1rem 0 !important;
+  }
+  
+  /* استایل لینک‌ها */
+  .ck-content a {
+    color: #2563eb !important; /* رنگ آبی روشن */
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+    transition: color 0.2s ease !important;
+  }
+  
+  .ck-content a:hover {
+    color: #1e40af !important; /* رنگ تیره‌تر در هاور */
+  }
+  
+  /* استایل تصاویر */
+  .ck-content img {
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 1.5rem 0 !important;
+    border-radius: 8px !important;
+    border: 2px solid #d1d5db !important; /* حاشیه خاکستری */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* استایل ویدیوها */
+  .ck-content .media {
+    max-width: 100% !important;
+    margin: 1.5rem 0 !important;
+    border-radius: 8px !important;
+    border: 2px solid #d1d5db !important;
+  }
+  
+  /* استایل بلاک‌های کد */
+  .ck-content pre,
+  .ck-content code {
+    direction: ltr !important;
+    text-align: left !important;
+    font-family: "JetBrains Mono", monospace !important;
+    background: #1e293b !important; /* پس‌زمینه تیره برای کد */
+    color: #a5b4fc !important; /* رنگ متن کد */
+    padding: 1.25rem !important;
+    border-radius: 8px !important;
+    border: 1px solid #4b5563 !important;
+    margin: 1rem 0 !important;
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* استایل لیست‌ها */
+  .ck-content ul,
+  .ck-content ol {
+    margin: 1rem 0 !important;
+    padding-right: 2rem !important;
+  }
+  
+  .ck-content li {
+    font-size: 1.125rem !important;
+    color: #4b5563 !important;
+    line-height: 1.8 !important;
+  }
+  
+  /* استایل نوار ابزار */
+  .ck-toolbar {
+    background: #e5e7eb !important; /* پس‌زمینه روشن‌تر برای نوار ابزار */
+    border-bottom: 1px solid #d1d5db !important;
+    border-radius: 8px 8px 0 0 !important;
+  }
+  
+  /* استایل دکمه‌های نوار ابزار */
+  .ck.ck-button,
+  .ck.ck-button.ck-on {
+    color: #1f2937 !important;
+    border-radius: 6px !important;
+  }
+  
+  .ck.ck-button:hover,
+  .ck.ck-button.ck-on:hover {
+    background: #3b82f6 !important; /* رنگ آبی برای هاور */
+    color: #ffffff !important;
+  }
+  
+  /* استایل منوی بازشو */
+  .ck.ck-dropdown__panel {
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+  }
+  
+  .ck.ck-dropdown__panel .ck-list__item:hover {
+    background: #3b82f6 !important;
+    color: #ffffff !important;
+  }
+  
+  /* استایل فرم لینک */
+  .ck.ck-link-actions,
+  .ck.ck-link-form {
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    color: #1f2937 !important;
+  }
+  
+  .ck.ck-link-form input {
+    background: #f9fafb !important;
+    border: 1px solid #d1d5db !important;
+    color: #1f2937 !important;
+    border-radius: 4px !important;
+  }
