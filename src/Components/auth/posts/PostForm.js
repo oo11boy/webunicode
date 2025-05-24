@@ -111,22 +111,23 @@ function PostForm({ isEditModalOpen, formData, error, categories, handleChange, 
 
         {/* توضیحات متا */}
         <div className="space-y-1">
-          <label className="block text-sm font-medium text-gray-700">توضیحات متا</label>
-          <input
-            name="metadescription"
-            value={formData.metadescription || ""}
-            onChange={handleChange}
-            placeholder="توضیحات متا را وارد کنید"
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow shadow-sm hover:shadow-md"
-            required
-          />
-          <p className="text-xs text-gray-600 mt-1 leading-relaxed">
-            <span className="font-semibold text-blue-600">توضیحات متا:</span> خلاصه‌ای جذاب با کلمه کلیدی (150-160 کاراکتر).
-            <span className={`ml-2 ${getCharacterCountClass(formData.metadescription?.length || 0, 150, 160)}`}>
-              ({formData.metadescription?.length || 0} کاراکتر)
-            </span>
-          </p>
-        </div>
+  <label className="block text-sm font-medium text-gray-700">توضیحات متا</label>
+  <textarea
+    name="metadescription"
+    value={formData.metadescription || ""}
+    onChange={handleChange}
+    placeholder="توضیحات متا را وارد کنید"
+    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow shadow-sm hover:shadow-md resize-y min-h-[100px]"
+    rows="4"
+    required
+  />
+  <p className="text-xs text-gray-600 mt-1 leading-relaxed">
+    <span className="font-semibold text-blue-600">توضیحات متا:</span> خلاصه‌ای جذاب با کلمه کلیدی (150-160 کاراکتر).
+    <span className={`ml-2 ${getCharacterCountClass(formData.metadescription?.length || 0, 150, 160)}`}>
+      ({formData.metadescription?.length || 0} کاراکتر)
+    </span>
+  </p>
+</div>
 
         {/* عنوان H1 */}
         <div className="space-y-1">
@@ -249,10 +250,19 @@ function PostForm({ isEditModalOpen, formData, error, categories, handleChange, 
           <p className="text-xs text-gray-600 mt-1 leading-relaxed">
             محتوای اصلی با حداقل 300 کلمه، شامل کلمه کلیدی، هدینگ‌ها، و تصاویر با alt توصیفی.
           </p>
+
+          <div className="flex justify-between relative items-start gap-4">
           <CustomEditor
             value={formData.text || ""}
             onChange={(content) => handleChange({ target: { name: "text", value: content } })}
           />
+          <SEOAnalyzer formData={formData} />
+         
+  
+
+          
+          </div>
+       
         </div>
 
         {/* کلمه کلیدی */}
@@ -273,23 +283,23 @@ function PostForm({ isEditModalOpen, formData, error, categories, handleChange, 
 
         {/* متن کوتاه */}
         <div className="space-y-1">
-          <label className="block text-sm font-medium text-gray-700">متن کوتاه</label>
-          <input
-            name="shorttext"
-            value={formData.shorttext || ""}
-            onChange={handleChange}
-            placeholder="خلاصه پست را وارد کنید"
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow shadow-sm hover:shadow-md"
-            required
-          />
-          <p className="text-xs text-gray-600 mt-1 leading-relaxed">
-            <span className="font-semibold text-blue-600">متن کوتاه:</span> خلاصه جذاب (100-200 کاراکتر).
-            <span className={`ml-2 ${getCharacterCountClass(formData.shorttext?.length || 0, 100, 200)}`}>
-              ({formData.shorttext?.length || 0} کاراکتر)
-            </span>
-          </p>
-        </div>
-
+  <label className="block text-sm font-medium text-gray-700">متن کوتاه</label>
+  <textarea
+    name="shorttext"
+    value={formData.shorttext || ""}
+    onChange={handleChange}
+    placeholder="خلاصه پست را وارد کنید"
+    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow shadow-sm hover:shadow-md resize-y min-h-[100px]"
+    rows="4"
+    required
+  />
+  <p className="text-xs text-gray-600 mt-1 leading-relaxed">
+    <span className="font-semibold text-blue-600">متن کوتاه:</span> خلاصه جذاب (100-200 کاراکتر).
+    <span className={`ml-2 ${getCharacterCountClass(formData.shorttext?.length || 0, 100, 200)}`}>
+      ({formData.shorttext?.length || 0} کاراکتر)
+    </span>
+  </p>
+</div>
         {/* دسته‌بندی‌ها */}
         <div className="space-y-1">
           <label className="block text-sm font-medium text-gray-700">دسته‌بندی‌ها</label>
@@ -312,8 +322,10 @@ function PostForm({ isEditModalOpen, formData, error, categories, handleChange, 
           </p>
         </div>
       </div>
-
-      <SEOAnalyzer formData={formData} />
+<div className="lg:!hidden">
+<SEOAnalyzer formData={formData} />
+</div>
+  
 
       {error && <p className="text-red-500 text-sm">{error}</p>}
 

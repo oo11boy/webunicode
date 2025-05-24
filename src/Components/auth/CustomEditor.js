@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, {  useRef } from "react";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { apiUrl } from "@/lib/ApiUrl";
@@ -56,7 +56,7 @@ const CustomEditor = ({ value, onChange }) => {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-lg border border-gray-200" dir="rtl">
+    <div className="bg-white lg:!w-2/3 rounded-lg shadow-lg border border-gray-200" dir="rtl">
       <CKEditor
         editor={ClassicEditor}
         data={value || ""}
