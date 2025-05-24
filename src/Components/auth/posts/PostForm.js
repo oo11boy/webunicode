@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import CustomEditor from "../CustomEditor";
 import SEOAnalyzer from "./SEOAnalyzer";
-
+import moment from "jalali-moment"; 
 function PostForm({ isEditModalOpen, formData, error, categories, handleChange, onSubmit, onCancel, apiUrl }) {
   const [imagePreview, setImagePreview] = useState(formData.mainimg || "");
   const [uploading, setUploading] = useState(false);
@@ -74,6 +74,17 @@ function PostForm({ isEditModalOpen, formData, error, categories, handleChange, 
       return "text-green-500";
     }
     return "text-gray-500";
+  };
+
+  // فرمت تاریخ برای نمایش
+
+
+  const formatDate = (date) => {
+    if (!date) return "";
+    return moment(date)
+      .add(1, "hours") // اضافه کردن 4 ساعت و 30 دقیقه
+      .locale("fa")
+      .format("YYYY/MM/DD HH:mm:ss");
   };
 
   return (
@@ -151,6 +162,38 @@ function PostForm({ isEditModalOpen, formData, error, categories, handleChange, 
             <span className="font-semibold text-blue-600">URL:</span> کوتاه، توصیفی، با کلمه کلیدی و خط تیره (مثلاً post-keyword).
           </p>
         </div>
+
+        {/* تاریخ ثبت (فقط در حالت ویرایش نمایش داده شود) */}
+        {isEditModalOpen && (
+          <div className="space-y-1">
+            <label className="block text-sm font-medium text-gray-700">تاریخ ثبت</label>
+            <input
+              name="created_at"
+              value={formatDate(formData.created_at) || ""}
+              readOnly
+              className="w-full p-3 border border-gray-300 rounded-lg bg-gray-100 text-gray-600 cursor-not-allowed"
+            />
+            <p className="text-xs text-gray-600 mt-1 leading-relaxed">
+              <span className="font-semibold text-blue-600">تاریخ ثبت:</span> زمان ایجاد پست.
+            </p>
+          </div>
+        )}
+
+        {/* تاریخ ویرایش (فقط در حالت ویرایش نمایش داده شود) */}
+        {isEditModalOpen && (
+          <div className="space-y-1">
+            <label className="block text-sm font-medium text-gray-700">تاریخ ویرایش</label>
+            <input
+              name="updated_at"
+              value={formatDate(formData.updated_at) || ""}
+              readOnly
+              className="w-full p-3 border border-gray-300 rounded-lg bg-gray-100 text-gray-600 cursor-not-allowed"
+            />
+            <p className="text-xs text-gray-600 mt-1 leading-relaxed">
+              <span className="font-semibold text-blue-600">تاریخ ویرایش:</span> زمان آخرین به‌روزرسانی پست.
+            </p>
+          </div>
+        )}
 
         {/* تصویر اصلی */}
         <div className="space-y-2">

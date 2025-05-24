@@ -55,7 +55,7 @@ export default function Dashboard() {
         categoriesCount,
         uploadsCount,
         totalUsageBytes,
-        recentPosts: postsData.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)),
+        recentPosts: postsData.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at)),
       }));
     } catch (error) {
       console.error("خطا در دریافت آمار داشبورد:", error);

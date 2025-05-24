@@ -46,8 +46,8 @@ async function generateDynamicRoutes() {
     const posts = await getPosts();
     
     return posts.map((post) => ({
-      url: `${BASE_URL}/blogs/${post.id}`,
-      lastModified: post.updatedAt ? new Date(post.updatedAt) : new Date(),
+      url: `${BASE_URL}/blogs/${post.link}`,
+      lastModified: post.updated_at ? new Date(post.updated_at) : new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     }));

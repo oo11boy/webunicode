@@ -9,7 +9,7 @@ export async function generateMetadata({ params }) {
   const { id } = params;
   const dataposts = await getPosts();
 
-  const findpost = dataposts.filter((item) => item.id == id)[0];
+  const findpost = dataposts.filter((item) => item.link == id)[0];
   if (!findpost) {
     return {
       title: "مقاله یافت نشد",
