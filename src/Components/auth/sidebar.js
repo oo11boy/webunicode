@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from "react";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ArticleIcon from "@mui/icons-material/Article";
@@ -8,19 +10,30 @@ import CategoryIcon from "@mui/icons-material/Category";
 import UploadIcon from "@mui/icons-material/CloudUpload";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Close } from "@mui/icons-material";
-import LogoutIcon from "@mui/icons-material/Logout"; // آیکون خروج
-import { useRouter } from "next/navigation"; // برای هدایت کاربر
+import LogoutIcon from "@mui/icons-material/Logout";
+import { useRouter } from "next/navigation";
 
 export default function Sidebar({ setPage }) {
   const [isPostsOpen, setIsPostsOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const router = useRouter(); // استفاده از useRouter برای هدایت کاربر
+  const router = useRouter();
 
   // تابع برای خروج از حساب کاربری
-  const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn"); // حذف وضعیت لاگین
-    localStorage.removeItem("token"); // حذف توکن
-    router.push("/login"); // هدایت کاربر به صفحه‌ی لاگین
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('/api/logout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      if (response.ok) {
+        router.push('/login'); // هدایت به صفحه لاگین
+      } else {
+        console.error('خروج ناموفق بود');
+      }
+    } catch (error) {
+      console.error('خطا در فرآیند خروج:', error);
+    }
   };
 
   return (
@@ -88,7 +101,6 @@ export default function Sidebar({ setPage }) {
               <UploadIcon />
               مدیریت فایل‌ها
             </li>
-            {/* آیتم خروج از حساب کاربری */}
             <li
               onClick={handleLogout}
               className="flex items-center cursor-pointer py-2 px-3 rounded-lg hover:bg-gray-700 transition-colors gap-2"

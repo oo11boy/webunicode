@@ -1,40 +1,28 @@
-"use client";
+import { redirect } from 'next/navigation';
+import { cookies } from 'next/headers';
+import jwt from 'jsonwebtoken';
+import AdminPannelContainer from '@/Components/auth/Dashboard/AdminPannelContainer';
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import Sidebar from "@/Components/auth/sidebar";
-import DashContent from "@/Components/auth/DashContent";
+export default async function Page() {
+  const cookieStore = cookies();
+  const isLoggedIn = cookieStore.get('isLoggedIn')?.value;
+  const token = cookieStore.get('token')?.value;
 
-export default function DashboardPage() {
-  const router = useRouter();
-  const [Page, setPage] = useState("dashboard");
-  const [isLoading, setIsLoading] = useState(true); // حالت برای بررسی وضعیت لاگین
+  // اعتبارسنجی توکن
+  if (!isLoggedIn || !token) {
+    redirect('/login');
+  }
 
-  useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    const token = localStorage.getItem("token");
-
-    if (!isLoggedIn || !token) {
-      router.push("/login"); // اگر کاربر لاگین نکرده باشد، به صفحه‌ی لاگین هدایت شود
-    } else {
-      setIsLoading(false); // اگر کاربر لاگین کرده باشد، isLoading را false کنید
-    }
-  }, [router]);
-
-  // اگر در حال بررسی وضعیت لاگین هستیم، چیزی رندر نکنید
-  if (isLoading) {
-    return null; // یا می‌توانید یک اسپینر یا پیام "در حال بررسی..." نمایش دهید
+  try {
+    jwt.verify(token, process.env.JWT_SECRET);
+  } catch (error) {
+    console.error('توکن نامعتبر است:', error);
+    redirect('/login');
   }
 
   return (
-    <div dir="rtl" className="flex yekan min-h-screen bg-gray-100">
-      {/* Sidebar */}
-      <Sidebar setPage={setPage} />
-
-      {/* Main Content */}
-      <div className="flex-1 p-4 md:p-6  md:mt-0">
-        <DashContent Page={Page} />
-      </div>
-    </div>
+    <>
+      <AdminPannelContainer />
+    </>
   );
 }

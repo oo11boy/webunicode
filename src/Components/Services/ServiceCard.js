@@ -22,7 +22,7 @@ export default function ServiceCard({ item }) {
           <h3 className="text-xl lg:text-2xl font-bold text-black md:text-white lg:text-gray-600 mb-8">
             {item.title}
           </h3>
-          <p className="text-gray-600 lg:text-lg md:text-[#dedede]">
+          <p className="text-gray-600 lg:text-lg md:!text-[#1c1313]">
             {item.content}
           </p>
         </div>

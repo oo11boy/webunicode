@@ -24,7 +24,7 @@ function PostsTable({ posts, handleDelete, openEditModal }) {
               <td className="p-3">{post.h1title}</td>
               <td className="p-3">{post.cat}</td>
               <td className="p-3 flex gap-2 justify-end">
-                <Link href={`/blogs/${post.id}`} className="text-green-600 hover:text-green-800 p-1">
+                <Link href={`/blogs/${post.link}`} className="text-green-600 hover:text-green-800 p-1">
                   <VisibilityIcon />
                 </Link>
                 <button onClick={() => openEditModal(post)} className="text-blue-600 hover:text-blue-800 p-1">

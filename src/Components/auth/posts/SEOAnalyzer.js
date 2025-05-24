@@ -19,7 +19,8 @@ const SEOAnalyzer = ({ formData }) => {
     let score = 0;
     const newSuggestions = [];
     const newIssues = [];
-    const hostname = window.location.hostname;
+    // استفاده از متغیر محیطی به جای window.location.hostname
+    const hostname = process.env.NEXT_PUBLIC_BASE_URL || "unicodewebdesign.com";
     const textContent = formData.text || "";
     const plainText = getPlainText(textContent);
     const wordCount = plainText.split(/\s+/).filter((word) => word.length > 0).length;
@@ -86,7 +87,7 @@ const SEOAnalyzer = ({ formData }) => {
       hasH3orH4 = doc.querySelectorAll("h3, h4").length > 0;
     }
     if (!hasH1InEditor && h2Count >= 1 && h2Count <= 10) {
-      score += 10 + (hasH3orH4 ? 5 : 0); // 10 برای H2، 5 اضافی برای H3/H4
+      score += 10 + (hasH3orH4 ? 5 : 0);
     } else {
       if (hasH1InEditor) {
         newIssues.push("تگ H1 در متن ادیتور استفاده شده است. این تگ نباید در متن اصلی باشد.");
@@ -116,7 +117,7 @@ const SEOAnalyzer = ({ formData }) => {
       hasMissingAlt = Array.from(images).some((img) => !img.hasAttribute("alt") || img.getAttribute("alt").trim() === "");
     }
     if (hasImageInText && !hasMissingAlt && (formData.mainimg || textContent.includes("<img"))) {
-      score += 8 + (isWebPFormat ? 2 : 0); // 8 برای تصاویر، 2 اضافی برای WebP
+      score += 8 + (isWebPFormat ? 2 : 0);
     } else {
       if (!hasImageInText) {
         newIssues.push("هیچ تصویری در متن اصلی وجود ندارد.");
@@ -141,7 +142,8 @@ const SEOAnalyzer = ({ formData }) => {
       const links = doc.querySelectorAll("a[href]");
       Array.from(links).forEach((link) => {
         try {
-          const linkUrl = new URL(link.href, window.location.origin);
+          // استفاده از hostname از متغیر محیطی
+          const linkUrl = new URL(link.href, `https://${hostname}`);
           if (linkUrl.hostname === hostname) {
             hasInternalLink = true;
           } else if (linkUrl.protocol.startsWith("http")) {
@@ -154,7 +156,7 @@ const SEOAnalyzer = ({ formData }) => {
       });
     }
     if (hasInternalLink && hasExternalLink) {
-      score += 8 + (hasNofollowExternal ? 2 : 0); // 8 برای لینک‌ها، 2 اضافی برای nofollow
+      score += 8 + (hasNofollowExternal ? 2 : 0);
     } else {
       if (!hasInternalLink) {
         newIssues.push("لینک داخلی وجود ندارد.");
@@ -170,7 +172,7 @@ const SEOAnalyzer = ({ formData }) => {
     }
 
     // 7. بررسی ساختار URL (10 امتیاز)
-    const slug = formData.slug || "";
+    const slug = formData.link || "";
     const isValidSlug = /^[a-z0-9-]+$/i.test(slug) && slug.length <= 100 && keyword && slug.toLowerCase().includes(keyword);
     if (isValidSlug) {
       score += 10;

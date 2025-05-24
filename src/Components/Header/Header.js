@@ -20,7 +20,7 @@ export default function Header() {
     <header
       dir="rtl"
       lang="fa"
-      className="bg-gradient-to-r from-white to-gray-50 shadow-lg sticky top-0 z-50"
+      className="bg-gradient-to-r from-white to-gray-50 shadow-lg sticky top-0 z-[999]"
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="منوی اصلی">
         <div className="flex items-center justify-between h-16">
